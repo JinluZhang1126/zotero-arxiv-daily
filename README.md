@@ -90,8 +90,8 @@ That's all! Now you can test the workflow by manually triggering it:
 Then check the log and the receiver email after it finishes.
 
 After each successful `Send emails daily` run, the workflow now also refreshes:
-- `paper_list.json`: structured list of the latest daily papers
-- `index.html`: HTML page generated from `paper_list.json` in the repository root
+- `paper_list.json`: structured paper history accumulated by run date, with the newest date first
+- `index.html`: HTML page generated from all saved papers in `paper_list.json`
 
 By default, the main workflow runs on 22:00 UTC everyday. You can change this time by editting the workflow config `.github/workflows/main.yml`.
 

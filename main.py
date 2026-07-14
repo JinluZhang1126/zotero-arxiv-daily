@@ -14,10 +14,12 @@ def _get_pdf_url_patch(links) -> str:
 arxiv.Result._get_pdf_url = _get_pdf_url_patch
 
 import argparse
+from datetime import date
 import os
 import sys
 import json
 import html as html_lib
+from typing import Optional
 from dotenv import load_dotenv
 load_dotenv(override=True)
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
@@ -43,8 +45,27 @@ def _paper_to_dict(paper: ArxivPaper) -> dict:
         "score": paper.score,
     }
 
-def save_paper_list_json(papers: list[ArxivPaper], filename: str = "paper_list.json") -> None:
-    paper_list = [_paper_to_dict(p) for p in papers]
+def save_paper_list_json(
+    papers: list[ArxivPaper],
+    filename: str = "paper_list.json",
+    run_date: Optional[str] = None,
+) -> None:
+    run_date = run_date or date.today().isoformat()
+    paper_list = [{"date": run_date, **_paper_to_dict(p)} for p in papers]
+    try:
+        with open(filename, "r", encoding="utf-8") as f:
+            history = json.load(f)
+    except FileNotFoundError:
+        history = []
+
+    current_ids = {p["arxiv_id"] for p in paper_list}
+    history = [
+        p for p in history
+        if p.get("date") != run_date and p.get("arxiv_id") not in current_ids
+    ]
+    paper_list.extend(history)
+    paper_list.sort(key=lambda p: p.get("date", ""), reverse=True)
+
     with open(filename, "w", encoding="utf-8") as f:
         json.dump(paper_list, f, ensure_ascii=False, indent=2)
 
@@ -53,6 +74,7 @@ def render_paper_list_html_from_json(json_file: str = "paper_list.json") -> str:
         paper_list = json.load(f)
     rows = []
     for p in paper_list:
+        paper_date = html_lib.escape(p.get("date", "-"))
         title = html_lib.escape(p.get("title", ""))
         arxiv_id = html_lib.escape(p.get("arxiv_id", ""))
         authors = ", ".join(p.get("authors", []))
@@ -64,6 +86,7 @@ def render_paper_list_html_from_json(json_file: str = "paper_list.json") -> str:
         score_text = "" if score is None else str(score)
         row = f"""
         <tr>
+            <td>{paper_date}</td>
             <td><a href="https://arxiv.org/abs/{arxiv_id}" target="_blank">{arxiv_id}</a></td>
             <td>{title}</td>
             <td>{authors}</td>
@@ -95,6 +118,7 @@ def render_paper_list_html_from_json(json_file: str = "paper_list.json") -> str:
   <table>
     <thead>
       <tr>
+        <th>Date</th>
         <th>arXiv ID</th>
         <th>Title</th>
         <th>Authors</th>
