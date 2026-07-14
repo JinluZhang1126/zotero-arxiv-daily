@@ -16,6 +16,8 @@ arxiv.Result._get_pdf_url = _get_pdf_url_patch
 import argparse
 import os
 import sys
+import json
+import html as html_lib
 from dotenv import load_dotenv
 load_dotenv(override=True)
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
@@ -29,6 +31,89 @@ from tempfile import mkstemp
 from paper import ArxivPaper
 from llm import set_global_llm
 import feedparser
+
+def _paper_to_dict(paper: ArxivPaper) -> dict:
+    return {
+        "title": paper.title,
+        "arxiv_id": paper.arxiv_id,
+        "authors": [a.name for a in paper.authors],
+        "summary": paper.summary,
+        "pdf_url": paper.pdf_url,
+        "code_url": paper.code_url,
+        "score": paper.score,
+    }
+
+def save_paper_list_json(papers: list[ArxivPaper], filename: str = "paper_list.json") -> None:
+    paper_list = [_paper_to_dict(p) for p in papers]
+    with open(filename, "w", encoding="utf-8") as f:
+        json.dump(paper_list, f, ensure_ascii=False, indent=2)
+
+def render_paper_list_html_from_json(json_file: str = "paper_list.json") -> str:
+    with open(json_file, "r", encoding="utf-8") as f:
+        paper_list = json.load(f)
+    rows = []
+    for p in paper_list:
+        title = html_lib.escape(p.get("title", ""))
+        arxiv_id = html_lib.escape(p.get("arxiv_id", ""))
+        authors = ", ".join(p.get("authors", []))
+        authors = html_lib.escape(authors)
+        summary = html_lib.escape(p.get("summary", ""))
+        pdf_url = html_lib.escape(p.get("pdf_url", ""))
+        code_url = p.get("code_url")
+        score = p.get("score")
+        score_text = "" if score is None else str(score)
+        row = f"""
+        <tr>
+            <td><a href="https://arxiv.org/abs/{arxiv_id}" target="_blank">{arxiv_id}</a></td>
+            <td>{title}</td>
+            <td>{authors}</td>
+            <td>{html_lib.escape(score_text)}</td>
+            <td><a href="{pdf_url}" target="_blank">PDF</a></td>
+            <td>{('<a href="' + html_lib.escape(code_url) + '" target="_blank">Code</a>') if code_url else '-'}</td>
+            <td>{summary}</td>
+        </tr>
+        """
+        rows.append(row)
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily arXiv Papers</title>
+  <style>
+    body {{ font-family: Arial, sans-serif; margin: 24px; }}
+    table {{ border-collapse: collapse; width: 100%; }}
+    th, td {{ border: 1px solid #ddd; padding: 8px; vertical-align: top; }}
+    th {{ background: #f4f4f4; text-align: left; }}
+    tr:nth-child(even) {{ background: #fafafa; }}
+  </style>
+</head>
+<body>
+  <h1>Daily arXiv Papers</h1>
+  <p>Total papers: {len(paper_list)}</p>
+  <table>
+    <thead>
+      <tr>
+        <th>arXiv ID</th>
+        <th>Title</th>
+        <th>Authors</th>
+        <th>Score</th>
+        <th>PDF</th>
+        <th>Code</th>
+        <th>Summary</th>
+      </tr>
+    </thead>
+    <tbody>
+      {''.join(rows)}
+    </tbody>
+  </table>
+</body>
+</html>
+"""
+
+def save_paper_list_html(html_content: str, filename: str = "index.html") -> None:
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write(html_content)
 
 def get_zotero_corpus(id:str,key:str) -> list[dict]:
     zot = zotero.Zotero(id, 'user', key)
@@ -193,8 +278,12 @@ if __name__ == '__main__':
             logger.info("Using Local LLM as global LLM.")
             set_global_llm(lang=args.language)
 
+    logger.info("Saving daily paper list and refreshing index.html...")
+    save_paper_list_json(papers, "paper_list.json")
+    paper_list_html = render_paper_list_html_from_json("paper_list.json")
+    save_paper_list_html(paper_list_html, "index.html")
+
     html = render_email(papers)
     logger.info("Sending email...")
     send_email(args.sender, args.receiver, args.sender_password, args.smtp_server, args.smtp_port, html)
     logger.success("Email sent successfully! If you don't receive the email, please check the configuration and the junk box.")
-
