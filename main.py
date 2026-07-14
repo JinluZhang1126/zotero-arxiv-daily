@@ -90,6 +90,7 @@ def render_paper_list_html_from_json(json_file: str = "paper_list.json") -> str:
 </head>
 <body>
   <h1>Daily arXiv Papers</h1>
+  <p>Data source: <a href="./paper_list.json"><code>paper_list.json</code></a></p>
   <p>Total papers: {len(paper_list)}</p>
   <table>
     <thead>
