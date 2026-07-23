@@ -15,7 +15,7 @@
 <body>
   <h1>Daily arXiv Papers</h1>
   <p>Data source: <a href="./paper_list.json"><code>paper_list.json</code></a></p>
-  <p>Total papers: 60</p>
+  <p>Total papers: 90</p>
   <table>
     <thead>
       <tr>
@@ -31,6 +31,342 @@
     </thead>
     <tbody>
       
+        <tr>
+            <td>2026-07-22</td>
+            <td><a href="https://arxiv.org/abs/2607.19190" target="_blank">2607.19190</a></td>
+            <td>Agentic Real2Sim: Physics-based World Modeling with Vision-Language Agents</td>
+            <td>Guanxiong Chen, Qianjun Xia, Jiawei Peng, Heng Zhang, Bole Ma, Justin Qian, Ziyi Jiao, Bingyang Zhou, Luoxin Ye, Kaifeng Zhang, Kunyi Wang, Weijia Zeng, Yunuo Chen, Pengzhi Yang, Ziqiu Zeng, Huamin Wang, Chao Liu, Alan Yuille, Fan Shi, Changxi Zheng, Yunzhu Li, Chenfanfu Jiang, Peter Yichen Chen</td>
+            <td>7.696252099275862</td>
+            <td><a href="https://arxiv.org/pdf/2607.19190v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Real-to-sim conversion for robotic interaction with objects remains labor-intensive because it requires more than visual reconstruction: a streamlined real2sim process must recover scene geometries and object states, infer physical parameters, and assemble actors, objects, cameras, poses, and trajectories into a runnable physical simulation. Today this process still depends on manual tuning of visual foundation models, mesh cleanup, coordinate-frame alignment, and brittle workflow glue across visual perception tools and simulators. We introduce \textit{Agentic Real2Sim}, a framework for generalized physical world modeling with vision-language agents, converting a real-world recording of object-robot interaction into a simulatable episodic twin which preserves observations, geometries, robot interactions, and object states. We evaluate Agentic Real2Sim on rigid-object manipulation, deformable-object interaction, and humanoid motion scenes, spanning domains that are usually handled by separate Real2Sim pipelines, marking a first step toward scalable conversion. The framework&#x27;s agentic decisions can be driven by an open-weight VLM backend at a small fraction of the cost of frontier models, while attaining comparable conversion success rate. We aim to use the resulting real-world-aligned twins for downstream robotics tasks, specifically policy learning and evaluation. The project site is available at https://ericchen321.github.io/agentic_real2sim.github.io/.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-07-22</td>
+            <td><a href="https://arxiv.org/abs/2607.18709" target="_blank">2607.18709</a></td>
+            <td>RoboInter1.5: A Holistic Intermediate Representation Suite for Embodied World Modeling and Robotic Manipulation</td>
+            <td>Ziqin Wang, Hao Li, Weijun Wang, Junhao Cai, Jia Zeng, Yilun Chen, Jiangmiao Pang, Si Liu</td>
+            <td>7.6767730325952215</td>
+            <td><a href="https://arxiv.org/pdf/2607.18709v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Existing robot datasets remain expensive to curate, embodiment-specific, and insufficiently annotated with the fine-grained structure required for generalizable reasoning, execution, or long-horizon environment dynamics simulation. Building on our prior work, RoboInter1.0, we present RoboInter1.5, an extended and holistic suite of intermediate representations for both robotic manipulation and embodied world modeling. RoboInter1.5 provides a unified resource of data, benchmarks, and models centered on dense manipulation-oriented intermediate representations. Specifically, RoboInter-Data contains over 230k manipulation episodes across 571 scenes with dense per-frame annotations covering more than ten types of intermediate representations, including subtasks, primitive skills, object and gripper grounding, segmentation, affordance, grasp poses, contact points, motion traces, etc. Built upon these annotations, RoboInter-VQA introduces spatial and temporal embodied VQA tasks to benchmark and improve the intermediate-representation reasoning capabilities of our RoboInter-VLM. RoboInter-VLA further studies how such representations benefit action execution through implicit, explicit, and modular plan-then-execute paradigms. To better model the physical world, we further introduce RoboInter-World, which leverages intermediate representations as structured conditioning signals for controllable prediction of future world states. Extensive evaluations demonstrate that RoboInter1.5 provides a unified spatiotemporal scaffolding for intermediate representations. Rather than treating intermediate representations merely as interpretable signals, RoboInter1.5 conceptualizes them as a bidirectional interface that both regularizes low-level action spaces and constrains the latent rollouts of open-world physical simulators.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-07-22</td>
+            <td><a href="https://arxiv.org/abs/2607.19343" target="_blank">2607.19343</a></td>
+            <td>Masked Visual Actions for Unified World Modeling</td>
+            <td>Hadi Alzayer, Wenlong Huang, Haonan Chen, Christopher Luey, Lvmin Zhang, Maneesh Agrawala, Gordon Wetzstein, Li Fei-Fei, Yilun Du, Jiajun Wu, Jia-Bin Huang</td>
+            <td>7.666423728325133</td>
+            <td><a href="https://arxiv.org/pdf/2607.19343v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Video models absorb rich priors over how the visual world moves, interacts, and responds to contact, making them promising substrates for robotic world modeling. The central challenge is how to communicate action to such models in a form aligned with the visual space in which they learned these interaction priors, yet still grounded in physical manipulation. We introduce Masked Visual Actions, a pixel-space control interface that expresses action as a partially revealed trajectory of an arbitrary entity in a video. Revealing robot motion makes the model act as a forward dynamics model that predicts the scene&#x27;s response to low-level robot actions, while revealing desired object motion makes the same model recover robot behavior consistent with that outcome. Finetuned with only 15 hours of masked examples from real videos and simulation, a single checkpoint achieves strong visual fidelity and controllability across diverse scenes and multiple embodiments. In downstream manipulation settings, the model produces imagined rollouts whose outcomes correlate with real-world execution for policy evaluation, improves decision making by ranking candidate futures in model-based planning, and supports inverse modeling by synthesizing robot motion from desired object motion.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-07-22</td>
+            <td><a href="https://arxiv.org/abs/2607.19228" target="_blank">2607.19228</a></td>
+            <td>IGGT4D: Streaming 4D Instance-Grounded Geometry Transformer</td>
+            <td>Zhengyu Zou, Hao Li, Kuixuan Jiao, Liu Liu, Tingyang Xiao, Xiaolin Zhou, Fangzhou Hong, Zhizhong Su, Dingwen Zhang, Ziwei Liu</td>
+            <td>7.65397866933143</td>
+            <td><a href="https://arxiv.org/pdf/2607.19228v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Real-world spatial intelligence requires agents to understand scenes from continuous video streams, where objects move, persist, disappear, and reappear over time. While recent spatial foundation models have enabled generalizable feed-forward 3D reconstruction, most streaming methods remain geometry-centric and lack temporally consistent object-level understanding. Meanwhile, existing semantic reconstruction and 3D-aware vision-language methods largely rely on externally extracted 2D semantic cues or loosely coupled geometry inputs, limiting unified geometry-instance learning in long dynamic scenes. In this paper, we propose IGGT4D, a streaming instance-grounded geometry Transformer for online 4D scene understanding. IGGT4D processes video frames sequentially, reuses historical context through causal spatial-temporal modeling, and incrementally updates a unified representation of camera motion, geometry, and object identity. This enables long-sequence feed-forward reconstruction with geometry-instance consistency in dynamic environments. To address the lack of high-quality 4D supervision, we further construct InsScene4D-147K, a large-scale dataset spanning real/synthetic and static/dynamic scenes, with RGB images, depth, poses, and temporally consistent instance masks generated by an automated geometry-guided annotation pipeline. Experiments on 3D reconstruction, pose estimation, instance spatial tracking, and open-vocabulary segmentation demonstrate that IGGT4D outperforms existing streaming baselines while maintaining scalable online inference for long dynamic sequences.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-07-22</td>
+            <td><a href="https://arxiv.org/abs/2607.18924" target="_blank">2607.18924</a></td>
+            <td>Learning Explicit Physical Parameter Control and Benchmarking for Video Generation</td>
+            <td>Yanxun Li, Hao Wen, Bingze Song, Jiashu Zhu, Aiming Hao, Chubin Chen, Jintao Chen, Jiahong Wu, Xiangxiang Chu, Miao Wang</td>
+            <td>7.63626587525842</td>
+            <td><a href="https://arxiv.org/pdf/2607.18924v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Recent advances in image-to-video generation have improved visual realism, making physically grounded and controllable dynamics an important step toward future world simulation.
+  Current models often generate plausible motion, but it is not reliably governed by explicit physical causes, and instance-level constraints can leak or become entangled in multi-object interactions.
+  We attribute this gap to two missing pieces: large-scale, fine-grained physical parameterization, and model designs that correctly bind physical attributes to instances and emphasize dynamics over appearance.
+  To bridge this gap, we introduce PhyParam-Dataset, an interaction-centric collection of 130K physically simulated videos with dense physical parameterization, including force vectors, object material properties, and environmental constants across five representative rigid-body motion types.
+  Built on this data, we present PhyParam, a physics-guided image-to-video diffusion model that conditions on object-level forces, masses, friction, restitution, and scene-level gravity via a lightweight physical-attention routing mechanism, and further improves motion learning with semantic-structural feature-space supervision.
+  We also establish PhyParam-Bench, a benchmark for physical-law consistency in image-to-video generation, with a multi-level protocol evaluating temporal dynamics, spatial stability, and semantic--physical alignment. Experiments show that PhyParam improves physical consistency while maintaining high visual fidelity, advancing explicit rigid-body physical-parameter control for image-to-video generation.
+  We will publicly release the dataset, benchmark, and code to support future research.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-07-22</td>
+            <td><a href="https://arxiv.org/abs/2607.18840" target="_blank">2607.18840</a></td>
+            <td>WorldScape Policy 2.0: Empowering Steerable World Action Modeling with Reasoning-Augmented Memory</td>
+            <td>Haisheng Su, Zongdai Liu, Xin Jin, Haoxuan Dou, Chengming Hu, Baorun Li, Zhanwang Liu, Ruiyan Xu, Jianjie Fang, Xin Zhang, Zhenjie Yang, Xue Yang, Chen Gao, Junchi Yan, Yong Li, Wei Wu</td>
+            <td>7.578896665289399</td>
+            <td><a href="https://arxiv.org/pdf/2607.18840v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>World Action Models (WAMs) offer a promising paradigm for robotic manipulation by jointly modeling visual state transitions and robot actions. However, existing WAMs are constrained by limited temporal context, coarse episode-level language supervision, and predominantly text-only conditioning, which hinder task-progress tracking and fine-grained language-video-action grounding while limiting visual-context reasoning and cross-embodiment transfer. In this paper, we introduce WorldScape Policy 2.0, a controllable WAM with reasoning-augmented long short-term memory. Its causal short-term visual memory supplies recent observations as DiT prefill to preserve local interaction dynamics, while its long short-term event memory organizes historical VLM outputs into global-history, local-active, and event-boundary representations for progress-aware retrieval. The retrieved history augments perception and autoregressively generated planning tokens, yielding an implicit subgoal condition for autonomous planning; semantic forcing further transfers event-level instruction semantics into this latent planning pathway. To establish fine-grained multimodal controllability, we construct ManipEvent-5M, an event-grounded embodied pretraining dataset containing nearly 5 million event segments with aligned action trajectories, episode-level task instructions, segment-level subtask captions, goal images, and video demonstrations. These designs provide a unified interface for autonomous planning from high-level instructions and controllable execution from fine-grained text, goal-image, or video-context prompts. Experiments in both simulation and real-world platforms demonstrate superior capabilities in long-horizon autonomous planning, fine-grained instruction following and in-context adaptation.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-07-22</td>
+            <td><a href="https://arxiv.org/abs/2607.19100" target="_blank">2607.19100</a></td>
+            <td>FlexiAvatar: Unified 3D Gaussian Human Avatars Under Arbitrary Body Visibility</td>
+            <td>Yihalem Yimolal Tiruneh, Muhammad Salman Ali, Uyoung Jeong, Muneeb A. Khan, MD Khalequzzaman Chowdhury Sayem, Allanur Bayramgeldiyev, Binod Bhattarai, Seungryul Baek</td>
+            <td>7.555435971837441</td>
+            <td><a href="https://arxiv.org/pdf/2607.19100v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Reconstructing animatable 3D human avatars from monocular video is a fundamental problem in computer vision with broad applications in AR/VR and digital content creation. Existing approaches typically couple parametric body models with neural rendering or 3D Gaussian splatting and optimize all body regions jointly from short videos, which often degrades fidelity in the visible areas. To overcome this limitation, we introduce FlexiAvatar, a unified framework that explicitly optimizes only the visible body regions, effectively eliminating artifacts arising from unobserved limbs. Our method integrates occlusion-robust SMPL-X tracking with part-specific residual refinement to capture high-frequency geometric and appearance details. To complete entirely unseen regions (e.g., back views), we leverage a diffusion-based approach to generate texture consistent with the observed appearance. Experiments on full-body (NeuMan, ZJU-MoCap, WildAvatar), upper/half-body (talk-show clips), and head-only (INSTA) inputs show that FlexiAvatar delivers consistently higher reconstruction quality, outperforming state-of-the-art methods by an average PSNR improvement of approximately 3% across datasets. Finally, by restricting optimization to observed regions, our method reduces the effective number of Gaussians that must be optimized and rendered, leading to reduced runtime and memory overhead in partial-visibility scenarios.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-07-22</td>
+            <td><a href="https://arxiv.org/abs/2607.18664" target="_blank">2607.18664</a></td>
+            <td>DeforM: Reasoning-Guided Physics-Aware Video Generation via Spatial-Temporal Masking</td>
+            <td>Yunyi Li, Yu Qiao, Yaohui Wang, Xinyuan Chen</td>
+            <td>7.483543283252898</td>
+            <td><a href="https://arxiv.org/pdf/2607.18664v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Video generation models achieve high visual quality but often struggle to generate physics-aware videos. Unlike rigid-body motion, which can be described by explicit trajectories or formulas, complex deformation dynamics remain challenging to synthesize. We observe that a lack of physical reasoning for localizing dynamic areas allows irrelevant regions to dilute the model&#x27;s attention, leading to generation failure. In this paper, we propose DeforM, a reasoning-guided image-to-video generation framework that directs the model&#x27;s focus toward physics-critical regions. To reason about and localize these critical regions, we introduce a VLM-guided physical reasoning module, DeforM-Reason, to identify target objects and generate spatial-temporal masks. For physical guidance, we develop two alternative strategies: DeforM-Free for training-free mechanism analysis and DeforM-Injection as a powerful training-based generator. Experimental results demonstrate that DeforM improves the realism of generated deformation scenarios, outperforming baseline models in both visual quality and physical consistency.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-07-22</td>
+            <td><a href="https://arxiv.org/abs/2607.19191" target="_blank">2607.19191</a></td>
+            <td>ABot-World-0: Infinite Interactive World Rollout on a Single Desktop GPU</td>
+            <td>Fan Jiang, Zhaoxu Sun, Mengchao Wang, Ziyu Zhu, Chiyu Wang, Yunpeng Zhang, Wenlin Liu, Yun Wang, Xue Zheng, Rui Sun, Junfeng Ni, Hongyu Pan, Zhongxu Sun, Fei Yu, Zengye Ge, Mengmeng Du, Nianfei Fan, Mingchao Sun, Yu Liu, Yongchang, Yanqing Zhu, Jiahang Wang, Ning Ying, Yuze Xuan, Di Yang, Zhicheng Liu, Zhe Gao, Tingbing Xu, Jiacheng Sui, Wenjin Yang, Junnan Lai, Shufeng Liu, Yuan Liu, Zheng Zhou, Yingliang Peng, Dawei Cao, Kaifeng Sheng, Yuxiang Cai, Fei Lu, Mu Xu, Ning Guo</td>
+            <td>7.4741519638661185</td>
+            <td><a href="https://arxiv.org/pdf/2607.19191v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>We present ABot-World-0, an action-conditioned video world model for real-time, long-horizon closed-loop interaction, supported by a multi-source data infrastructure spanning AAA games, simulation engines, and internet videos to learn controllable world dynamics. WorldExplorer performs agent-driven collection guided by training feedback, while a unified pipeline applies 14 deterministic quality checks, VLM-based assessment, and synchronized action and text annotation. We progressively distill a bidirectional action-conditioned teacher into a causal student through teacher forcing and ODE distillation, and introduce LongForcing to align long student self-rollouts with an extended-horizon teacher, mitigating accumulated distribution shift and autoregressive drift. Raw keyboard actions provide a unified control interface for scene roaming and third-person character interaction, while reference-character memory provides persistent appearance cues for identity consistency during third-person rollouts. For deployment, we co-design a streaming inference stack with a lightweight VAE decoder, efficient attention, memory-aware scheduling, and low-bit DiT inference. Across optimized low-bit configurations, ABot-World-0 streams 720P video at up to 16 FPS on a single NVIDIA RTX 5090 desktop GPU, with 1.2s action-to-first-frame latency and approximately 19GiB peak VRAM. Experiments on WorldRoamBench and extended interactive rollouts demonstrate competitive controllability and coherent long-horizon world evolution.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-07-22</td>
+            <td><a href="https://arxiv.org/abs/2607.19120" target="_blank">2607.19120</a></td>
+            <td>Latent Riemannian Flow Matching for Geometry-Grounded 3D Foundation Models</td>
+            <td>Lisa Weijler, Irene Ballester, Guofeng Mei, Tolga Birdal, Pedro Hermosilla</td>
+            <td>7.432924314406333</td>
+            <td><a href="https://arxiv.org/pdf/2607.19120v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Geometric foundation models, such as the Visual Geometry Grounded Transformer (VGGT), provide strong 3D priors from unposed images. However, such models operate purely in a feed-forward, deterministic regime, \ie~they cannot generate plausible geometry beyond what the input views directly support. Generative models for 3D scenes, on the other hand, must rely on strong geometric priors to produce coherent outputs from sparse inputs. We bridge these two paradigms by performing flow matching directly in VGGT&#x27;s latent space, leveraging its learned 3D priors without committing to any explicit downstream representation such as Gaussians, meshes, or video-VAE latents. This requires respecting the latent geometry: VGGT tokens occupy a product of high-dimensional hyperspheres on which standard Euclidean flow matching fails. We address this with a Riemannian Flow Matching framework defined on a product manifold of four hyperspheres, aligned with VGGT&#x27;s multi-scale encoder, which keeps generated tokens on the valid data manifold required by the frozen decoding heads. On RealEstate10K, ScanNet++ and ETH3D, our method achieves strong performance against recent scene generation baselines in both per-view appearance and aggregated 3D geometry, establishing latent-space flow matching on geometric foundation models as a viable paradigm for 3D generation. The project page can be found $\href{https://lisaweijler.github.io/geometry-grounded-rfm/}{\text{here}}$.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-07-22</td>
+            <td><a href="https://arxiv.org/abs/2607.18630" target="_blank">2607.18630</a></td>
+            <td>Seeing Before Generating: Object Perception Enhances Single-View 3D Reconstruction</td>
+            <td>Y Huynh, Duc Thanh Nguyen, Mohamed Abdelrazek</td>
+            <td>7.429822817522902</td>
+            <td><a href="https://arxiv.org/pdf/2607.18630v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>The relationship between object perception and reconstruction is well established in human vision, yet remains underexplored in computer vision. In this paper, we demonstrate that learnt object perception can significantly enhance 3D reconstruction. Focusing on the challenging task of single-view 3D object reconstruction, we propose a method that leverages perceptual signals extracted from pretrained perception models capturing semantic and geometric information to drive the reconstruction of an object from its single image. Our approach is model-agnostic and can be integrated into various reconstruction methods in a plug-and-play manner. Experiments with two state-of-the-art single-view 3D reconstruction pipelines in a benchmark dataset show consistent and substantial improvements achieved by our method, validating the effectiveness of incorporating perception into generation. We provide in-depth analysis of various aspects of our method and its application. Our project page is at https://ynhuhuynh.github.io/perception-3d/.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-07-22</td>
+            <td><a href="https://arxiv.org/abs/2607.18367" target="_blank">2607.18367</a></td>
+            <td>AlayaWorld: Interactive Long-Horizon World Modeling -- Full Technical Report</td>
+            <td>AlayaWorld Team, Kaipeng Zhang, Chuanhao Li, Yifan Zhan, Yongtao Ge, Yuanyang Yin, Jiaming Tan, Kang He, Liaoyuan Fan, Mingliang Zhai, Ruicong Liu, Xiaojie Xu, Xuangeng Chu, Zhen Li, Zhengyuan Lin, Zhixiang Wang, Zian Meng, Zihui Gao</td>
+            <td>7.425627039792851</td>
+            <td><a href="https://arxiv.org/pdf/2607.18367v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Unlike conventional video game development, which relies on labor-intensive pipelines for asset production, animation, physics, and programming, video world models generate interactive environments from user inputs instantly. It enable us to create customized, explorable, and continuously evolving virtual world from text, an image, or video. Realizing this vision requires four tightly coupled capabilities: interaction, persistent spatiotemporal consistency, stable long-horizon generation, and efficient response. We present AlayaWorld, an interactive long-horizon video world model that generates 24-fps video at 540p and 720p. Built on a 15B video diffusion transformer, AlayaWorld generates short latent chunks autoregressively under camera trajectories and switchable text prompts. Its bounded visual context combines a persistent sink frame, compressed temporal history, geometry-aligned spatial memory, and recent-frame conditioning. To reduce long-term drift, the model is trained with corrupted histories and prediction residuals collected from its own roll-outs. We further introduce a discrete autoregressive distillation formulation that combines distribution-matching distillation, self-forcing++, and consistency distillation, reducing inference from approximately 30 sampling steps to four steps per chunk. On iWorld-Bench, AlayaWorld achieves the best performance over long-horizon generation. Conceived as a full-stack, open-source, and long-term project, AlayaWorld is intended to provide an extensible foundation for future research on interactive video world models.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-07-22</td>
+            <td><a href="https://arxiv.org/abs/2607.18646" target="_blank">2607.18646</a></td>
+            <td>Fluid-SDF: Ultra-Lightweight and Editable Implicit Shape Representation via Differentiable Primitives</td>
+            <td>Pradyumna Sripada, Chinmay Nadgir, Ksheer Agrawal, Krishna Kanth Kodanganti</td>
+            <td>7.413839163626887</td>
+            <td><a href="https://arxiv.org/pdf/2607.18646v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Implicit Neural Representations (INRs) have become the standard for continuous 2D shape modeling, but they suffer from black-box uneditability, vulnerability to noise, and high parameter counts that severely hinder deployment on edge devices. We introduce Fluid-SDF, a highly compressed, differentiable Constructive Solid Geometry (CSG) framework that models shapes using explicit geometric primitives blended via a smooth minimum function. By replacing traditional multi-layer perceptrons (MLPs) with a parameterized primitive engine, Fluid-SDF reconstructs complex, non-convex topologies using strictly under 100 parameters, achieving comparable or superior intersection-over-union (mIoU) to standard neural baselines. Furthermore, we demonstrate that Fluid-SDF acts as a powerful geometric prior, inherently resisting high-frequency dataset noise where capacity-matched neural networks catastrophically overfit. Finally, unlike standard INRs, Fluid-SDF&#x27;s explicit parameter space allows for direct, zero-shot user editing of local and global shape features without retraining. By bypassing expensive on-device gradient updates entirely, Fluid-SDF is uniquely suited for mobile AI, augmented reality, and resource-constrained embedded environments</td>
+        </tr>
+        
+        <tr>
+            <td>2026-07-22</td>
+            <td><a href="https://arxiv.org/abs/2607.19344" target="_blank">2607.19344</a></td>
+            <td>Appearance Pointers -- Multimodal Region Control of Diffusion Transformers</td>
+            <td>Rahul Sajnani, Yulia Gryaditskaya, Radomír Měch, Srinath Sridhar, Matheus Gadelha</td>
+            <td>7.403547531152983</td>
+            <td><a href="https://arxiv.org/pdf/2607.19344v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Controllable image generation remains challenging for creative professionals, who often require precise regional control over materials, object identities, and spatial arrangements that cannot be reliably achieved through text prompting alone. Diffusion Transformers (DiTs) can natively ingest heterogeneous tokens stemming from texts and images, but they lack mechanisms for determining where and how these tokens should influence the output. We introduce appearance pointers, compact tokens that guide DiTs toward the correct appearance cues at the correct spatial locations by aligning text or image inputs with user-specified masks. Appearance pointers are produced by a region correspondence network and refined through a spatial aggregation mechanism, enabling the model to handle multiple regional descriptions without significantly increasing token load. Our approach introduces the first modality-agnostic interface for localized multimodal control in a DiT without retraining the base model from scratch. Across a range of metrics, our single model reaches or surpasses the performance of modality-specific state of the art methods, offering a simple and extensible path toward precise, region-aware, multimodal guidance in generative image synthesis.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-07-22</td>
+            <td><a href="https://arxiv.org/abs/2607.18625" target="_blank">2607.18625</a></td>
+            <td>Norm or Direction? Decoding Vision Mambas for High-Resolution Vision</td>
+            <td>Jin Yu, Juyoun Park</td>
+            <td>7.37263341124285</td>
+            <td><a href="https://arxiv.org/pdf/2607.18625v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Vision Mamba models replace quadratic self-attention with linear complexity selective state space models (SSMs), emerging as efficient visual backbones. However, MambaOut demonstrates that a Gated CNN block can match or exceed VMamba on image classification, questioning the necessity of SSMs for vision. This raises a fundamental question: do VMamba and MambaOut encode visual information differently at the representation level? To investigate, we apply cross model centered kernel alignment (CKA) analysis and find that VMamba&#x27;s final stage blocks form representations distinctly different from both MambaOut and its own preceding blocks. We therefore focus on the final block features, decomposing each spatial token into magnitude and direction. MambaOut concentrates class-discriminative information in high-norm foreground tokens that align with Grad-CAM attribution. VMamba, by contrast, produces high-norm tokens predominantly in background regions, misaligned with Grad-CAM, yet preserves discriminative signals primarily in token directions. These observations reveal that the two models rely on different encoding strategies. We connect this difference to high-resolution classification and semantic segmentation. VMamba distributes logit support broadly across object regions, whereas MambaOut relies on sparse dominant tokens, a strategy that becomes less stable as token counts grow. Under full fine-tuning for segmentation, VMamba consistently outperforms MambaOut. These results suggest that VMamba&#x27;s advantage in dense prediction stems not merely from the SSM mechanism or sequence length, but from how semantic evidence is organized across token magnitude, direction. Ultimately, we conclude that token magnitude and directional structure serve as critical axes for improving visual backbones, particularly under dense supervision.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-07-22</td>
+            <td><a href="https://arxiv.org/abs/2607.19171" target="_blank">2607.19171</a></td>
+            <td>Point Ladder Tuning: Parameter-Efficient Hierarchical Adaptation for 3D Point Cloud Understanding</td>
+            <td>Junlin Chang, Longhao Zou, Rui Li</td>
+            <td>7.362925188497376</td>
+            <td><a href="https://arxiv.org/pdf/2607.19171v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Fine-tuning pre-trained point-cloud backbones typically updates all parameters, resulting in substantial computation and memory overhead. More importantly, modern point backbones rely on aggressive tokenization and downsampling, which yields compact global tokens but irreversibly discards fine-grained local geometry, an inherent bottleneck for parameter-efficient adaptation. Consequently, existing PEFT methods that operate only on these coarsened tokens can modulate global semantics but struggle to recover the missing multi-scale locality. We present Point Ladder Tuning (PLT), a locality-aware PEFT framework that performs hierarchical, instance-conditioned adaptation while keeping the backbone frozen. PLT forms a lightweight closed loop: (i) a Hierarchical Ladder Network (HLN) constructs a multi-resolution local feature pyramid directly from raw points; (ii) a Local-Global Fusion (LGF) aligns and fuses local pyramids with intermediate backbone semantics; and (iii) a Dynamic Prompt Generator produces instance-aware multi-scale prompts to modulate the frozen backbone effectively. For dense prediction, we further introduce a lightweight segmentation head that progressively upsamples fused features and leverages backbone priors to refine fine structures. Extensive experiments on classification and dense prediction show that PLT consistently surpasses prior PEFT baselines with minimal tunable parameters. PLT achieves state-of-the-art performance using only 2.71% trainable parameters for classification and 7.69% for dense prediction, and scales favorably to larger backbones, requiring merely 0.36% parameters on PointGPT-L. The code is released at https://github.com/JunLinChang/ECCV2026-PLT.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-07-22</td>
+            <td><a href="https://arxiv.org/abs/2607.18540" target="_blank">2607.18540</a></td>
+            <td>Recti-Q: Feature-Space Rectification for Out-of-Distribution-Robust Quantized Perception in Edge Robotics</td>
+            <td>Hamidreza Yaghoubi Araghi, Parastoo Pilevar, Ming C. Lin</td>
+            <td>7.337761776066202</td>
+            <td><a href="https://arxiv.org/pdf/2607.18540v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Robotic perception pipelines increasingly rely on large vision backbones deployed on SWaP-constrained edge platforms, making post-training quantization (PTQ) attractive for real-time inference. However, while PTQ often preserves clean in-distribution accuracy, we show that it can substantially degrade reliability under deployment-relevant distribution shifts (e.g., sensor noise, severe weather, and novel operating environments), creating a Quantization-Induced Robustness Gap. Across foundational vision benchmarks (ImageNet-C and PACS), 4-bit PTQ models exhibit pronounced robustness degradation despite negligible ID accuracy loss. To address this, we propose Recti-Q, a lightweight feature-space rectification framework that freezes the quantized backbone and trains a small classifier-head LoRA adapter using only source data. Recti-Q is architecture-agnostic across CNNs and Transformers, supports efficient teacher-free training, and recovers a significant portion of the lost robustness, in some cases matching or exceeding FP32 performance. At less than 1% parameter overhead (as small as 6 KB), Recti-Q preserves over 99% of PTQ memory savings, adds negligible compute, and enables low-bandwidth Over-The-Air (OTA) resilience patching for deployed robotic fleets operating in unpredictable physical environments.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-07-22</td>
+            <td><a href="https://arxiv.org/abs/2607.18863" target="_blank">2607.18863</a></td>
+            <td>Reliability-Aware 3D Geometric Injection for Universal Person Re-identification</td>
+            <td>Bohan Su, Jiashuo Wang, Fangyi Liu, Mang Ye</td>
+            <td>7.322234383714278</td>
+            <td><a href="https://arxiv.org/pdf/2607.18863v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Universal person re-identification (ReID) aims to retrieve pedestrian identities across diverse real-world scenarios, including severe occlusions, clothing changes, and cross-modality shifts, within a unified model. However, existing 2D representations fundamentally struggle with spatial ambiguities due to a lack of depth and topological awareness, while naively introducing monocular 3D priors often causes severe negative transfer due to geometric estimation noise under extreme visual degradation. To safely harness the clothing-invariant and canonical structural properties of 3D geometry, we propose UniGeo, a Universal Monocular 3D-Enhanced ReID framework driven by a Consistency-Aware Reliability Gate and Dual-Stream Residual Fusion. Specifically, the processing of 3D information is strategically decoupled into geometric extraction and dynamic utilization. To provide pure structural compensation, we project monocular 3D parameters into kinematic joint representations, explicitly capturing instance-level geometric topology to resolve appearance-based ambiguities. To robustly incorporate these cues without perturbing the reliable 2D feature space, we isolate the 3D prior as a late-stage structural residual; modulated by the consistency-aware gate, this mechanism adaptively filters geometric noise and enables controlled fallback to the pure 2D baseline. Extensive experiments show that our method improves challenging, structure-sensitive scenarios while preserving competitive performance on clean domains. Code is available at https://github.com/BohanSu/UniGeo.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-07-22</td>
+            <td><a href="https://arxiv.org/abs/2607.18510" target="_blank">2607.18510</a></td>
+            <td>DuSPiT: Dual-Branch Sub-Patch Pixel Diffusion Transformer</td>
+            <td>Yunpeng Bai, Yossi Gandelsman, Michaël Gharbi</td>
+            <td>7.314948971234045</td>
+            <td><a href="https://arxiv.org/pdf/2607.18510v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Diffusion Transformers achieve strong image generation performance, but most operate in compressed latent spaces. Pixel-space diffusion avoids this information loss, yet existing approaches map each raw image patch to a single token, forcing one representation to handle both global communication and fine-grained details. We address this issue by proposing a new architecture, \textbf{DuSPiT}, a \textbf{Du}al-branch \textbf{S}ub\textbf{P}atch \textbf{Pi}xel \textbf{T}ransformer. This model separates global structural reasoning from local appearance modeling. DuSPiT uses a compact base branch for efficient global reasoning and a parallel, high-capacity pixel branch, organized into subpatch groups, to preserve detailed appearance, with the two branches interacting through cross-attention. Our results show that DuSPiT generates images with richer details and stronger fine-grained structures, while also achieving a better quality--efficiency trade-off than prior pixel-space diffusion transformers.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-07-22</td>
+            <td><a href="https://arxiv.org/abs/2607.18789" target="_blank">2607.18789</a></td>
+            <td>Moving Alphabet: A Controlled Study of Training Data for Text-to-Video Generation</td>
+            <td>Amber Yijia Zheng, Lu Liu, Raymond A. Yeh, Xi Yin</td>
+            <td>7.312310522403474</td>
+            <td><a href="https://arxiv.org/pdf/2607.18789v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Text-to-video generation has advanced significantly over the past five years through scaling of model size, data, and compute. Unlike model architecture, training data is often underexplored. Real-world data curation is complex and non-trivial, involving clip selection from raw videos and captioning to create video-text pairs for learning text-to-video mappings. We study how data distribution and caption quality impact text-to-video models. To enable controlled experiments, we introduce Moving Alphabet, a procedural testbed that renders letters with varying fonts, colors, sizes, and positions, moving in different directions and speeds against a black background. This design allows precise control over data distribution and caption quality by corrupting ground-truth metadata. Our experiments yield three findings: a) a diverse and balanced distribution of video content and duration is critical for generalization; b) caption quality significantly affects both model performance and training efficiency, suggesting that text-to-video models are bounded by video understanding capabilities; and c) classifier-free guidance and fine-tuning on high-quality data provide partial recovery from models trained on corrupted captions, but cannot fully compensate for poor pre-training data. We believe these insights can inform the development of large-scale text-to-video models, and we advocate for greater attention to the science of pre-training data.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-07-22</td>
+            <td><a href="https://arxiv.org/abs/2607.18768" target="_blank">2607.18768</a></td>
+            <td>Cross-Modal UAV Object Tracking: State-Aware Representation Learning and A Unified Benchmark</td>
+            <td>Yun Xiao, Zhihong Hong, Jiandong Jin, Chenglong Li, Jin Tang, Amir Hussain</td>
+            <td>7.28565001769022</td>
+            <td><a href="https://arxiv.org/pdf/2607.18768v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Unmanned Aerial Vehicle (UAV) object tracking has emerged as a popular research field with broad practical applications. Modern UAVs are increasingly equipped with both visible light and thermal infrared sensors. However, due to constraints in communication bandwidth, computational resources and power consumption, current systems often activate one modality and switch between modalities to maintain robust tracking in complex scenarios. Such modality switch inevitably leads to significant appearance change and sudden spatial shift, posing great challenges for existing tracking algorithms. To handle this problem, we propose a novel State-Aware Representation Learning Approach called SARLA, which perceives the inconsistent modality states of current frame with template and last frame in the target representations to adapt to the sudden changes in both appearance and position, for robust cross-modal object tracking. In particular, we propose the Modality State Aware Representation Module (MSARM) and Spatial State Aware Representation Module (SSARM). MSARM guides the model to learn appearance correlation, bridging the modality gap, while SSARM models cross-frame spatial correlation to mitigate sudden spatial shift impacts. In addition, we design a spatial shift prediction loss to further handle the effects of spatial variation caused by modality switch. To promote the development of this research field, we establish a large-scale video benchmark called CM-UOT, which consists of 1079 cross-modal sequences with an average video length greater than 621 frames and encompasses over 671K frames in total. Extensive experiments on CM-UOT dataset demonstrate the superior performance of the proposed SARLA against 20 excellent tracking methods. The source code, datasets, and evaluation protocols associated with this work are publicly available at: https://github.com/hongsmile365/sarla-.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-07-22</td>
+            <td><a href="https://arxiv.org/abs/2607.18798" target="_blank">2607.18798</a></td>
+            <td>UVFaceFusion: Fast Multi-view Topologically Consistent Face Reconstruction in the Wild via UV-space Neural Fusion</td>
+            <td>Xin Ming, Yuxuan Han, Junhai Yong, Feng Xu</td>
+            <td>7.282161665271203</td>
+            <td><a href="https://arxiv.org/pdf/2607.18798v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Reconstructing high-fidelity facial geometry with an assigned topology is essential for digital avatar creation and animation, yet existing automated methods often trade off geometric fidelity and in-the-wild generalization. We present UVFaceFusion, a feed-forward framework for multi-view, fixed-topology face reconstruction from daily images. Our key idea is to replace heuristic topological optimization with learnable neural fusion in a canonical UV space. Given multi-view images, we first obtain dense point maps and facial UV correspondences of each view using VGGT and Pixel3DMM, respectively. Then, the view-specific point maps are lifted into the canonical UV domain and fused with a novel mask-aware neural fusion network. The network predicts a complete UV-space point map, from which a fixed-topology mesh is directly sampled. Although trained only on Ava-256, UVFaceFusion generalizes well to multiple public benchmarks and in-the-wild captures, benefiting from its canonical UV-space geometry-to-geometry fusion that reduces dependence on dataset-specific appearance and capture conditions. Experiments on various benchmarks show that UVFaceFusion achieves state-of-the-art reconstruction accuracy while reconstructing a mesh from 16 input views in less than 3 seconds on a single RTX 4090. Code is available at https://github.com/grignarder/UVFaceFusion.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-07-22</td>
+            <td><a href="https://arxiv.org/abs/2607.19115" target="_blank">2607.19115</a></td>
+            <td>CR-Refiner: An Object-Centric Optimal Transport Reranker for Edit-Conditioned 3D Scene Retrieval</td>
+            <td>Hao Wu, Jinjing Zhu, Nanyu Wu, Qianyi Cai, Heyi Lin, Hao Wang, Hui Xiong</td>
+            <td>7.278317921469705</td>
+            <td><a href="https://arxiv.org/pdf/2607.19115v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Edit-conditioned 3D scene retrieval pairs a reference 3D room with a natural-language modification and retrieves rooms from a corpus that satisfy the edit. Three lines of prior work each fall short on this task. 2D composed image retrieval reasons over pixel-level edits and has no primitive for 3D object sets. 3D foundation encoders embed individual objects but cannot compose at the scene level. 3D scene-grounding methods localize references inside a static scene rather than rank modified rooms across a corpus. We present CR-Refiner, a training-free reranker that wraps any base retriever&#x27;s top-K candidates with three components. A frozen LLM parses the edit into a structured query entity, and each candidate is scored by an unbalanced optimal-transport problem over a 1xG cost matrix coupling category, style, material, and geometry. The unbalanced solver lets the single-entity query drop mass on irrelevant objects, modelling the asymmetry directly. An axis-conditional structural prior adds size-keyword cues for geometric edits and subject-anchor direction cues for spatial edits. An LLM verifier refines the top three candidates with continuous confidence. Because no benchmark evaluates compositional matching over 3D object sets, we additionally release 3D-CER, 4,963 edit-conditioned queries over a 23,381-room indoor corpus across five edit axes, with multi-positive ground truth, CIRR-style hard subsets, and zero-target adversarials. Across three qualitatively distinct base retrievers, CR-Refiner consistently improves hard-subset R@1 and mAP@10 on every edit axis.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-07-22</td>
+            <td><a href="https://arxiv.org/abs/2607.18580" target="_blank">2607.18580</a></td>
+            <td>STeP: Signal Temporal Logic for Precise Specifications for Action Generation with Vision Language Models</td>
+            <td>Kasra Torshizi, Anukriti Singh, Sidharth Mathur, Khuzema Habib, Leo Du, Pratap Tokekar</td>
+            <td>7.270258879356964</td>
+            <td><a href="https://arxiv.org/pdf/2607.18580v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Vision-language-action (VLA) models have shown impressive generalization, but often lack interpretability and can struggle to follow precise natural language instructions that encode spatial, temporal, and logical requirements. We propose a hierarchical framework that uses Signal Temporal Logic (STL) as a shared representation connecting high-level language understanding with low-level robot execution. A high-level policy leverages a VLM to decompose language instructions into high-level subtasks, generate STL specifications for each subtask, and choose a low-level policy for executing each subtask. The STL specifications translate language-derived intent into precise constraints, and the low-level policy selection determines whether those constraints are enforced directly through STL-guided model-predictive control or monitored during execution of a learned policy for perceptually complex, or contact-rich behaviors. By integrating STL into plan validation, low-level policy, subtask monitoring, and replanning, our framework enables language-derived plans to be checked, optimized, and revised at runtime using a common formal structure. We evaluate the approach on a real-world tabletop domain, demonstrating how formal specifications can improve the precision, reliability, and interpretability of language-conditioned robot planning.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-07-22</td>
+            <td><a href="https://arxiv.org/abs/2607.19324" target="_blank">2607.19324</a></td>
+            <td>InstructMixup: Instruction-Guided Salient Patch Editing for Robust Data Augmentation</td>
+            <td>Khawar Islam, Arif Mahmood, Xin Jin, Naveed Akhtar</td>
+            <td>7.265368573368114</td>
+            <td><a href="https://arxiv.org/pdf/2607.19324v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>In image and video technologies, data augmentation is widely used to improve the generalization of deep visual models, and mixup-based strategies that interpolate between samples have become the dominant approach. However, computing informative mixing regions adds substantial overhead, and blending content across different images frequently disrupts the semantic integrity of the resulting sample. We propose \our{}, a data augmentation method that constructs challenging yet label-consistent training samples entirely within a single visual sample. \our{} first extracts multi-scale salient patches from the sample using a lightweight saliency detector, refines each patch with an instruction-guided generative model, and blends the edited patch back into the non-salient regions of the same sample; because the generative edits are computed once and cached offline, this step adds negligible training cost. To further diversify the learned representation, \our{} injects self-similar fractal structure into the same salient regions at an adaptive ratio, so each training sample carries both fractal and non-fractal structure. We derive a second-order approximation of the resulting vicinal risk, showing that the method simultaneously enforces invariance to the generative edit and suppresses curvature along the perturbed salient directions, and we verify both predictions empirically. We evaluate on small to large backbones for instance Convolutional Neural Networks (CNNs), Vision Transformers (ViTs) and Vision-Language Foundational Models (VLMs) across seven benchmarks covering coarse- and fine-grained classification, robustness to corruption and occlusion, calibration, and transfer and self-supervised learning, InstructMixup outperforms nine competing augmentation methods, surpassing the strongest baseline across all benchmarks.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-07-22</td>
+            <td><a href="https://arxiv.org/abs/2607.18985" target="_blank">2607.18985</a></td>
+            <td>Athena-Brain Technical Report: An Efficient Robot Brain for General Intelligence and Embodied Interactio</td>
+            <td>Jialian Li, Junhong Liu, Yuchen Cao, Weiran Guo, Jiaming Song, Xutao Wang, Yi Zhao, Jiangpin Liu, Jie Chen</td>
+            <td>7.250686737797606</td>
+            <td><a href="https://arxiv.org/pdf/2607.18985v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Large language models (LLMs) have demonstrated remarkable capabilities in language understanding, reasoning, and world knowledge. As embodied agents become increasingly capable, there is a growing demand for compact models that can serve as an on-device brain, preserving the broad general intelligence of LLMs while enabling effective high-level interaction with embodied environments. Existing approaches, however, often prioritize either general-purpose intelligence or specialized embodied capabilities, making it challenging to satisfy both requirements within a single model. We present \textbf{Athena-Brain-8B}, an 8B LLM designed to serve as an on-device brain for embodied intelligence for embodied intelligence. Through a multi-stage post-training pipeline consisting of General Supervised Fine-Tuning, General Reinforcement Learning, Embodied Expert training, and Model Merge, Athena-Brain-8B maintains strong general capabilities while acquiring strong high-level embodied interaction capabilities and generating concise responses for efficient embodied interaction. Experimental results demonstrate the effectiveness of Athena across both general and embodied evaluations. Compared with the corresponding Qwen3-8B thinking model, Athena-Brain-8B achieves comparable performance on general language and reasoning benchmarks while generating substantially shorter responses. On in-domain embodied benchmarks, Athena-Brain-8B consistently outperforms models of similar scale and surpasses several substantially larger frontier models evaluated zero-shot, demonstrating that compact language models can effectively integrate strong general intelligence with embodied capabilities.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-07-22</td>
+            <td><a href="https://arxiv.org/abs/2607.19064" target="_blank">2607.19064</a></td>
+            <td>Mage-Flow: An Efficient Native-Resolution Foundation Model for Image Generation and Editing</td>
+            <td>Xinjie Zhang, Peng Zhang, Shicheng Zheng, Jinghao Guo, Zhaoyang Jia, Yifei Shen, Xun Guo, Yuxuan Luo, Jiahao Li, Wenxuan Xie, Fanyi Pu, Xiaoyi Zhang, Kaichen Zhang, Zongyu Guo, Tianci Bi, Dongnan Gui, Zhening Liu, Zimo Wen, Zihan Zheng, Senqiao Yang, Xiao Li, Jinglu Wang, Bin Li, Yan Lu</td>
+            <td>7.229151960855392</td>
+            <td><a href="https://arxiv.org/pdf/2607.19064v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Large-scale visual generators are increasingly capable but costly to train, fine-tune, and deploy. We introduce Mage-Flow, a compact 4B-scale generative stack for efficient text-to-image generation and instruction-based image editing. The stack is built from two co-designed components: Mage-VAE, a lightweight high-fidelity latent tokenizer, and a Native-Resolution Multimodal Diffusion Transformer trained with rectified flow matching. Mage-VAE uses one-step diffusion-style encoding and decoding with anchor-latent regularization, preserving the reconstruction quality of strong public VAEs while reducing tokenization cost by more than an order of magnitude. Together with native-resolution packing and stack-level CUDA kernel fusion, the stack supports flexible-resolution training and improves end-to-end training throughput by about $2.5\times$. Built on this foundation, we develop a complete model family with Base, RL-aligned, and Turbo variants for both generation and editing. Diffusion-NFT improves prompt following, text rendering, aesthetic quality, and editing fidelity, while few-step distillation with adversarial perceptual guidance produces 4-step Turbo models for low-latency inference. Despite its compact scale, Mage-Flow and Mage-Flow-Edit achieves competitive performance across standard generation and editing benchmarks. More importantly, the Turbo variants make high-resolution generation and editing practical for interactive use: at $1024^2$ resolution on a single NVIDIA A100 GPU, Mage-Flow-Turbo generates an image in 0.59s, and Mage-Flow-Edit-Turbo edits an image in 1.02s, while maintaining a small memory footprint. These results show that careful tokenizer--backbone--system co-design can deliver strong high-resolution generation and editing within an efficient 4B model family.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-07-22</td>
+            <td><a href="https://arxiv.org/abs/2607.18539" target="_blank">2607.18539</a></td>
+            <td>AniGS: Bridging Rendering and Diffusion Prior for 3D Scene Animation</td>
+            <td>Yen-Chi Cheng, Chen Gao, Chuhan Chen, Tuotuo Li, Rajvi Shah, Ayush Saraf, Changil Kim, Liangyan Gui, Alexander Schwing, Johannes Kopf, Hung-Yu Tseng</td>
+            <td>7.219833611401958</td>
+            <td><a href="https://arxiv.org/pdf/2607.18539v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Novel view rendering of large and complex reconstructed scenes is becoming increasingly photorealistic. However, most reconstructions remain static and lack the ambient motion that makes environments immersive. We present AniGS, a method for scene-level animation of 3D Gaussian Splatting (3DGS) reconstructions that adds subtle, distributed dynamics, e.g., vegetation motion, while preserving rigid structures. Unlike existing 3D animation techniques which are limited to object-centric subjects or small regions, AniGS is designed for large, cluttered, navigable scenes. AniGS represents the scene with a canonical 3DGS and models motion using a time-conditioned deformation field. To animate the entire scene, we leverage a pretrained video diffusion model and introduce an iterative dataset--model update strategy that progressively expands viewpoint coverage and repeatedly updates camera-fixed training videos using a render-and-refine scheme. To prevent artifacts from unintended motion in static areas, we further introduce a composed video-to-video refinement scheme that restricts motion to desired regions. Experiments on five real-world, large-scale outdoor scenes demonstrate that AniGS produces natural ambient dynamics and high-quality novel view videos, enabling more immersive viewing experiences of reconstructed environments.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-07-22</td>
+            <td><a href="https://arxiv.org/abs/2607.18703" target="_blank">2607.18703</a></td>
+            <td>Generative World Renderer at the Speed of Play</td>
+            <td>Guixu Lin, Zheng-Hui Huang, Siqi Yang, Ming-Hsuan Yang, Kaipeng Zhang, Zhixiang Wang</td>
+            <td>7.218346009324222</td>
+            <td><a href="https://arxiv.org/pdf/2607.18703v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Generative world renderer AlayaRenderer receives structured world states exported from physics engines and synthesizes RGB frames. Unlike models that generate frames from text/control-hints prompts, AlayaRenderer preserves scene structure without altering the underlying world dynamics. This demonstrates an alternative path toward interactive world modeling and user-controllable play. However, the original AlayaRenderer is too computationally expensive for real-time deployment. This technical report introduces AlayaRenderer-Flash, a real-time-oriented generative forward world renderer that pushes AlayaRenderer from 0.56 FPS to 31.54 FPS, reaching the speed of play. AlayaRenderer-Flash reformulates the original renderer as a few-step autoregressive streaming model and introduces lightweight distilled codecs for efficient latent encoding and frame reconstruction. It retains the teacher model&#x27;s G-buffer and text-prompt interfaces while enabling continuous rendering over input streams of unbounded length. We evaluate AlayaRenderer-Flash on G-buffer streams across content preservation, temporal consistency, cross-window stability, prompt controllability, and runtime efficiency. Our results show that AlayaRenderer-Flash substantially reduces inference cost while preserving the core rendering capabilities of the teacher model. By integrating AlayaRenderer-Flash with a physics engine, we build a fully playable generative world running at 30 FPS.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-07-22</td>
+            <td><a href="https://arxiv.org/abs/2607.18856" target="_blank">2607.18856</a></td>
+            <td>Think Sparse, Predict Dense: Continuous Thought Machines for Image Super-Resolution</td>
+            <td>Zekai Shi</td>
+            <td>7.2062762090651855</td>
+            <td><a href="https://arxiv.org/pdf/2607.18856v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Continuous Thought Machines introduce an internal temporal dimension in which neuron-level histories and synchronization-derived representations evolve over a sequence of thought ticks. Extending this mechanism to dense visual prediction is non-trivial, because tasks such as image super-resolution require spatial evidence to remain available at every output location rather than being compressed into a single global representation. In the proposed window-level use of CTM, the thought dynamics produce a compact summary representation for each local window. DQ-CTM transforms this compact thought representation into window-aligned dense queries through a structured low-rank, parameter-efficient compact-to-dense query mechanism. Each position within a window receives its own query, while shared thought dynamics progressively refine the dense representation across ticks. In its super-resolution instantiation, termed ThinkSR, encoded feature maps are partitioned into local visual windows without token pooling, restored to the original feature field after shared refinement, and decoded into a high-resolution image. Preliminary experiments under a fixed four-tick training horizon reveal a progressive reconstruction trajectory. PSNR-Y increases from 28.1045 dB at $T=0$ to 30.2817 dB at $T=4$, while PSNR-RGB increases from 26.6271 dB to 28.7781 dB and the mean $\ell_1$ error decreases from 0.034602 to 0.023545. All 100 evaluated images improve from $T=1$ to $T=4$. These initial results establish the feasibility of sparse latent thought for dense spatial reconstruction and motivate broader continuous-thought architectures for dense vision.</td>
+        </tr>
+        
         <tr>
             <td>2026-07-16</td>
             <td><a href="https://arxiv.org/abs/2607.13154" target="_blank">2607.13154</a></td>
