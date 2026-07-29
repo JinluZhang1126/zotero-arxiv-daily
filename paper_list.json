@@ -1,5 +1,542 @@
 [
   {
+    "date": "2026-07-28",
+    "title": "LeapBot-WA: World-Anchor Action Models via Predictive Latent Alignments",
+    "arxiv_id": "2607.23969",
+    "authors": [
+      "Pei Liu",
+      "Nan Zheng",
+      "Lang Zhang",
+      "Daojie Peng",
+      "Yanan Zhang",
+      "Feilong Kong",
+      "Mingyue Feng",
+      "Jiachao Liu",
+      "Yaonong Wang",
+      "Qifeng Chen",
+      "Jun Ma"
+    ],
+    "summary": "World Action Models (WAMs) have emerged as a powerful paradigm for embodied intelligence, yet the prevailing reliance on pixel-level video generation creates a fundamental bottleneck. Forcing models to reconstruct task-irrelevant visual details dissipates representational capacity and renders policies vulnerable to visual distractors. In this paper, we propose LeapBot-WA, which establishes a novel Predictive-Latent paradigm for WAMs by operationalizing the Joint-Embedding Predictive Architecture (JEPA) as a World-Anchor. Departing from the traditional reliance on visual synthesis, LeapBot-WA shifts the core of world modeling to Predictive Semantic Alignment, extracting abstract physical dynamics directly within a latent foundation space. To bridge the modality gap between non-Gaussian predictive features and diffusion priors, we introduce the Isotropic Semantic Autoencoder (ISAE), which reshapes the anchor's latent space into a diffusion-friendly manifold to prevent off-manifold drift. Furthermore, we design an Asymmetric Mixture-of-Transformers (MoT) architecture. During training, an Anchor Diffusion Transformer acts as a privileged dynamics expert to guide the Action Diffusion Transformer; at inference, this heavy dynamics branch is pruned, enabling zero-overhead execution. LeapBot-WA achieves state-of-the-art performance among predictive models on LIBERO and matches top-tier generative WAMs on RoboTwin 2.0 without requiring large-scale trajectory pre-training. It further demonstrates superior zero-shot robustness to unseen environments and successful real-world transfer, establishing a highly efficient and robust latent-centric paradigm for scalable robotic control. Code: https://github.com/LeapWM/leapbot-wa.",
+    "pdf_url": "https://arxiv.org/pdf/2607.23969v1",
+    "code_url": null,
+    "score": 7.89743435925431
+  },
+  {
+    "date": "2026-07-28",
+    "title": "KAI: A Kinematic-Aware Interface for Data-Efficient Articulated Object Manipulation",
+    "arxiv_id": "2607.24493",
+    "authors": [
+      "Yaping Li",
+      "Zhaxizhuoma",
+      "Qiaojun Yu",
+      "Jia Zeng",
+      "Dahua Lin",
+      "Jiangmiao Pang"
+    ],
+    "summary": "Articulated object manipulation requires an understanding of kinematic structure that is difficult and costly to learn from robot demonstrations alone. We introduce the Kinematic-Aware Articulation Interface (KAI), a structured intermediate representation that captures the kinematic structure of articulated objects. By embedding interpretable geometric and kinematic priors into policy learning, KAI provides a strong inductive bias aligned with the underlying structure of articulated motion. This design effectively improves sample efficiency, with gains particularly pronounced in low-data regimes: across six simulation tasks, our method achieves an average success rate of 82.9%, matching or surpassing baseline performance while using only half the demonstration data. Our method also exhibits robust generalization to unseen backgrounds and visual distractors, transferring from a single clean training environment to cluttered real-world scenes. KAI's action-agnostic design further enables co-training with human interaction videos to enhance real-world robustness: under diverse visual distractions, our method with video co-training achieves over 70% average success rate.",
+    "pdf_url": "https://arxiv.org/pdf/2607.24493v1",
+    "code_url": null,
+    "score": 7.841041773650454
+  },
+  {
+    "date": "2026-07-28",
+    "title": "Real-Time Human-Centric World Modeling for Upper-Body Human-Object Interaction",
+    "arxiv_id": "2607.23517",
+    "authors": [
+      "Chaonan Ji",
+      "Jinwei Qi",
+      "Peng Zhang",
+      "Bang Zhang"
+    ],
+    "summary": "We present a real-time human-centric world model for upper-body interactive generation, aiming to synthesize coherent local world dynamics centered on a person, where coordinated body, hand, and facial motions evolve jointly with controllable human-object discrete interaction. To this end, we adopt a continuous-discrete joint control scheme with two complementary components: a continuous human state and a discrete interaction state. For continuous human-state control, we introduce a unified implicit representation based on multi-scale motion encoding, in which motion latents from the upper body, hands, and face are fused into a shared latent space. This multi-scale design improves expressiveness across different spatial scales, captures fine-grained human dynamics more effectively, and enables direct control without explicit retargeting. For discrete object interaction-state control, we represent object contact using a small set of language-encoded discrete interaction states, where text serves as an explicit interaction-state command, such as \\emph{no contact} or \\emph{grasp}, rather than an open-ended generation prompt, and we further construct a dedicated rendering pipeline for human-object interaction data to supervise such discrete interaction states. By combining continuous implicit human-state control with discrete interaction-state control, our model enables precise modeling of how a person moves and interacts with the local environment, including controllable changes to nearby scene states. Finally, we distill the model for efficient streaming real-time inference, achieving 25 FPS on two H100 GPUs. Experiments demonstrate improved fine-grained motion fidelity, more realistic hand-object coordination, and effective real-time interaction, establishing a practical step beyond motion reproduction toward real-time human-centric world modeling.",
+    "pdf_url": "https://arxiv.org/pdf/2607.23517v1",
+    "code_url": null,
+    "score": 7.781456876594105
+  },
+  {
+    "date": "2026-07-28",
+    "title": "DeVA: Decoupled Video-Action Model with physical guidance for robot policy learning",
+    "arxiv_id": "2607.24159",
+    "authors": [
+      "Mengqi Zhang",
+      "Sahil Khose",
+      "Simar Kareer",
+      "Yuchen Song",
+      "Unnat Jain",
+      "Judy Hoffman"
+    ],
+    "summary": "Generalizable robot manipulation requires policies that can anticipate how visual scenes evolve while executing language instructions. While recent Vision-Language-Action models benefit from large-scale pretraining, their predominantly static pretraining objectives provide limited supervision for physical dynamics and temporal causality, leaving control-relevant knowledge to be learned from downstream robot demonstrations. Video generative models offer a promising foundation by encoding rich spatiotemporal priors through future predictions. However, existing Video-Action Models either couple video and action prediction in a shared backbone, making policy adaptation harder to optimize, or under-utilize video information when guiding the action branch. In this work, we introduce DeVA, a Decoupled Video-Action model with specialized video and action experts, multi-level feature transfer, and physically salient guidance. DeVA transfers representations from multiple video layers to the action expert, enabling rich information exchange while making policy learning more tractable. It further supervises intermediate video features and the action stream with physically salient guidance (affordance/depth). Experiments on both simulation benchmarks and real-world deployment demonstrate strong performance with limited data, faster convergence than a unified architecture, and clear performance gains from physical guidance.",
+    "pdf_url": "https://arxiv.org/pdf/2607.24159v1",
+    "code_url": null,
+    "score": 7.774723940251316
+  },
+  {
+    "date": "2026-07-28",
+    "title": "MIME: Multimodal Interactive Motion Encoder",
+    "arxiv_id": "2607.22702",
+    "authors": [
+      "Addison Zucek",
+      "Prerit Gupta",
+      "Kamila Kuatova",
+      "Aniket Bera"
+    ],
+    "summary": "Text-motion representation learning has advanced rapidly, with growing interest in multi person interactions for animation, AR/VR, and embodied AI. These settings require representations that align language with both individual actor dynamics and the relationships between actors. We introduce the Multimodal Interactive Motion Encoder (MIME), which, to our knowledge, represents the first dedicated multimodal encoder designed specifically for two person interactive motion. MIME captures individual and shared structure using stream based co-attention with explicit interaction features and curriculum based contrastive training. On Inter-X text-motion retrieval, MIME consistently outperforms early and late fusion baselines across gallery sizes, achieving a 12.8% relative improvement in text-to-motion R@1 at a 2,000-sample gallery. We further evaluate MIME as a frozen auxiliary prior within TIMotion and InterMask on the unseen InterHuman dataset. MIME improves semantic alignment metrics while maintaining comparable FID in TIMotion. These results show that interaction aware multimodal encoding improves multi person motion retrieval and transfers across datasets to support downstream motion generation.",
+    "pdf_url": "https://arxiv.org/pdf/2607.22702v1",
+    "code_url": null,
+    "score": 7.64476786967357
+  },
+  {
+    "date": "2026-07-28",
+    "title": "TOM-GS: Editable Video Representation via Temporal Opacity Modulation of Static 3D Gaussians",
+    "arxiv_id": "2607.22717",
+    "authors": [
+      "Marek Lisowski",
+      "Łukasz Smoliński",
+      "Kornel Howil",
+      "Piotr Biliński",
+      "Marcin Mazur",
+      "Przemysław Spurek"
+    ],
+    "summary": "While Implicit Neural Representations (INRs) and dynamic 3D Gaussian Splatting (3DGS) achieve impressive results in video processing, they often fall short of producing representations that are easily editable. Recent methods address this by introducing complex spatial deformations or folded distributions, which constrain optimization and reduce flexibility for downstream editing. In this paper, we introduce TOM-GS, an editable video representation that forgoes complex deformations in favor of regular 3D Gaussians equipped with a continuous temporal opacity formulation. By assigning a learnable temporal mean and scale to the opacity of each Gaussian, our model enables static 3D spatial components to fade smoothly in and out of the scene. Grounded by robust, off-the-shelf pose estimation, our approach maintains a static spatial geometry that naturally supports a wide range of manual and physics-based edits. TOM-GS outperforms prior editable video representations in visual fidelity, while its reliance on standard 3D Gaussians ensures seamless compatibility with established 3D editing tools.",
+    "pdf_url": "https://arxiv.org/pdf/2607.22717v1",
+    "code_url": null,
+    "score": 7.634699000501179
+  },
+  {
+    "date": "2026-07-28",
+    "title": "Data Pyramid for Embodied Manipulation",
+    "arxiv_id": "2607.24744",
+    "authors": [
+      "Yifan Ye",
+      "Yankai Fu",
+      "Yaoxu Lv",
+      "Bohan Hou",
+      "Jun Cen",
+      "Lingdong Kong",
+      "Duo Zheng",
+      "Tianxing Chen",
+      "Jiaming Liu",
+      "Ziang Cao",
+      "Yunfan Lou",
+      "Wei Chow",
+      "Xian Sun",
+      "Yingshuo Wang",
+      "Kuangzhi Ge",
+      "Xiaowei Chi",
+      "Xidong Zhang",
+      "Zhibo Pang",
+      "Yiwu Zhong",
+      "Sirui Han",
+      "Zhihe Lu",
+      "Weihao Yuan",
+      "Qifeng Chen",
+      "Michael Yu Wang",
+      "Yao Mu",
+      "Ziwei Liu",
+      "Jianfei Yang",
+      "Ping Luo",
+      "Shanghang Zhang"
+    ],
+    "summary": "Multimodal foundation models learned to see and to speak by consuming the whole internet. Embodied agents admit no such shortcut, since they require data that couple observations with physical states and actions. These signals can be provided, to varying degrees, by multiple data sources. In this work, we organize the embodied data ecosystem as a \"pyramid\" spanning five complementary sources: real-robot data, UMI-style data, egocentric and exocentric data, simulation data, and general vision-language data. We organize the pyramid around the tension between scalability and robot alignment, and further characterize each source in terms of data quality, diversity, reusability, and physical fidelity. We then analyze recent embodied foundation models through the lens of their data recipes, examining how different sources are selected, aligned, and mixed during pretraining. For embodied brain models, vision-language-action models, and world-action models alike, we relate data composition to capabilities in perception, reasoning, planning, action generation, and world prediction. We close by discussing six open challenges: building large-scale tactile datasets, collecting failure and recovery data, developing scalable data-collection pipelines, aligning actions across embodiments, leveraging egocentric data for dexterous manipulation, and designing principled data recipes for robot learning. We hope this work paves the foundation for the design of next-generation embodied systems.",
+    "pdf_url": "https://arxiv.org/pdf/2607.24744v1",
+    "code_url": null,
+    "score": 7.623153517388587
+  },
+  {
+    "date": "2026-07-28",
+    "title": "Real2Sim2Real for Vision-Language-Action Manipulation: An AMD ROCm-Based Pipeline",
+    "arxiv_id": "2607.22997",
+    "authors": [
+      "Qing Yang",
+      "Xun Wang",
+      "Ziguan Wang",
+      "Zhenjiang Li",
+      "Hongqiang Wang",
+      "Dongdong Weng"
+    ],
+    "summary": "Physical AI -- the integration of large vision-language-action (VLA) models with embodied agents that act in the real world -- has emerged as the next major frontier for AI, echoed by industry leaders such as Jensen Huang (``the next big thing is Physical AI, AI with a body,'' GTC Paris, June 2025) and Dr. Lisa Su (`we're entering the world of Physical AI ... this is where AI enters the real world,' CES 2026). This paper presents an end-to-end, fully AMD-accelerated technology stack for embodied manipulation, spanning data-center training silicon, Radeon PRO simulation/rendering GPUs, and Ryzen AI edge compute, unified by the open ROCm software stack. We demonstrate that training and deploying VLA-based manipulation policies does not require a CUDA-locked ecosystem. Four progressive demonstrations are presented: (1) a Sim-to-Real manipulation pipeline trained with SmolVLA and deployed on a physical Franka arm; (2) a semantic, language-grounded object-selection task (`one-of-three'); (3) a Real2Sim synthetic-data generation pipeline that fuses 3D Gaussian Splatting (3DGS) reconstructions of real scenes with the Genesis physics engine; and (4) large-scale reinforcement learning for quadruped and humanoid locomotion benchmarked across multiple hardware platforms. All pipelines run natively on ROCm + PyTorch on RDNA4 (Radeon AI PRO R9700) and RDNA3.5 (Radeon PRO W7900) hardware and are reproducible on the free Radeon Cloud Platform.",
+    "pdf_url": "https://arxiv.org/pdf/2607.22997v1",
+    "code_url": null,
+    "score": 7.606041045488143
+  },
+  {
+    "date": "2026-07-28",
+    "title": "A Motion-Aware Vector Quantization Framework with Centroid Reuse for Efficient VLA Inference",
+    "arxiv_id": "2607.24148",
+    "authors": [
+      "Zhuoran Song",
+      "Haozhe Jiang",
+      "Chunyu Qi",
+      "Minnan Pei",
+      "Gang Li",
+      "Xiaoyao Liang",
+      "Haibing Guan"
+    ],
+    "summary": "Vision-Language-Action (VLA) models have demonstrated strong potential for embodied AI, yet their high inference latency on GPUs limits real-time deployment. Existing accelerators, such as Dadu-Corki, improve efficiency but treat VLA models as full-precision workloads, leaving substantial redundancy in both memory and computation underexploited.\n  In this paper, we propose VQVLA, an algorithm-hardware co-design framework that accelerates VLA inference by exploiting weight similarity and execution dynamics. We first introduce MotionVQ, a motion-aware vector quantization scheme that dynamically adjusts quantization precision based on the robot's execution state, reducing memory access while preserving task success rate. We then propose a merged-centroid vectorized GEMM paradigm that operates on the codebook-index representation, eliminating redundant multiplications through spatial aggregation and temporal reuse of centroids. To realize these optimizations, we design an accelerator that efficiently supports dynamic precision selection and centroid-reuse computation. Experimental results show that VQVLA achieves 6.5x, 2.8x, 1.9x, 3.3x, and 4.3x speedup over the A100 GPU, Dadu-Corki, LUT-DLA, CodeGEMM, and ShiftAddLLM, respectively, with negligible accuracy degradation.",
+    "pdf_url": "https://arxiv.org/pdf/2607.24148v1",
+    "code_url": null,
+    "score": 7.602495725629023
+  },
+  {
+    "date": "2026-07-28",
+    "title": "FloAff-Kitchen: Bridging Navigation and Manipulation via Canonical and Progressive Floor Affordance Learning",
+    "arxiv_id": "2607.24207",
+    "authors": [
+      "Ping Zhong",
+      "Manling Teng",
+      "Tao Wu",
+      "Bolei Chen",
+      "Jiazhi Xia",
+      "Jianxin Wang"
+    ],
+    "summary": "Mobile manipulation requires robots to identify Floor Affordance (FloAff) that maximizes downstream manipulation success rather than merely ensuring navigation feasibility. FloAff prediction is a target-conditioned local spatial reasoning problem, yet existing methods suffer from representation ambiguity caused by irrelevant spatial context and arbitrary object orientations, while entangling shared and task-specific knowledge across heterogeneous manipulation skills. To address these challenges, we propose a unified framework for FloAff prediction from egocentric multimodal perception, consisting of canonical representation learning and progressive affordance prior learning. Specifically, we introduce a Canonical Floor Affordance Representation (CFAR), which learns canonical interaction geometry by preserving affordance-relevant local structure while eliminating nuisance spatial variations unrelated to robot base placement. We further propose Progressive Floor Affordance Learning (PFAL), which learns transferable FloAff priors from a foundation manipulation task and progressively adapts them to heterogeneous downstream manipulation skills. To facilitate systematic evaluation, we establish the first cross-scene, multi-view FloAff-Kitchen benchmark covering diverse manipulation skills, scene layouts, furniture styles, and viewpoints. Extensive experiments on three benchmark settings demonstrate that our method consistently outperforms strong baselines, while ablation studies validate the contribution of each proposed component. Project page: https://csu-hero-lab.github.io/FloAff-Kitchen_Web/",
+    "pdf_url": "https://arxiv.org/pdf/2607.24207v1",
+    "code_url": null,
+    "score": 7.5826056768550965
+  },
+  {
+    "date": "2026-07-28",
+    "title": "VIPER: Visual In-Context Physics Reasoning for Physically Plausible Video Generation",
+    "arxiv_id": "2607.23472",
+    "authors": [
+      "Tianxiao Chen",
+      "Hanmo Chen",
+      "Huajin Chen",
+      "Bo Li",
+      "Qi Ye",
+      "Peng-Tao Jiang"
+    ],
+    "summary": "Modern video generation models can synthesize visually compelling and temporally coherent clips, yet controlling their physical behavior remains difficult with standard text and image conditions. The core challenge is a conditioning bottleneck: material response, contact interaction, deformation, and motion trajectory are continuous and relational physical cues that are hard to specify exhaustively in language but can be demonstrated naturally by video. We propose VIPER, a Visual In-Context Physics Reasoning framework for reference-guided image-to-video generation. Given a target image, a brief target prompt, and a reference video, VIPER treats the reference as a dense visual demonstration of the desired physical process rather than an appearance template. It uses a Multimodal Large Language Model (MLLM) to extract reference-derived physical cues and guide a pretrained image-to-video generator through a hierarchical training strategy, enabling physical behavior transfer while preserving the visual prior of the base generator. To support this setting, we construct VIPER-19K, a curated dataset with material, trajectory, and physical-impact annotations, together with filtered reference-target pairs. Experiments on an unseen validation set show that VIPER achieves stronger reference-video physical similarity and higher human preference than representative video generation and video-as-prompt baselines, while maintaining competitive general video quality. Qualitative results further demonstrate that VIPER can transfer reference-derived physical behavior to new target scenes without requiring carefully engineered prompts.",
+    "pdf_url": "https://arxiv.org/pdf/2607.23472v1",
+    "code_url": null,
+    "score": 7.582056335667557
+  },
+  {
+    "date": "2026-07-28",
+    "title": "FutureRTC: Real-Time Robot Execution with Anticipatory-Conditioned Action Chunking",
+    "arxiv_id": "2607.24008",
+    "authors": [
+      "Hai Jiang",
+      "Yixian Zou",
+      "Binbin Liang",
+      "Boqian Liu",
+      "Fanman Meng",
+      "Shuaicheng Liu"
+    ],
+    "summary": "Real-time deployment of Vision-Language-Action (VLA) policies necessitates asynchronous execution, wherein subsequent action chunks are computed concurrently with the execution of the current chunk, leading to prediction-execution misalignment and manifesting as inter-chunk discontinuities. Existing methods either superficially smooth chunk boundaries, require costly policy optimization, or exclusively forward-predict proprioceptive states yet neglect critical visual observations. In this paper, we propose \\textbf{FutureRTC}, a plug-and-play adaptation framework that predicts execution-time observations and states for asynchronous VLA control without modifying the underlying policy. Specifically, FutureRTC features a state correction module to compensate for the discrepancy between rolled-forward and actual execution-time proprioceptive states and an observation prediction module that forecasts execution-time visual representations by leveraging robot motion as an explicit physical prior through motion-aware feature transport and reconstruction. Furthermore, we introduce a policy consistency loss to align the action chunks generated from predicted contexts with those produced under the expected execution-time inputs of the VLA policy. Extensive experiments across simulated and real-world environments demonstrate that FutureRTC achieves superior robustness to inference delays, resulting in smoother trajectories, faster execution, and consistently higher task success rates.",
+    "pdf_url": "https://arxiv.org/pdf/2607.24008v1",
+    "code_url": null,
+    "score": 7.581667586815288
+  },
+  {
+    "date": "2026-07-28",
+    "title": "UniGen-AR: Unifying Visual Generation with Auto-Regressive Modeling",
+    "arxiv_id": "2607.24157",
+    "authors": [
+      "Zhipeng Bao",
+      "Zhen Zhu",
+      "Nupur Kumari",
+      "Anurag Bagchi",
+      "Yu-Xiong Wang",
+      "Pavel Tokmakov",
+      "Martial Hebert"
+    ],
+    "summary": "Modern computer vision pipelines remain fragmented, with tasks such as text-to-image generation, editing, restoration, and classical perception handled by separate models. We study Unified Visual Generation (UVG), where a single model produces diverse image-valued outputs through a unified multimodal interface. While diffusion-based systems dominate UVG due to strong quality and controllability, their iterative sampling incurs substantial inference latency, limiting practical deployment. To address these limitations, we propose UniGen-AR, a framework that pairs a general-purpose multi-modal language model (MLLM) with an efficient next-scale visual auto-regressive (VAR) decoder. This design retains the flexibility of MLLM-based conditioning while leveraging the sampling efficiency and latent unification properties of VAR models. In our framework, the MLLM encodes free-form instructions and control signals into a unified sequence, which guides the VAR decoder to generate image-valued outputs for over 15 tasks spanning four families. Empirically, UniGen-AR achieves up to $19 \\times$ lower inference latency than diffusion-based baselines while maintaining or improving output quality. Our ablations further reveal that VQ-VAE tokenizer design, particularly codebook size and hierarchy, is a critical factor for VAR scalability in UVG. These results establish visual auto-regressive modeling as a compelling and efficient backbone for unified visual generation. Our project page is at https://zpbao.github.io/projects/unigenar.",
+    "pdf_url": "https://arxiv.org/pdf/2607.24157v1",
+    "code_url": null,
+    "score": 7.526450070360273
+  },
+  {
+    "date": "2026-07-28",
+    "title": "CameraAnything: Refilming Videos with Arbitrary Camera Control",
+    "arxiv_id": "2607.24591",
+    "authors": [
+      "Yixuan Li",
+      "Yanhong Zeng",
+      "Ka Leong Cheng",
+      "Jiayi Zhu",
+      "Hanlin Wang",
+      "Wen Wang",
+      "Yihao Meng",
+      "Hao Ouyang",
+      "Qiuyu Wang",
+      "Yue Yu",
+      "ZiDong Wang",
+      "Yiyuan Zhang",
+      "Yujun Shen",
+      "Dahua Lin"
+    ],
+    "summary": "We introduce CameraAnything, the first unified framework for camera controlled video editing that enables joint control of both intrinsic and extrinsic camera parameters. Existing approaches either rely on expensive 3D reconstruction to achieve full camera functionality or restrict editing to extrinsic parameter manipulation. Moreover, the coupled influence of intrinsic and extrinsic parameters on video appearance makes disentangled modeling particularly challenging. To address this, we adopt per-pixel Plücker ray injection alongside resolution-aware 3D RoPE in self-attention, building both camera conditioning and spatial positional encoding on the target latent to jointly control camera position, focal length, and native resolution editing without cropping or outpainting. To overcome the scarcity of paired training data, we further develop a scalable synthetic pipeline that constructs diverse dynamic scenes through structured multi-camera recording and generates synchronized videos with varied camera configurations. With a tailored orthogonal training strategy, CameraAnything enables expressive video reshooting with arbitrary viewpoint control, focal length adjustment, resolution adaptation, and multi-shot transitions within a single generation process, offering strong practical value for cinematic video editing and cross-platform content adaptation in video production.",
+    "pdf_url": "https://arxiv.org/pdf/2607.24591v1",
+    "code_url": null,
+    "score": 7.510215676909655
+  },
+  {
+    "date": "2026-07-28",
+    "title": "PCA: Persistence-Aware Compression and Aggregation for Fast Video Large Language Models",
+    "arxiv_id": "2607.22726",
+    "authors": [
+      "Zihan Song",
+      "Shuo Ye",
+      "Bo Zhao",
+      "Ruixin Zhang",
+      "Jiayu Zhang",
+      "Shouhong Ding",
+      "Zitong Yu"
+    ],
+    "summary": "Despite advances in Video Large Language Models (VLLMs) that have displayed promising outcomes in video understanding, the redundancy in the long-duration frames remains a hindrance to efficient reasoning. This paper introduces a training-free $\\mathbf{P}$ersistence-Aware $\\mathbf{C}$ompression and $\\mathbf{A}$ggregation (PCA) method designed to preserve high-fidelity raw visual information before the encoding stage. PCA can be built on arbitrary VLLMs and consists of two modules: 1) A Dynamic Downsampling (DD) module that adaptively removes redundant frames by analyzing frame-wise similarity. 2) A Persistence-Aware Motion Enhancement (PAME) module that enriches each selected keyframe by aggregating the temporal context of its neighbors, ensuring that essential information is preserved even after aggressive frame reduction. Our approach substantially reduces the computation of long-context modeling, while enhancing the performance of the baseline model. Extensive experiments demonstrate that PCA consistently outperforms existing state-of-the-art approaches in both efficiency and accuracy, achieving a speedup of 1.8$\\times$ to 2.5$\\times$ compared to the baseline VLLM. The code is open-sourced at https://github.com/Heisenberg10110/PCA.",
+    "pdf_url": "https://arxiv.org/pdf/2607.22726v1",
+    "code_url": null,
+    "score": 7.496513028150779
+  },
+  {
+    "date": "2026-07-28",
+    "title": "NEO: NeRF It Once, Edit It Many Times for Continuous Object Manipulation",
+    "arxiv_id": "2607.24538",
+    "authors": [
+      "Mikołaj Zieliński",
+      "David Hall",
+      "Dominik Belter",
+      "Peyman Moghadam"
+    ],
+    "summary": "In this paper, we present NEO, a unified framework providing language-guided NeRF editing for robotic manipulation. Our paper introduces (i) a language-guided object removal that combines neural field resampling with multiview-consistent progressive inpainting, (ii) a direct NeRF weight editing method utilizing knowledge distillation, composing original and edited NeRFs via a teacher-student model, enabling coherent modeling of future scene states before a robot executes an action, and (iii) the first benchmark (NEO-Dataset) for quantitatively evaluating NeRF scene editing methods suitable for robot manipulation. We show that our approach outperforms state-of-the-art baselines in scene editing tasks, including object removal and pick-and-place robotic experiments, yielding visually coherent and geometrically consistent edits that reduce artifacts commonly introduced by prior methods.",
+    "pdf_url": "https://arxiv.org/pdf/2607.24538v1",
+    "code_url": null,
+    "score": 7.495128069369208
+  },
+  {
+    "date": "2026-07-28",
+    "title": "GRAPE: Graduated Routing for Articulated Portrait mesh Estimation",
+    "arxiv_id": "2607.23657",
+    "authors": [
+      "Yunfei Liu",
+      "Lijian Lin",
+      "Ye Zhu",
+      "Yu Li"
+    ],
+    "summary": "Articulated portrait mesh estimation is fundamental to 3D understanding, avatar generation, and immersive interaction. Existing approaches primarily rely on 3D Morphable Models (3DMMs). However, face-centric models suffer from the \"floating head\" assumption, conflating head pose with global rotation due to the lack of neck kinematics. Conversely, body-centric models lack high-fidelity facial expression capabilities. Furthermore, current methods struggle to disentangle jaw articulation from expression blendshapes, often over-relying on expressions for mouth opening. These limitations make monocular portrait recovery difficult across representation, supervision, and anatomical parameter estimation. To address these limitations, we introduce GRAPE(Graduated Routing for Articulated Portrait mesh Estimation). We build a Portrait Parametric Model (PPM) with an explicit torso-to-head kinematic chain and a canonical injection step to merge FLAME and the SMPL-X torso. We propose a Progressive Anatomical Alignment (PAA) network, which is composed of a pretrained portrait encoder, a Graduated-Mask Router, and coarse-to-fine experts that follow the portrait anatomical prior. We then train this network with multi-source supervision that combines sparse anatomical keypoints, feature distillation, foreground mask constraints, and relative geometry constraints. Experiments show that GRAPE improves portrait mesh recovery quality, pose alignment, and jaw--expression disentanglement over prior methods. We also demonstrate that our method can benefit the downstream tasks of audio-driven talking-head generation and 3D portrait generation.",
+    "pdf_url": "https://arxiv.org/pdf/2607.23657v1",
+    "code_url": null,
+    "score": 7.48535581987002
+  },
+  {
+    "date": "2026-07-28",
+    "title": "$N_0$-TWAM: Scaling Tactile-Native World-Action Model for Contact-Rich Manipulation",
+    "arxiv_id": "2607.23783",
+    "authors": [
+      "NeoteAI Team",
+      "Fudan TEAI Team"
+    ],
+    "summary": "We present $N_0$-TWAM, a tactile-native world-action model for contact-rich manipulation that predicts both future vision and future contact. To our knowledge, it is the first tactile world-action model trained at large scale, and it shows strong capability on contact-rich tasks. We pre-train $N_0$-TWAM at large scale with visuo-tactile joint training over tactile-rich demonstrations spanning six embodiments and 450 tasks. We use NeoForce, a unified force-based tactile representation, to form a physically grounded contact signal that conditions action generation. To improve long-horizon and multi-stage manipulation, we introduce tactile contact events for task staging and advance through them during execution. For real-time efficiency, we adopt an asymmetric Mixture-of-Transformers architecture that pairs a full-width expert for video prediction with slim experts for downstream action and tactile prediction. Evaluations on both real and simulated benchmarks justify the capabilities of $N_0$-TWAM across a range of contact-rich tasks, and demonstrate the benefit of data scaling for precise tactile and action prediction. In summary, $N_0$-TWAM endows a world-action model with predictive capabilities to foresee vision, touch and action, building a solid foundation for fine-grained manipulation on open contact-rich tasks. The codebase and model checkpoints will be made publicly available to foster further research and development in tactile-enabled robotic manipulation.",
+    "pdf_url": "https://arxiv.org/pdf/2607.23783v1",
+    "code_url": null,
+    "score": 7.4796586136468175
+  },
+  {
+    "date": "2026-07-28",
+    "title": "MSVS-VAE: Multi-Scale Anchored VecSet for High-Fidelity 3D Reconstruction",
+    "arxiv_id": "2607.24436",
+    "authors": [
+      "Dehao Hao",
+      "Kaiyi Zhang",
+      "Tanghui Jia",
+      "Xiangjun Gao",
+      "Dongyu Yan",
+      "Weikai Chen",
+      "Zeyu Hu",
+      "Lingting Zhu",
+      "Yingda Yin",
+      "Runze Zhang",
+      "Li Yuan",
+      "Xin Wang",
+      "Long Quan"
+    ],
+    "summary": "High-fidelity 3D generative modeling increasingly relies on the latent diffusion paradigm, where the reconstruction quality of the underlying 3D VAE becomes a primary bottleneck. Existing approaches largely follow two paradigms: sparse voxel-based representations achieve strong reconstruction quality but incur significant memory and computational overhead, while set-based representations are compact and continuous yet typically lag in fidelity due to latent sparsity and excessive global smoothness. We propose MSVS-VAE, a hierarchical set-based VAE that closes this fidelity gap without sacrificing compactness. Our key idea is to progressively densify anchored VecSet latents via hierarchical point-shuffle upsampling, increasing spatial capacity for fine-grained geometry modeling. To efficiently decode from the densified hierarchy, we replace global cross-attention with AVS-Conv, a geometry-aware local aggregation operator operating within local neighborhoods rather than the exhaustive latent set. We further introduce multi-scale query decoding to fuse coarse-to-fine latent features, where coarse scales provide stable global context, and fine scales refine localized geometry, reducing artifacts from overly local receptive fields. Extensive experiments on Objaverse, ABO, and in-the-wild benchmarks demonstrate that MSVS-VAE consistently outperforms prior set-based and voxel-based VAEs, delivering approximately 10x faster decoding than prior set-based methods and approximately 10x higher compactness than voxel-based baselines.",
+    "pdf_url": "https://arxiv.org/pdf/2607.24436v1",
+    "code_url": null,
+    "score": 7.476975734113975
+  },
+  {
+    "date": "2026-07-28",
+    "title": "τ: Learning Touch-Augmented Vision-Language-Action Models from Future Visual Supervision",
+    "arxiv_id": "2607.24485",
+    "authors": [
+      "Ning Cheng",
+      "Jinan Xu",
+      "Wanlin Li",
+      "Yangzhi Chen",
+      "Jing Gao",
+      "Yiqun Wang",
+      "Kelan Peng",
+      "Wenjuan Han"
+    ],
+    "summary": "Learning the informative tactile representation while effectively adapting it to pretrained Vision-Language-Action (VLA) models remains challenging at both the data and modeling levels. At the data level, limited task-specific demonstrations constrain representation quality, whereas large-scale pretraining incurs substantial costs. At the modeling level, existing methods either focus on instantaneous contact states or model temporal interaction dynamics using 6D wrench sequences, leaving high-dimensional tactile signals underexplored. To address these challenges, we present τ, a touch-augmented VLA framework that learns an action-conditioned spatiotemporal tactile representation from future visual supervision inspired by the Joint-Embedding Predictive Architecture (JEPA), and fuses it with vision-language features for action generation under limited data. This supervision operates in latent space and is used only during training, adding no deployment overhead. We also introduce TacAura, a dataset of synchronized vision, proprioception, and vision-based tactile signals across four representative contact-rich manipulation tasks. Experiments show that τ outperforms existing models and generalizes to unseen objects and scenes, delivering improved manipulation performance and robustness",
+    "pdf_url": "https://arxiv.org/pdf/2607.24485v1",
+    "code_url": null,
+    "score": 7.47544288959066
+  },
+  {
+    "date": "2026-07-28",
+    "title": "MOJITO: Modal Joint Learning for Unified End-to-End Autonomous Driving",
+    "arxiv_id": "2607.23511",
+    "authors": [
+      "Zhijing Cheng",
+      "Xuancheng Zhang",
+      "Donglin Di",
+      "Lei Fan",
+      "Baorui Ma",
+      "Hao Li",
+      "Xun Yang"
+    ],
+    "summary": "End-to-end autonomous driving systems commonly follow a cascaded two-stage pipeline where a perception stage compresses multi-modal sensor inputs into a compact context and a downstream planner predicts trajectories conditioned on this context. We argue that this one-way perception-to-planning interface forces sensor inputs into a compact representation, losing the fine-grained details critical for planning. Moreover, by constraining the planner to this compressed context, it is difficult to leverage the rich representations offered by modern vision foundation models. To address these issues, we propose MOJITO, a unified sensor-to-action framework for end-to-end autonomous driving built on modal joint learning. MOJITO removes the cascaded interface and instead performs block-wise Modal Joint Attention that simultaneously updates action, image, and LiDAR features, allowing the planner to directly access multi-modal features during action generation. MOJITO achieves 88.9 PDMS on the NAVSIM v1 dataset and 88.4 EPDMS on the more challenging NAVSIM v2 dataset, setting a new state-of-the-art. Extensive experiments further demonstrate strong scalability, instruction following, and diverse trajectory generation. Code and models are available at https://github.com/mumucc01/MOJITO.",
+    "pdf_url": "https://arxiv.org/pdf/2607.23511v1",
+    "code_url": null,
+    "score": 7.468243690944715
+  },
+  {
+    "date": "2026-07-28",
+    "title": "ViDS: Video Diffusion Shader using 3D Face Tracking",
+    "arxiv_id": "2607.24124",
+    "authors": [
+      "Wenbo Ji",
+      "Davide Davoli",
+      "Zhe Chen",
+      "Liam Schoneveld",
+      "Matthias Nießner",
+      "Jiapeng Tang"
+    ],
+    "summary": "We introduce ViDS, a Video Diffusion Shader that leverages 3D face tracking for expressive and identity-preserving portrait animation. We first reconstruct the identity-specific 3DMM mesh from the reference image, and then animate it using expression and pose parameters from a driving video. Leveraging dense geometric cues from 3DMM normal maps, we employ a video diffusion model as a neural shader to synthesize lifelike portrait animations while preserving the appearance and identity of the reference image. We find that more accurate 3DMM tracking enables finer-grained expression control. We also introduce an autoregressive diffusion sampling process that extends generation beyond the model's native window while reducing discontinuities between adjacent clips. Compared with prior diffusion-based approaches for portrait animation that rely on landmark-based conditioning or implicit motion latents, our method achieves more detailed and consistent expression and pose control while faithfully preserving identity and appearance. Detailed ablation studies validate the effectiveness of our design choices. Project page: https://fusheng-ji.github.io/ViDS/",
+    "pdf_url": "https://arxiv.org/pdf/2607.24124v1",
+    "code_url": null,
+    "score": 7.45380546474414
+  },
+  {
+    "date": "2026-07-28",
+    "title": "Calibration-Free 3D Multi-Camera People Tracking for Indoor Environment",
+    "arxiv_id": "2607.22731",
+    "authors": [
+      "Ponleur Veng",
+      "Dominique Vaufreydaz",
+      "Phutphalla Kong"
+    ],
+    "summary": "Multi-Camera People Tracking (MCPT) traditionally relies on precise intrinsic and extrinsic camera calibration to project 2D detections into a unified 3D world coordinate system.However, manual calibration constitutes a major bottleneck in large-scale dataset generation from unconstrained video archives.  This work proposes a unified calibration-free 3D MCPT framework that infers geometric structure directly from visual data using deep foundation models.  The system integrates anchor-free detection (YOLOX), robust tracking (BoT-SORT), omni-scale appearance embedding (OsNet), pose estimation (HRNet via MMPose), and transformer-based geometric reconstruction using the Visual Geometry Grounded Transformer (VGGT). A pose-guided 3D lifting strategy projects head keypoints onto a reconstructed manifold, eliminating dependence on ground-plane homography. Global identity association is formulated as hierarchical agglomerative clustering under a joint appearance-geometry cost with strict velocity gating. Evaluation on the AI City Challenge 2024 demonstrates a HOTA score of 53.13% without access to ground-truth calibration matrices, establishing a strong baseline for purely vision-based 3D tracking.",
+    "pdf_url": "https://arxiv.org/pdf/2607.22731v1",
+    "code_url": null,
+    "score": 7.443776547790826
+  },
+  {
+    "date": "2026-07-28",
+    "title": "AptAvatar: Fast and Vivid Long-Form Audio-Driven Video Generation for Production-Ready Avatars",
+    "arxiv_id": "2607.24013",
+    "authors": [
+      "Hengyuan Zhang",
+      "Jingna Sun",
+      "Meiguang Jin",
+      "Junfeng Ma"
+    ],
+    "summary": "Production-ready audio-driven avatar generation requires efficient inference without sacrificing fidelity or motion expressiveness. However, existing acceleration methods often compromise quality through restrictive architectural choices, such as causal attention and short temporal horizons, or by reducing model capacity and resolution. Without such compromises, we propose AptAvatar, a 14B-parameter long-form audio-driven avatar generation framework that delivers fast and expressive inference. For efficiency in production-level applications, AptAvatar addresses the extreme two-step generation challenge. To bridge the gap between the multi-step teacher model and the two-step student model, we introduce Endpoint-Anchored Distribution Distillation. It augments vanilla distribution matching with a dedicated Anchor Score Estimator trained on the trajectory-endpoint distribution defined from a frozen pretrained 4-step bridge generator. This provides an attainable endpoint-level anchor for the evolving two-step student. To improve long-horizon consistency, we further introduce Self-Generated History Replay, which reuses cached outputs from earlier generator checkpoints as history conditions during chunk-wise training. This approximates inference-time conditioning on self-generated histories without costly online rollouts, mitigating quality degradation from accumulated history errors. Extensive experiments demonstrate that AptAvatar generates vivid 720p long-form avatar videos with only 2 NFEs, achieving a 60x speedup while preserving visual fidelity and long-horizon identity. Code is available at https://github.com/TaoLiveAIGC/AptAvatar",
+    "pdf_url": "https://arxiv.org/pdf/2607.24013v1",
+    "code_url": null,
+    "score": 7.417995187591573
+  },
+  {
+    "date": "2026-07-28",
+    "title": "UltraViT: Latency-Optimized On-device Vision Encoder for Large Vision-Language Models",
+    "arxiv_id": "2607.23373",
+    "authors": [
+      "Ioannis Maniadis Metaxas",
+      "Adrian Bulat",
+      "Alberto Baldrati",
+      "Anestis Zaganidis",
+      "Yassine Ouali",
+      "Hyeonuk Kim",
+      "Georgios Tzimiropoulos"
+    ],
+    "summary": "Large Vision-Language Models (LVLMs) remain bottlenecked by massive computational footprints, precluding their deployment on resource-constrained edge devices. While efforts to compress LVLMs focus heavily on vision token reduction or smaller language models, the vision encoder is largely overlooked, typically deployed as a monolithic, computationally heavy feature extractor. Moreover, there is no previous effort that designs a vision encoder for LVLMs directly optimized for on-device latency. In this paper, we present UltraViT, a vision encoder for LVLMs, explicitly designed and optimized for on-device performance. Specifically, by taking into account real on-device latencies, we systematically design a pyramidal architecture that strategically integrates and adapts heterogeneous spatial mixers at the macro-block level. Furthermore, to pre-train UltraViT, we propose a novel two-stage generative pre-training strategy: cultivating rich spatial features via dense distillation, followed by direct generative supervision from a capacity-mixed frozen LLM. Compared to standard contrastive and SSL, we show that our pre-training is much more effective for achieving high-level semantic grounding for UltraViT needed for the subsequent generative multimodal alignment of LVLM training. Extensive experiments demonstrate that our on-device latency-informed design combined with our tailored training strategy establishes a new state-of-the-art for efficient LVLM encoding, significantly outperforming existing encoder-centric baselines while operating on-device at nearly 1.7xthe speed.",
+    "pdf_url": "https://arxiv.org/pdf/2607.23373v1",
+    "code_url": null,
+    "score": 7.404601466503252
+  },
+  {
+    "date": "2026-07-28",
+    "title": "InterOCF: Spatio-Temporal 2D-3D Interaction for Camera-Only 4D Occupancy Forecasting",
+    "arxiv_id": "2607.24431",
+    "authors": [
+      "Qi Zhang",
+      "Xinquan Yu",
+      "Kaiyi Zhang",
+      "Hui Huang"
+    ],
+    "summary": "Camera-only 4D occupancy forecasting enables autonomous vehicles to predict future 3D semantic scenes solely from historical multi-view images, which is critical for driving safety. Even though current methods have achieved good performance, the strong spatial-temporal modeling between the input multi-view frames is still underexplored, which limits the performance of those methods in future 4D forecasting. To address this gap, we introduce a novel framework, InterOCF, for 4D occupancy forecasting that jointly models temporal dynamics in both 3D voxel-based representations and multi-view segmentation sequences, while explicitly incorporating feature interaction between the 2D and 3D branches. Our framework incorporates three core components: 1) A 3D Spatio-Temporal (3DST) module that learns volumetric dynamics from historical voxel states to predict future voxel states; 2) A 2D Spatio-Temporal (2DST) module employing an auxiliary multi-view temporal segmentation forecasting task to enhance temporal semantic dynamics; 3) A Spatio-Temporal Interaction Modeling (STIM) module that enables feature interaction between 2D and 3D representations. Experiments on the nuScenes, Lyft-Level5, and nuScenes-Occupancy datasets show that InterOCF consistently outperforms existing baseline approaches.",
+    "pdf_url": "https://arxiv.org/pdf/2607.24431v1",
+    "code_url": null,
+    "score": 7.4032446986109655
+  },
+  {
+    "date": "2026-07-28",
+    "title": "MemVLN: Episodic and Procedural Memory for Vision-and-Language Navigation",
+    "arxiv_id": "2607.23504",
+    "authors": [
+      "Yuqi Liu",
+      "Shengju Qian",
+      "Tianyuan Qu",
+      "Mingxian Lin",
+      "Zixuan Wang",
+      "Xin Wang",
+      "Bei Yu",
+      "Jiaya Jia"
+    ],
+    "summary": "Vision-and-Language Navigation in Continuous Environments (VLN-CE) requires agents to maintain long-horizon visual history for trajectory consistency while executing actions with low latency. Existing video-based VLN approaches typically struggle to satisfy both demands simultaneously. To address these challenges, we propose MemVLN, a novel VLN framework that achieves state-of-the-art performance with real-time inference efficiency (14 FPS). MemVLN utilizes a visual encoder to process continuous observations and a Large Language Model (LLM) to interpret instructions and generate actions. Central to our approach is an Episodic Memory management that applies pyramidal resolutions. This mechanism concentrates computation on immediate percepts while retaining compressed long-term history. Complementing to this design, we introduce Procedural Memory for fast action with a compact vocabulary of atomic mid-level actions to bypass auto-regressive decoding latency. Experiments on VLN-CE show that MemVLN-4B surpasses the baseline Qwen3-VL-4B architecture by 5.8\\% SR in R2R and 9.7\\% SR in RxR, while achieving a 7$\\times$ speedup in inference latency.",
+    "pdf_url": "https://arxiv.org/pdf/2607.23504v1",
+    "code_url": null,
+    "score": 7.398171490794978
+  },
+  {
+    "date": "2026-07-28",
+    "title": "The Visual Bottleneck: Sparse-Frame Adaptation of MLLMs for Joint Spatial-Temporal Video Grounding",
+    "arxiv_id": "2607.24570",
+    "authors": [
+      "Jiameng Zhang",
+      "Srikanth Madikeri"
+    ],
+    "summary": "Large-scale video platforms process millions of uploads hourly, requiring moderation systems that can localize when and where policy violations occur within each video. Processing every frame is infeasible at scale, so systems are constrained to sparse inputs of 8 to 16 frames per video. Yet state-of-the-art multimodal large language models (MLLMs) are pretrained on dense sequences of hundreds of frames, creating a fundamental mismatch between training and deployment conditions. This mismatch causes severe performance collapse: the Qwen3-VL 8B model drops from 56.0% to 22.3% temporal mIoU when frames are reduced to 16, a 60.2% relative degradation.\n  We present a systematic empirical study of training strategies to close this gap for spatial-temporal video grounding. Our results suggest that visual feature extraction is the dominant bottleneck under sparse-frame inputs. Adapting only the final three ViT layers, 4% of total parameters, achieves 68.8% temporal mIoU and surpasses a zero-shot 8B model using dense inputs by 12.8 points. Language model fine-tuning, by contrast, offers negligible or negative returns. A boundary-aware sampling strategy, Hybrid16, further improves temporal mIoU by 26 points over uniform sampling when temporal boundaries are available. We conclude that for sparse-frame video grounding, training strategy dominates model scale: a fine-tuned 2B model consistently outperforms a zero-shot 8B model, with or without dense frame access.",
+    "pdf_url": "https://arxiv.org/pdf/2607.24570v1",
+    "code_url": null,
+    "score": 7.39568515351194
+  },
+  {
+    "date": "2026-07-28",
+    "title": "$N_0$-VTLA: Scaling Vision-Tactile-Language-Action Model with Latent Tactile Tokens",
+    "arxiv_id": "2607.23782",
+    "authors": [
+      "NeoteAI Team",
+      "Fudan TEAI Team"
+    ],
+    "summary": "We present $N_0$-VTLA, a vision-tactile-language-action (VTLA) foundation model capable of (1) fine-grained contact-rich manipulation with tactile perception and tactile-feedback control, and (2) offline policy improvement from stored deployment data. Building on current vision-based backbones, we propose a training recipe for tactile integration consisting of visuo-tactile pre-training, staged tactile-pathway integration, and advantage-conditioned offline policy improvement. During pre-training, the policy learns broad contact priors from NeoData, our large-scale visuo-tactile robot dataset; to our knowledge, $N_0$-VTLA is the first VTLA model pretrained on tactile data at scale. During post-training, we augment the policy with a predictive tactile pathway that distills the contact patterns learned at scale into the fine motion adjustments required by downstream tactile-centric manipulation. For offline policy improvement, we introduce ALTER, an advantage-conditioned offline reinforcement learning method that converts relative progress and trajectory-event comparisons into binary advantage labels for policy training on a fixed deployment corpus, further improving task-specific learning on contact-rich skills such as deformable object manipulation. Across contact-rich benchmarks, $N_0$-VTLA outperforms strong baselines by wide margins: it wins all nine real-robot NeoReal tasks and reaches 63.8% mean success on a twenty-task simulation suite, against 44.0% for the strongest baseline. $N_0$-VTLA policies trained with ALTER reach 75-95% success on three long-horizon real-robot tasks. These results lay a foundation for versatile tactile-driven manipulation policies.",
+    "pdf_url": "https://arxiv.org/pdf/2607.23782v1",
+    "code_url": null,
+    "score": 7.394646876489947
+  },
+  {
+    "date": "2026-07-28",
+    "title": "ID-V2V: Identity-Preserving Video Restylization",
+    "arxiv_id": "2607.22830",
+    "authors": [
+      "Yuancheng Xu",
+      "Mingming He",
+      "Pablo Salamanca",
+      "Li Ma",
+      "Yash Kant",
+      "Emmett Steven",
+      "Paul Debevec",
+      "Ning Yu"
+    ],
+    "summary": "In visual storytelling, human performances are central to creative intent and narrative meaning. However, preserving human identity and performance while enabling flexible visual edits remains challenging for generative video models. We formalize this challenge as identity-preserving video restylization, which propagates scene, lighting, and style changes specified by an edited keyframe across a source video, while preserving facial likeness and performance, including expressions, eye gaze, and lip synchronization. A key obstacle is the absence of paired training data, as identity-preserving restylized video pairs are rare in real-world settings. To address this, we propose a decoupling of source-grounded identity preservation and edit-driven video synthesis. Our key insight is that facial appearance and expression should remain invariant, with illumination being the primary permissible variation. We therefore cast identity preservation as a video relighting problem, while modeling visual edit propagation as controlled video synthesis guided by the edited keyframe. Building on this formulation, we introduce ID-V2V, a video-to-video generative framework integrating complementary control signals: relit facial regions and facial normal maps tightly constrain facial likeness and performance, while edited keyframes and depth sequences enable flexible and temporally coherent generation. This design enables constructing training pairs from a single video, eliminating the need for scarce paired data. Extensive experiments demonstrate that ID-V2V significantly outperforms existing methods in preserving facial likeness and fine-grained facial performance, supports both single- and multi-subject scenarios, and delivers high visual quality, highlighting its potential as a human-centric tool for real-world content production. The code is available at: https://github.com/Eyeline-Labs/ID-V2V.",
+    "pdf_url": "https://arxiv.org/pdf/2607.22830v1",
+    "code_url": null,
+    "score": 7.389699984719017
+  },
+  {
     "date": "2026-07-22",
     "title": "Agentic Real2Sim: Physics-based World Modeling with Vision-Language Agents",
     "arxiv_id": "2607.19190",
