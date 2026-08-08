@@ -15,7 +15,7 @@
 <body>
   <h1>Daily arXiv Papers</h1>
   <p>Data source: <a href="./paper_list.json"><code>paper_list.json</code></a></p>
-  <p>Total papers: 180</p>
+  <p>Total papers: 210</p>
   <table>
     <thead>
       <tr>
@@ -31,6 +31,336 @@
     </thead>
     <tbody>
       
+        <tr>
+            <td>2026-08-07</td>
+            <td><a href="https://arxiv.org/abs/2608.05706" target="_blank">2608.05706</a></td>
+            <td>LAWM-3D: Learning 3D-Aware Latent Actions from Human Videos for Generalizable Robot World Models</td>
+            <td>Jiarui Yang, Jiale Zhange, Jiawei Li, Hang Guo, Wen Huang, Jinpeng Wang, Peidong Liu, Shu-Tao Xia</td>
+            <td>7.834580196920031</td>
+            <td><a href="https://arxiv.org/pdf/2608.05706v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>World models enable agents to perform forward rollout and planning without real-world interaction. However, their application in open-world embodied intelligence remains limited by the high cost of action annotations and the heterogeneity of action spaces across platforms. Recently, latent action models (LAMs) have alleviated this bottleneck by learning action representations directly from unlabeled human videos in a self-supervised manner. Nevertheless, most existing LAMs rely on single-view inputs and operate primarily in 2D pixel space, raising a fundamental question: can simply incorporating multi-view videos into LAM training endow the learned latent actions with 3D-aware perception? Our study shows that the answer is negative. The primary reasons lie in future-frame appearance leakage as well as inter-camera appearance discrepancies and viewpoint variations. To address these issues, we propose LAWM-3D, which introduces three tightly coupled key designs: (1) a multi-view invariant unified action tokenization scheme for learning 3D-aware latent actions; (2) a geometric alignment constraint that anchors intermediate encoder features to a pretrained 3D foundation model, thereby explicitly providing cross-view geometric correspondences; and (3) a non-injective RGB-D joint reconstruction objective that prevents shortcut learning from future-frame appearance information, forcing the LAM to focus supervision on motion cues with geometric significance. Importantly, these components are not simply stacked but are tightly coupled through a unified motivation. Built upon a two-stage paradigm of large-scale human video pretraining followed by robot fine-tuning, extensive experiments demonstrate that the proposed 3D-aware latent actions significantly improve world model performance, achieving SOTA results in generation quality, physical consistency, and generalization ability.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-07</td>
+            <td><a href="https://arxiv.org/abs/2608.05215" target="_blank">2608.05215</a></td>
+            <td>VLAff: Vision-Language-Affordance Model for Unified Actionable Affordances</td>
+            <td>Jihoon Oh, Kento Kawaharazuka, Kei Okada</td>
+            <td>7.826111882981904</td>
+            <td><a href="https://arxiv.org/pdf/2608.05215v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Learning manipulation skills from human videos is promising for scalable robot learning. However, the embodiment mismatch between humans and robots makes this challenging. One promising solution is to learn object-centric actionable affordances that are embodiment-agnostic. In this work, we propose a framework that leverages egocentric human videos with state-of-the-art 3D Structure-from-Motion and hand mesh reconstruction to extract actionable affordances such as visual, grasp, and trajectory affordances that explicitly encode where to interact, how to grasp, and how to move. We construct EgoAffordance, a large-scale dataset comprising 204K episodes with 5.6M visual affordances and 11.6M grasp and trajectory affordances. Building on this, we introduce VLAff, a large vision-language model-based unified foundation model that learns cross-modal correlations across all actionable affordances. Given a visual observation and instruction, VLAff generates visual affordance heatmaps, grasp poses, and trajectories, which are then converted into directly executable actions by utilizing 3D scene information. Through extensive experiments, we demonstrate that VLAff not only achieves state-of-the-art performance on visual affordance prediction, but can also be effectively applied to real robot applications such as zero-shot manipulation and affordance-guided robot learning.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-07</td>
+            <td><a href="https://arxiv.org/abs/2608.05674" target="_blank">2608.05674</a></td>
+            <td>JoyAI-RA 0.5: Scaling Robot Manipulation Learning via Dual Action Alignment</td>
+            <td>JoyAI-RA Team</td>
+            <td>7.807497875493043</td>
+            <td><a href="https://arxiv.org/pdf/2608.05674v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Robot data is scarce, so generalist policies need to learn from heterogeneous sources, including human egocentric video, simulation, and real robots, which differ in supervision and embodiment, with action labels missing or mutually incompatible. Human egocentric data scale best but sit farthest from robot data, and naive pooling causes negative transfer rather than knowledge sharing. We propose JoyAI-RA 0.5, a generalist Vision-Language-World-Action (VLWA) framework that couples physical world-dynamics priors with visual semantics and scales manipulation learning across such data via dual action alignment. Implicit action alignment infers latent actions from visual transitions, enabling action-free human, simulation, and robot data to guide a latent-action-conditioned world model in learning physical dynamics. Explicit alignment grounds reliable human and robot trajectories in a unified physical action space through a canonical action representation and camera-frame chunk-relative end-effector actions. An inner-outer-loop reinforcement stage then pairs efficient task adaptation with foundation-policy improvement. On a real-world AgiBot benchmark, JoyAI-RA performs strongly on both seen tasks and unseen variations. The task score improves consistently as the volume of human egocentric pretraining data increases and shows no sign of plateauing at our largest scale. This suggests that abundant but weakly labeled human experience can be converted into a transferable training signal, making human video not merely a weak auxiliary source but a primary axis along which manipulation capability can be scaled. Project page can be found at https://joyai-ra-05.github.io/.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-07</td>
+            <td><a href="https://arxiv.org/abs/2608.06374" target="_blank">2608.06374</a></td>
+            <td>DyPES-VLA: Learning Shared Dynamics Priors and Embodiment-Specific Control for Cross-Embodiment Manipulation</td>
+            <td>Junfeng Li, Junjie He, Zhide Zhong, Yangyang Zheng, Pingyue Sheng, Jiayu Dong, Ruixin Li, Haodong Yan, Jiaguan Zhu, Tianran Zhang, Runze Yu, Wen Chen, Liuqing Yang, Yuxiang Gao, Haoang Li</td>
+            <td>7.751217942741201</td>
+            <td><a href="https://arxiv.org/pdf/2608.06374v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Vision-Language-Action (VLA) models have become a powerful paradigm for robot manipulation, but training a single generalist policy for heterogeneous robot embodiments remains an open problem. Existing methods have two main limitations. First, they underuse dynamics priors shared across diverse visual and interaction data, limiting cross-embodiment transfer. Second, they require extensive manual preprocessing to convert embodiment-specific actions into a common format. To overcome these limitations, we propose DyPES-VLA, a cross-embodiment VLA that learns shared Dynamics Priors and Embodiment-Specific control. First, we learn shared dynamics priors by training the vision-language model (VLM) with a future-prediction objective on cross-embodiment data, driving the shared query representation to capture object motion, contact, and interaction-induced scene changes. Second, an embodiment-specific Mixture-of-Experts (MoE) action head translates these shared dynamics priors into executable controls directly in each embodiment&#x27;s native action space, without manually pre-aligning heterogeneous actions into a common format. This head shares attention layers to capture common temporal action structures, while its embodiment-specific feed-forward experts resolve the unique kinematic constraints and control semantics of distinct embodiments. As a generalist policy, our \ourmethod achieves state-of-the-art performance across simulation and real-world evaluations, reaching 98.0% success on LIBERO, 59.25% on RoboCasa-GR1, and 89.02% on RoboTwin~2.0.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-07</td>
+            <td><a href="https://arxiv.org/abs/2608.05903" target="_blank">2608.05903</a></td>
+            <td>Robust-WAM: Bridging Generative Pretraining and Semantic Foresight in World-Action Models</td>
+            <td>Haodong Yan, Junfeng Li, Junjie He, Zhide Zhong, MingMing Yu, Wenxuan Song, Jiaguan Zhu, Yangyang Zheng, Yuqiao Du, Jiadi You, Yingjie Cai, Xu Yan, Guanyi Zhao, Bingbing Liu, Haoang Li</td>
+            <td>7.738919270820696</td>
+            <td><a href="https://arxiv.org/pdf/2608.05903v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Mainstream World-Action Models (WAMs) adapt pretrained video generation models (VGMs) for robot control, transferring their learned dynamics prior for action prediction. These VGMs are typically trained in a variational autoencoder (VAE) latent space. However, the VAE latent space is optimized for pixel reconstruction, which rewards fine appearance detail and leaves the action prediction fragile under visual shifts. Recent works build WAMs in semantic latent space, which are more robust to appearance shifts. However, these models cannot leverage the large-scale VGM pretraining that exists only in VAE space. To overcome this dilemma, we propose Robust-WAM, a general post-training method for video-generation-based WAMs that preserves the VAE-based generative path and adds a lightweight semantic foresight alignment objective on the action stream. This retains the large-scale VGM pretraining while grounding actions in appearance-invariant dynamics that stay reliable under illumination shifts and other visual out-of-distribution conditions. Specifically, we employ learnable query tokens to bring future-scene semantics into the action stream by aligning their output hidden states with the semantic foresight of future ground-truth frames. To establish the temporal correspondence between each query and the future step it describes, we give it the positional encoding of the matching action tokens. Experiments on out-of-distribution generalization simulation benchmarks and a real-robot setup show that our Robust-WAM consistently improves the success rates of multiple WAM baselines without sacrificing in-distribution performance.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-07</td>
+            <td><a href="https://arxiv.org/abs/2608.06375" target="_blank">2608.06375</a></td>
+            <td>$ω$-0: A Latent Predictive World Action Model for Concurrent Humanoid Loco-Manipulation</td>
+            <td>Zhe Li, Zhenzhe Zhang, Yangyang Wei, Wenjie Zhang, Xichen Yuan, Peiyuan Zhi, Gen Li, Xinying Guo, Fengjie Gao, Jianfei Yang, Shanghang Zhang</td>
+            <td>7.730403945214364</td>
+            <td><a href="https://arxiv.org/pdf/2608.06375v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Humanoid household tasks often require concurrent loco-manipulation, where the robot must move, adjust posture, maintain balance, and manipulate objects as a single coordinated behavior. Yet existing humanoid policies typically decompose locomotion and manipulation, while recent world-action models remain either arm-centric or video-centered. We present $ω$-0, a latent predictive whole-body world-action model for real-world humanoid concurrent loco-manipulation. Given a language instruction, current visual observation, and robot proprioceptive state, $ω$-0 directly predicts controller-compatible whole-body action latents for real-robot execution. Rather than reconstructing future videos, $ω$-0 learns compact future observation embeddings as a lightweight predictive objective, coupling latent visual foresight with diffusion-based whole-body action generation. The model supports egocentric RGB, exocentric RGB, and exocentric depth inputs, and leverages controller-based simulation replay to ground human/public visual-motion priors into robot-executable action latents. We further collect $ω$-HOME, a 40+ hour real-world household humanoid dataset with synchronized multi-view observations, whole-body SMPL motions, robot states, and action latents. Real-world experiments on 11 household tasks demonstrate that a single $ω$-0 model can produce smooth manipulate-while-moving behaviors and consistently outperform representative imitation learning, VLA, humanoid, and WAM baselines.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-07</td>
+            <td><a href="https://arxiv.org/abs/2608.06332" target="_blank">2608.06332</a></td>
+            <td>GeniWorld: A Generalizable Interactive World Model for Robotic Manipulation via Visual Actions</td>
+            <td>Chenghao Gu, Hanyang Yu, Jingbo Zhang, Haitao Lin, Wenyao Zhang, Jinghe Wang, Hanglei Jin, Shuzhao Xie, Jingyan Jiang, Zhi Wang</td>
+            <td>7.730114479263253</td>
+            <td><a href="https://arxiv.org/pdf/2608.06332v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Generalist robot policies exhibit strong capabilities, but their robustness in complex and unseen environments remains limited. Scaling robot learning and evaluation in diverse real-world environments remains costly and challenging. Action-conditioned world models offer a promising alternative, but they often suffer from limited action controllability and poor generalization to out-of-distribution (OOD) scenarios. To this end, we present GeniWorld, an interactive world model for robots that generalizes robustly across unseen scenarios. Building on pretrained video generative models, we use URDF-based rendering to transform numerical actions into visual action representations, enabling spatially grounded action control. By explicitly decoupling embodiment kinematics from environmental dynamics, our model mitigates scene overfitting and facilitates modeling of robot-environment interactions. To achieve closed-loop control, we construct an autoregressive video prediction model integrated with high-frequency robot kinematic control, enabling interaction with both robot policies and human teleoperators. In our experiments, even when trained solely on limited fixed-scene data, our model achieves superior in-domain performance and robust zero-shot generalization to highly randomized, unseen environments. For downstream applications, GeniWorld serves as a scalable policy evaluator that remains reliable under environmental perturbations. Furthermore, even with limited real-world demonstrations, GeniWorld generates diverse manipulation trajectories within the world model, improving downstream policy performance and robustness in complex environments.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-07</td>
+            <td><a href="https://arxiv.org/abs/2608.05579" target="_blank">2608.05579</a></td>
+            <td>ARGUS: Aligning Robot Scene Geometry Under Shifting Views with Large 3D Vision Models</td>
+            <td>Rishik Sathua, Haonan Chen, Katherine Driggs-Campbell</td>
+            <td>7.702438216562959</td>
+            <td><a href="https://arxiv.org/pdf/2608.05579v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Large-scale visuomotor policies have demonstrated impressive performance across a wide range of robot manipulation tasks. However, despite this success, manipulation polices often entangle scene geometry with the corresponding viewpoint, learning where objects lie in an image rather than where it lies in the task space. This entanglement inherently limits the corresponding policy&#x27;s ability to learn from viewpoint-diverse datasets (ex. DROID, BridgeV2) and generalize beyond the viewpoints captured in their training data. In this work, we present ARGUS, an observation pre-processing pipeline that uses large-scale 3D vision models to align image observations from arbitrary camera viewpoints into a canonical viewpoint before passing it to downstream visuomotor policies. Experiments across training datasets with varying levels of viewpoint diversity, from fixed multi-view camera configurations to highly varied camera placements, show that our method consistently outperforms prior approaches across both limited-view and view-diverse training regimes. In efficiency comparisons, ARGUS demonstrates an ability to learn from view-diverse data, converging to high success rates 4-6x faster than previous methods by leveraging a simplified observation space. Overall, our findings show that leveraging large-scale 3D vision models reduces the learning burden on visuomotor policies, enabling more efficient learning from large-scale, viewpoint-diverse robot datasets.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-07</td>
+            <td><a href="https://arxiv.org/abs/2608.05745" target="_blank">2608.05745</a></td>
+            <td>UniVVT: A Unified End-to-End Framework for High-Fidelity Video Virtual Try-on</td>
+            <td>Yushe Cao, Shikun Feng, Fei Shen, Haikuo Peng, Jianqiang Xia, Yiheng Zhu, Dianxi Shi, Chun Yu</td>
+            <td>7.701250824913728</td>
+            <td><a href="https://arxiv.org/pdf/2608.05745v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Video Virtual Try-On (VVT) synthesizes a video of a person wearing a target garment while preserving identity, motion, and scene dynamics. Dominant approaches cast VVT as mask-conditioned video inpainting and rely on separate modules for human parsing, pose estimation, and garment warping. This multi-stage design complicates deployment and, more critically, allows errors in explicit geometric priors to propagate irreversibly into the generated video. We present UniVVT, a unified end-to-end framework that reframes VVT as semantically conditioned video generation, eliminating mask, pose, and warping modules at inference. At its core, a scene-task perceiver built on a Multimodal Large Language Model jointly encodes the source video, target garment, and task instruction into compact, task-aware latent tokens, implicitly capturing what to transfer and where and how to transfer it. A lightweight semantic bridge then aligns these tokens with the conditioning space of a diffusion-based video generator, enabling coherent garment transfer. To robustly couple the heterogeneous components, we devise a three-stage progressive training strategy comprising semantic alignment, joint task adaptation, and flexible-resolution refinement. Extensive experiments demonstrate that UniVVT achieves state-of-the-art performance across multiple benchmarks, validating implicit semantic guidance as a simple and effective alternative to fragile geometric preprocessing for end-to-end virtual try-on.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-07</td>
+            <td><a href="https://arxiv.org/abs/2608.05799" target="_blank">2608.05799</a></td>
+            <td>XEWorld: Can Action-Conditioned World Models Generalize to Unseen Robot Embodiments?</td>
+            <td>Yixiang Chen, Jiabing Yang, Yuan Xu, Qisen Ma, Keji He, Peiyan Li, Kai Wang, Ziheng He, Xiangnan Wu, Jing Liu, Nianfeng Liu, Yan Huang, Liang Wang</td>
+            <td>7.691399206945966</td>
+            <td><a href="https://arxiv.org/pdf/2608.05799v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Action-conditioned world models are promising learned simulators for robotic manipulation, yet evaluating them exclusively on training robots fails to reveal whether they capture physical dynamics or merely memorize visual patterns. To answer whether a model can faithfully render a robot it has never seen, we introduce XEWorld, a controlled cross-embodiment testbed for world models that isolates embodiments by evaluating held-out robots within physically identical scenes. Our systematic analysis uncovers a shared architectural bottleneck: current models act primarily as 2D visual pattern matchers whose generalization is governed by visual similarity rather than physical kinematic similarity. Driven by this limitation, they struggle to translate abstract numeric joint actions into coherent visual trajectories, and fail to predict dynamic visual changes from static initial observations. Consequently, successfully rendering an unseen embodiment zero-shot strictly requires heavily grounded cues, specifically pixel-space actions and explicit spatial-temporal alignment. Even when bypassing this zero-shot barrier via few-shot adaptation, the forced appearance recovery triggers catastrophic forgetting of seen embodiments. Together, these failures expose a critical inability to apply learned physical dynamics to novel visual appearances, highlighting that achieving true cross-embodiment generalization requires architectural innovations that decouple visual appearance from underlying physical dynamics.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-07</td>
+            <td><a href="https://arxiv.org/abs/2608.05970" target="_blank">2608.05970</a></td>
+            <td>SkillMemo: Expert-guided Skill Memory Framework for Compositional Embodied Manipulation</td>
+            <td>Changyuan Wang, Chubin Zhang, Zhenyu Wu, Runhao Li, Angyuan Ma, Ke Chao, Yinan Liang, Xiuwei Xu, Ziwei Wang, Yansong Tang, Jiwen Lu</td>
+            <td>7.634259919599744</td>
+            <td><a href="https://arxiv.org/pdf/2608.05970v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Embodied visuomotor models, including Diffusion Policy (DP) and Vision-Language-Action (VLA) models, have demonstrated promising performance on robotic manipulation benchmarks. However, their potential remains fundamentally constrained by the scarcity of large-scale embodied trajectory datasets, leading to insufficient compositional generalization in out-of-distribution (OOD) scenarios with limited capability to capture reusable skill structures. To address this limitation, we propose Skill-Based Memory (SkillMemo) framework that implicitly decomposes long-horizon demonstrations into latent atomic skills and integrates skill-level features into a dynamic episodic memory bank for solving compositional tasks. Specifically, we first introduce an expert-guided trajectory segmentation module built upon a Mixture-of-Experts (MoE) architecture, which implicitly partitions trajectories into distinct skill primitives represented by learned gating coefficients. We further design a skill-level episodic memory architecture that stores compact skill representations as retrievable key-value pairs. During inference, the memory bank retrieves the most relevant skill primitives which are subsequently fused with the model&#x27;s current gating distribution, providing a robust contextual prior to refine action predictions. Extensive experiments on the simulation benchmark and real-world manipulation tasks demonstrate that SkillMemo consistently enhances both DP and VLA backbones, achieving state-of-the-art performance and outperforming $π_{0.5}$, while exhibiting strong compositional generalization to unseen task configurations.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-07</td>
+            <td><a href="https://arxiv.org/abs/2608.06161" target="_blank">2608.06161</a></td>
+            <td>iARCS: Iterative Agentic RL for Controllable 3D Scene Generation</td>
+            <td>Saugat Adhikari, Ashok Prasad Neupane, Pramish Paudel, Ajad Chhatkuli, Danda Pani Paudel</td>
+            <td>7.614200345162136</td>
+            <td><a href="https://arxiv.org/pdf/2608.06161v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Synthetic 3D scene generation is increasingly used as a data source for computer vision and embodied AI, but existing generators often optimize perceptual realism without reliably satisfying task-critical functional constraints. This mismatch limits the usefulness of synthetic data for downstream training, where accessibility, traversability, and spatial rule compliance are often essential. We present iARCS, an iterative agentic reinforcement learning framework that adapts a pretrained scene generator to natural-language task requirements. iARCS uses a two-stage strategy: universal-reward pretraining to improve physical plausibility and layout quality, followed by task-specific fine-tuning with LLM-generated reward programs that are iteratively refined from training feedback. Experiments show improved constraint fidelity on walkability, reachability, and clearance-focused tasks, effective task-specific constraint optimization, and competitive scene diversity. We further show that data generated by iARCS improves a base generator, supporting its value as a practical synthetic data generation tool rather than only a controllable scene editing method.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-07</td>
+            <td><a href="https://arxiv.org/abs/2608.05804" target="_blank">2608.05804</a></td>
+            <td>Ordered Diffusion for 3D Human Registration</td>
+            <td>Mattia Masiero, Ilya A. Petrov, Daniel Cremers, Gerard Pons-Moll, Riccardo Marin</td>
+            <td>7.605950403864723</td>
+            <td><a href="https://arxiv.org/pdf/2608.05804v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>3D human registration has historically been treated as a regression task, assuming a unique ground-truth alignment exists between the template and an input point cloud. In reality, acquisition noise, occlusions, and unknown soft tissue dynamics introduce inherent ambiguity into human scans. Regression-based methods consequently converge to an average prediction, often failing to represent a plausible geometry. In our work, we embrace such uncertainty by modeling the registration as a distribution of alignments. We propose ODin, which formulates registration as a 3D diffusion process that generates a point cloud aligned with the target geometry while preserving template semantics through consistent point ordering. To achieve this, ODin relies on global, local, and positional conditioning, guiding each point to its correct location. Our experiments demonstrate that such a generative formulation not only outperforms its regression-based baseline, but also establishes a new state of the art, surpassing highly engineered methods while reducing the registration time by two-thirds. Pre-trained models and code are available at https://riccardomarin.github.io/odin/.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-07</td>
+            <td><a href="https://arxiv.org/abs/2608.05369" target="_blank">2608.05369</a></td>
+            <td>World-to-Wrist: Task-Conditioned Future Wrist Modeling for Fine-Grained Robot Manipulation</td>
+            <td>Yuhao Pan, Haosong Peng, Zhengshen Zhang, Zhengyang Yan, Yalun Dai, Fushuo Huo, Chujie Wang, Tianyu Qi, Xiucheng Wang, Nan Cheng, Wenchao Xu</td>
+            <td>7.604783327716458</td>
+            <td><a href="https://arxiv.org/pdf/2608.05369v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Vision-language-action (VLA) models often treat main-view and wrist-view observations as parallel visual inputs, overlooking their distinct roles in robot manipulation. Fine-grained manipulation, however, benefits from anticipating how wrist-local interactions may evolve under the global task context. To address this limitation, we present World-to-Wrist VLA (W2-VLA), a VLA model for fine-grained robot manipulation with task-conditioned future wrist modeling. Given current multi-view observations and a task instruction, W2-VLA contextualizes a set of latent modeling tokens as a compact interface between the vision-language model and the wrist predictor. Conditioned on this interface and the observed wrist history, the predictor forecasts future wrist latents, which are transformed into future-aware context for action prediction. In addition, we introduce W2-CoT, a synthesis pipeline that produces structured annotations describing manipulation progress, physical transition cues, and wrist-local evidence. These annotations provide auxiliary supervision that shapes the task-conditioned latent interface. Experiments on LIBERO, RoboTwin 2.0, and real-world manipulation tasks demonstrate improved fine-grained and contact-sensitive manipulation across both single-arm and bimanual settings, while maintaining action-generation rates above 80 Hz.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-07</td>
+            <td><a href="https://arxiv.org/abs/2608.05803" target="_blank">2608.05803</a></td>
+            <td>Vorch-Omni: Multi-Task Orchestration of Sight and Sound</td>
+            <td>Vorch Team, Xiaoyu Chen, Yang Ding, Cong Han, Menglin Han, Yuxin Hong, Jiebo Hou, Zequn Jie, Xiang Li, Jing Liu, Qi Liu, Yulei Lu, Siyuan Luo, Lin Ma, Xin Ma, Yinlong Qian, Peng Shi, Fang Wan, Siqi Wang, Yaohui Wang, Yaole Wang, Yidi Wu, Siqian Yang, Mingyu Yin, Haoran Yu, Gang Yue, Lisai Zhang, Yuting Zhang</td>
+            <td>7.550257947652939</td>
+            <td><a href="https://arxiv.org/pdf/2608.05803v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Recent advances in generative video modeling have enabled diverse generation, reference-based synthesis, extension, and editing, but existing approaches often rely on fragmented task-specific models. A general model must distinguish heterogeneous target, source, and reference signals to determine what to generate, preserve, or use as guidance, while reducing interference among tasks. Joint audio-visual generation further increases this challenge by introducing diverse conditioning and output configurations across modalities. We present Vorch-Omni, a unified multi-task framework for audio-visual synthesis based on an arbitrary-condition-to-arbitrary-output formulation. It flexibly treats video and audio signals as either conditioning inputs or generation targets. Token-level conditioning masks and task identifiers distinguish targets, source content, and references, while position types separate temporal context from independent conditions. To capture semantic and structural information, Vorch-Omni employs complementary visual conditioning pathways: a vision-language model interprets sampled frames with text instructions, and a video VAE encodes conditions into latent tokens for direct guidance. We further build a distributed data pipeline to curate diverse temporally aligned audio-visual clips, generate structured captions and metadata, and balance heterogeneous task distributions. Built on a single flow-matching diffusion transformer without task-specific architectural changes, Vorch-Omni supports over 10 tasks, including text-to-video, text-to-audio-video, image- and reference-conditioned generation, temporal extension, audio-driven generation, video transformation, and audio-visual editing. This unified framework provides a scalable foundation for general-purpose audio-visual generation and manipulation.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-07</td>
+            <td><a href="https://arxiv.org/abs/2608.06009" target="_blank">2608.06009</a></td>
+            <td>Wan-Animate-2: Pushing the Application Boundaries of Character Animation</td>
+            <td>Guangyuan Wang, Li Hu, Dechao Meng, Zhongyi Zhang, Peng Zhang, Mingyang Huang, Ruoshi Zhang, Ke Sun, Zhe Zhang, Xingjun Wang, Gang Cheng, Bang Zhang</td>
+            <td>7.539578565024789</td>
+            <td><a href="https://arxiv.org/pdf/2608.06009v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Character image animation remains a foundational yet challenging task in computer vision. Existing approaches can be broadly categorized into three paradigms: methods based on explicit motion representations suffer from extraction errors and identity drift; methods based on implicit motion features lose fine-grained dynamics through compression; and in-context learning approaches avoid intermediate representations but incur prohibitive computational costs. Furthermore, all current systems are designed for offline synthesis, unable to meet the real-time requirements of interactive applications such as digital avatars and live-streaming hosts. To address these limitations, we present Wan-Animate-2, an end-to-end character animation framework that directly consumes the driving video within a redesigned Diffusion Transformer. Our architecture achieves superior motion fidelity and identity preservation by eliminating intermediate motion extractors entirely. We further introduce text driven viewpoint control that decouples the output camera perspective from the driving video--a capability rarely supported by prior character animation methods that rely on explicit motion representations. Beyond generation quality, we present Wan-Animate-2-Lite, an efficient variant that reduces inference latency to real-time thresholds through a three-stage training paradigm: teacher forcing pretraining with error buffer mechanism, and Self-Forcing distillation with chunk-wise backpropagation. This enables streaming character animation for interactive applications, opening new deployment scenarios that were previously infeasible. Qualitative evaluations and user studies demonstrate that Wan-Animate-2 achieves high-fidelity animation results across diverse characters and motion patterns. To foster further research and community development, we will release the Wan-Animate-2-Base model weights to the public.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-07</td>
+            <td><a href="https://arxiv.org/abs/2608.05747" target="_blank">2608.05747</a></td>
+            <td>GST-Bench: Can VLMs Develop Global Spatial Awareness from Video?</td>
+            <td>Qifeng Zhang, Kaixiang Huang, Heng Dong, Huang Fang, Junting Chen, Junjie Zhu, Yonghang Chen, Zhiyu Zhang, Wei Li</td>
+            <td>7.539330545078756</td>
+            <td><a href="https://arxiv.org/pdf/2608.05747v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Spatial intelligence is fundamental to embodied agents, yet existing benchmarks focus on local spatial perception from single or few viewpoints, overlooking global spatial awareness over continuous, long-horizon visual streams. To address this limitation, we introduce the Global-Spatial-Temporal Benchmark (GST-Bench), a VQA benchmark for global spatial intelligence in video understanding, comprising human-verified questions derived from 6,790 minutes of synthetically generated video. It requires models to perform accurate spatial inference from novel viewpoints unseen in the input video and to map egocentric observations onto global top-down images. A comprehensive evaluation of 22 state-of-the-art VLMs exposes a striking gap between models and humans: the strongest zero-shot model attains only 42.68, far below the human score of 79.08. To probe the cause of this gap, we construct GST-Bench-Local and find that models, despite strong local spatial understanding under the same task formulation, still fail to consolidate long-horizon observations into a globally consistent scene representation. We further provide GST-Train, a dataset for global spatial reasoning, as a complementary resource to facilitate future research on this challenge.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-07</td>
+            <td><a href="https://arxiv.org/abs/2608.05948" target="_blank">2608.05948</a></td>
+            <td>GAUGE: A Measurement-Grounded Benchmark for Physical Fidelity in Simulation Engines and Video World Models</td>
+            <td>Shuai Wang, Yaxin Feng, Xuekun Jiang, Shihan Tian, Ningyu Yan, Xing Shen, Chaoyang Lyu, Hui Wang, Yunsong Zhou, Hanqing Wang, Jiangmiao Pang, Yang Xiang, Xing Gao, Chunhua Shen, Weinan Zhang</td>
+            <td>7.51990616320506</td>
+            <td><a href="https://arxiv.org/pdf/2608.05948v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Physics engines facilitate large-scale training and evaluation for embodied intelligence, while generative video world models are emerging as implicit simulators of future states and interactions. However, existing evaluations of physical fidelity are often conducted in isolation and rely heavily on perceptual similarity or human judgments, providing limited insight into which physical principles or parameters are violated. We introduce GAUGE, a real-world-grounded diagnostic benchmark for jointly evaluating how numerical simulators and generative video world models reproduce or deviate from real-world physics. It comprises 22 controlled task families covering rigid bodies, flexible cables, textiles, and volumetric deformable objects. Grounded in real-world trajectories and paired with calibrated physical metadata, uncertainty annotations, and task-specific observables, these tasks cover fundamental physical processes including collision, friction, momentum transfer, oscillation, self-contact, and deformation across diverse materials and conditions. We benchmark Isaac Sim, Genesis, and Newton on 14 task families using generalized trajectory errors, and evaluate 6 image-to-video models on 5 rigid-body tasks by testing physical-law consistency and the temporal stability of inferred parameters. Our results reveal no uniformly faithful physics engine, with the largest discrepancies arising in impulsive contact, rapid textile motion, and volumetric deformation. We further find that video world models can produce trajectories with the expected equation form while recovering incorrect accelerations, momentum transfer, and oscillation timing. GAUGE lays the groundwork for developing more physically faithful simulators and world models for embodied intelligence.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-07</td>
+            <td><a href="https://arxiv.org/abs/2608.05631" target="_blank">2608.05631</a></td>
+            <td>ChronoVision: Temporal Reasoning via Latent State Reconstruction</td>
+            <td>Yifan Shen, Jian Xu, Boyi Li, Yuner Zhang, Tianjiao Yu, Bingxuan Li, Houze Yang, Rushi Wang, Xu Cao</td>
+            <td>7.504771587137564</td>
+            <td><a href="https://arxiv.org/pdf/2608.05631v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Multimodal large language models excel at passive perception but struggle with complex visual cognitive tasks requiring multi-step temporal reasoning. This degradation largely stems from the inherent ambiguity of language-based reasoning, which often fails to accurately articulate continuous visual transformations. To address this, we propose ChronoVision, a multimodal framework designed to align visual logic with latent imagery. During supervised fine-tuning, a Reconstructive Visual Head predicts the latent representation of the final transformed state, while an ROI Attention Locating module focuses the model on key visual evidence via semantic span queries. In post-training, we apply reinforcement learning with an implicit process grounding mechanism, guided by a composite reward function that evaluates outcome correctness, latent process alignment, and unsupervised visual focus. Furthermore, we introduce Vbvr-VQA, a novel dataset that evaluates temporal tracking by reformulating video reasoning into a strict image-ordering task. Experiments demonstrate that ChronoVision achieves state-of-the-art performance on Vbvr-VQA with 74.8% in-domain and 71.6% out-of-domain accuracy, alongside a strong 55.0% accuracy on IntPhys2, a highly challenging cross-domain benchmark.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-07</td>
+            <td><a href="https://arxiv.org/abs/2608.05505" target="_blank">2608.05505</a></td>
+            <td>DynaPix: Can Vision-Language Models Identify the Exact Future?</td>
+            <td>Thong Nguyen, Vinh-Hien Do, Quynh Vo, Cong-Duy Nguyen, See-Kiong Ng</td>
+            <td>7.4917927260709325</td>
+            <td><a href="https://arxiv.org/pdf/2608.05505v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Acting in a physical scene requires knowing its real later state, not a plausible one. Current evaluations often accept words or a realistic-looking image, so the predicted state is never checked against the true one. We introduce DynaPix (Dynamic Pixels), a benchmark that makes prediction checkable. Given a video clip that stops before a key event and a question about a later moment, a model must pick the true future image from close candidates or a large gallery. The scenes come from a physics simulator, so the correct image and its time are known exactly and the wrong options are deliberately similar. Models often succeed when a visible event marks the target moment, but are near chance when only elapsed time marks it. Gallery search is harder still, as the true image rarely ranks first. People handle the elapsed-time items well, so the difficulty lies with the models, not the questions. Training on scene accounts drawn from the simulator&#x27;s true record, not a teacher&#x27;s guess, repairs much of this but not the longer elapsed time case. DynaPix thus exposes a temporal-anchoring gap: models attach a prediction to an event far better than to time itself.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-07</td>
+            <td><a href="https://arxiv.org/abs/2608.05999" target="_blank">2608.05999</a></td>
+            <td>Beyond Flat Policies: Hierarchical Post-Training for Embodied Agents in Robotic Manipulation</td>
+            <td>He Kong, Zengjue Chen, Qi Wang, Qianli Xing, Runliang Niu, Peidong Liu, Jiawei Li, Shiqi Wang, Yi Chang</td>
+            <td>7.471785444126612</td>
+            <td><a href="https://arxiv.org/pdf/2608.05999v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Vision-language-action (VLA) models have demonstrated remarkable capabilities in robotic manipulation by leveraging pretrained vision-language models. However, existing post-training methods predominantly optimize VLA models as flat policies, making it difficult to explicitly model task progression and perform robust long-horizon manipulation. Although hierarchical approaches introduce task decomposition, they mainly rely on supervised learning from offline demonstrations and cannot effectively improve execution through online interaction. To address this limitation, we propose Hierarchical Robotic Control (HiRoC), a hierarchical post-training framework that decouples high-level task planning from low-level action execution. The planner decomposes complex tasks into executable subgoals to provide explicit semantic guidance, while the executor continuously improves subgoal-conditioned action generation through reinforcement learning. To enable effective collaboration between the two modules, we further align the executor with planner-generated subgoals before reinforcement learning, mitigating the distribution misalignment between planning and execution. Extensive experiments across diverse robotic manipulation benchmarks demonstrate that HiRoC consistently outperforms strong baselines. Comprehensive analyses further validate the effectiveness of hierarchical post-training and the contribution of each key component.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-07</td>
+            <td><a href="https://arxiv.org/abs/2608.06170" target="_blank">2608.06170</a></td>
+            <td>Prior-SG: Task and Prior Driven Region Segmentation for Scene Graphs in Arbitrarily-Structured Environments</td>
+            <td>Giorgio Tonetti, Laurent Kneip, Abel Gawel, Marco Hutter</td>
+            <td>7.444055366267048</td>
+            <td><a href="https://arxiv.org/pdf/2608.06170v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Hierarchical 3D scene graphs are a promising representation for high-level spatial reasoning in autonomous mobile platforms. However, existing extraction frameworks typically rely on purely local visual clustering or strict geometric heuristics, such as wall-separated rooms, which fail in open-plan or arbitrarily-structured environments. We propose Prior-SG, a task- and prior-driven framework that casts scene graph generation fundamentally as a probabilistic alignment problem. As the robot explores, it continuously aggregates an incoming RGB-D sensor stream into a physically grounded Instance Graph utilizing a multi-scale, open-vocabulary feature fusion strategy. The system then infers the high-level functional semantics of this map through a Maximum A Posteriori (MAP) estimate, guided by a Prior Graph-a logical expectation of the environment&#x27;s structure and task-relevant vocabulary synthesized dynamically by a Large Language Model. By optimizing a Markov Random Field that fuses heterogeneous experts (visual, geometric, and discrete objects) with these topological priors, the system resolves local perceptual ambiguities. We validate this approach across diverse simulated residential datasets and large, open-plan real-world environments. Prior-SG achieves state-of-the-art semantic region segmentation accuracy compared to recent baselines, robustly delineates distant functional boundaries in the absence of physical walls, and uniquely provides zero-shot ontological flexibility, enabling the robot to entirely restructure its spatial partitioning based on a given high-level task.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-07</td>
+            <td><a href="https://arxiv.org/abs/2608.05738" target="_blank">2608.05738</a></td>
+            <td>In-Context VLA: Endowing Vision-Language-Action Models with Language via In-Context Post-Training and Agentic Tool Use</td>
+            <td>Jiarui Yang, Wen Huang, Jiale Zhang, Maowei Hu, Hang Guo</td>
+            <td>7.425836416536739</td>
+            <td><a href="https://arxiv.org/pdf/2608.05738v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Vision-Language-Action (VLA) models have become the dominant recipe for generalist manipulation, yet they are almost universally trained by behavior cloning: a policy imitates expert action chunks conditioned on a static image and a fixed instruction. A natural remedy is to inject explicit reasoning through textual chain-of-thought (CoT). We show, both empirically and analytically, that free-form textual CoT degrades low-level control: the reasoning it produces is ungrounded, its latency breaks closed-loop timing, and, crucially, the reasoning and action tokens are optimized against conflicting objectives so that the policy learns to narrate rather than to act. We argue that what a VLA needs is not the ability to generate language, but the ability to consume grounded language. To this end we introduce \textbf{\ourmethod{}}, a framework that endows a VLA with language competence through (i) in-context post-training, in which perceptual evidence is injected as structured context and the model is supervised only on actions, and (ii) an agentic tool-use interface, in which the policy queries open-vocabulary detectors, monocular depth, and a vision--language model to actively acquire task-relevant information. Rather than emitting a single templated caption, our data engine produces diverse, paraphrased, and evidence-conditioned spatial descriptions, so that the policy learns to interpret language it has never seen verbatim. Across the RoboCasa-GR1, SimplerEnv, and LIBERO simulation benchmarks, together with 8 real-world robot manipulation tasks, our method consistently achieves SOTA results in both performance and efficiency when compared with CoT-based approaches under matched configurations.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-07</td>
+            <td><a href="https://arxiv.org/abs/2608.05663" target="_blank">2608.05663</a></td>
+            <td>Vorch-Streamer: Extending Human Audio-Visual Generation to Real-Time Long-Form Streaming</td>
+            <td>Menglin Han, Yang Ding, Yulei Lu, Haoran Yu, Xin Ma, Junyi Chen, Zhangkai Ni, Lin Ma, Yaohui Wang</td>
+            <td>7.4112121717934265</td>
+            <td><a href="https://arxiv.org/pdf/2608.05663v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Real-time long-form avatar audio--video generation requires causal, continuous synthesis while maintaining audiovisual synchronization and visual consistency. Adapting a pretrained bidirectional model to this setting presents two key dilemmas. First, autoregressively reusing generated blocks as context creates exposure bias, causing errors and visual drift to accumulate over long rollouts. Second, a global speech utterance does not indicates a causal generator which portion should be spoken next when only limited local audio--video context is available. We present \textbf{Vorch-Streamer}, a post-training framework that addresses these challenges and enables real-time long-form Text-to-Audio-Video (T2AV) streaming. We construct a synthetic corpus of 80K avatar clips spanning 12--21 seconds and first train a causal generator with mixed Teacher Forcing and Diffusion Forcing. We then apply long-horizon Self Forcing with DMD distillation, exposing the model to its own rollout distribution while preserving the quality of the pretrained bidirectional teacher. To explicitly control speech progression, an external language model predicts discrete 25-Hz speech-planning tokens, whose continuous features condition the audio diffusion branch and align each causal block with the content it should speak. With bounded causal context and four-step denoising, Vorch-Streamer jointly generates audio and video from text at 27.12 FPS, exceeding the 24-FPS real-time playback rate while maintaining competitive audio--lip synchronization and strong identity preservation over long-form generation.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-07</td>
+            <td><a href="https://arxiv.org/abs/2608.06221" target="_blank">2608.06221</a></td>
+            <td>Robot Learning from Human Demonstrations: Handwritten Alphabet Trajectories and Human-Likeness Evaluation</td>
+            <td>Alperen Kenan, Paul Bremner, Manuel Giuliani</td>
+            <td>7.4009238146611835</td>
+            <td><a href="https://arxiv.org/pdf/2608.06221v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Learning from demonstration (LfD) provides a developmental framework through which robots can develop motor skills by observing and imitating human dynamics, reducing reliance on explicit programming to teach a skill to a robot. The resulting human-like robot motion is recognised as a key factor in building trust and enabling natural collaboration in human-robot interaction. This paper presents a framework for learning human-like robot motion from demonstration, including data collection, probabilistic trajectory learning, and perceptual user evaluation. A dataset of 3,142 handwriting demonstrations was collected from 22 participants across all 52 Latin alphabet character-case combinations via a touchscreen teleoperation interface, capturing planar position, contact force, and timing. Building on the widely used Gaussian Mixture Model and Gaussian Mixture Regression approach for learning from demonstration, the framework is extended in this work by incorporating force and normalised time dimensions to enable richer representation of human dynamics, and adapting it to handle non-continuous, multi-segment trajectories, enabling generalisation across demonstrations. A user study with 21 participants evaluated the perceived human-likeness of the generated trajectories using a continuous scale anchored between robotic and human-like motion, normalised to 0-100 where 50 represents the neutral midpoint. The generated trajectories achieved an overall human-likeness score of 71.50 (SD=22.56), indicating that the majority of trajectories were perceived as more human-like. Participants identified geometric positioning and trajectory sequence as the most influential perceptual factors, and reported positive attitudes toward human-like robot behaviour. The datasets are released as open-source, providing a reproducible benchmark for developing and evaluating human-like robot motion methods.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-07</td>
+            <td><a href="https://arxiv.org/abs/2608.05782" target="_blank">2608.05782</a></td>
+            <td>VSMP-IMU: Video-Grounded Semantic Motion Programs for Sensor-Aware Synthetic IMU Generation</td>
+            <td>Lala Shakti Swarup Ray, Vitor Fortes Rey, Mengxi Liu, Paul Lukowicz, Bo Zhou</td>
+            <td>7.389680080974631</td>
+            <td><a href="https://arxiv.org/pdf/2608.05782v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Wearable human activity recognition (HAR) is often limited by the scarcity of labeled sensor data, especially in low-resource, class-imbalanced, and subject-generalization settings. Synthetic IMU generation can reduce this dependency and enhance HAR machine learning model&#x27;s performance, but existing approaches face a trade-off without addressing all factors: video-driven methods are visually grounded but sensitive to pose-estimation errors, while text-driven methods are controllable but often weakly grounded in how activities are actually performed. We present VSMP-IMU, a video-grounded framework for controllable synthetic IMU generation based on a structured Semantic Motion Program (SMP), which separates activity-defining semantics from label-preserving variation. Given an input video, VSMP-IMU extracts and augments an SMP, uses it to synthesize motion, converts the motion into virtual IMU signals, and grounds the resulting signals to the target wearable domain. We evaluate VSMP-IMU against state-of-the-art synthetic data generation methods on five public IMU-HAR datasets under leave-one-person-out evaluation. VSMP-IMU achieves an average Macro-F1 of 78.33%, improving over real-only training by 9.77% and over the strongest prior synthetic baseline by 4.04%. In low-resource settings with reduced training data-samples, it improves over real-only training by 18.54% and over the strongest prior synthetic baselines by more than 6% on average. Under long-tail evaluation in imbalanced datasets, it improves tail-class Macro-F1 by 19.86% over Real-only training and by 4.76% over SOTA. These results show that structured video-grounded semantics provide a practical foundation for controllable, wearable-relevant synthetic sensor data generation.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-07</td>
+            <td><a href="https://arxiv.org/abs/2608.05811" target="_blank">2608.05811</a></td>
+            <td>Energy-Guided Flow Matching</td>
+            <td>Haoyang Tong, Yu He, Fang Li, Lichen Ma, Jingling Fu, Dong Chen, Zhen Chen, Junshi Huang, Jie Cao</td>
+            <td>7.38381379330594</td>
+            <td><a href="https://arxiv.org/pdf/2608.05811v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Pixel-space generative models bypass lossy latent compression, yet necessitate joint learning of global structure and fine-grained details in a high-dimensional space. Standard flow matching interpolates noise toward a fixed clean-image endpoint, leaving the spectral evolution to be learned implicitly. In this paper, we introduce Energy-Guided Flow Matching(EG-FM) that explicitly models a coarse-to-fine generative trajectory by moving endpoint. Specifically, EG-FM replaces the fixed endpoint with a heat-kernel-filtered endpoint that evolves smoothly from low-frequency image to clean image.The fraction of high-frequency signal in moving endpoint is released by an image-specific energy-guided scheduling, leading to the re-targeting of velocity in flow matching.Our framework requires no adaptation of the backbone and training data, bringing negligible cost on the training and inference stages. In our experiment, EG-FM consistently achieves lower FID on the ImageNet class-conditional image generation task at $256 \times 256$ with fewer epochs, reaching an FID of 1.55 at 200 epochs and 1.45 at 600 epochs. We continue training the generation task on the setting of $512 \times 512$ resolution, yielding a FID of 1.58 after only 40 high-resolution adaptation epochs.Furthermore, we transfer EG-FM on text-to-image generation and achieve 0.85 on GenEval score and 83.9 on DPG-Bench. Code is available at https://github.com/ysng123/EG-FM.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-07</td>
+            <td><a href="https://arxiv.org/abs/2608.05258" target="_blank">2608.05258</a></td>
+            <td>Grad-CAM for Vision Transformers: A Systematic Taxonomy and Audit of Methodological Ambiguity in Explainable AI</td>
+            <td>Casey Wall, Longwei Wang, Rodrigue Rizk, KC Santosh</td>
+            <td>7.372251280153057</td>
+            <td><a href="https://arxiv.org/pdf/2608.05258v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Gradient-weighted Class Activation Mapping (Grad-CAM) is widely used to visualize model decisions, but it was originally formulated for convolutional neural networks, where spatial feature maps and channel dimensions have clear architectural meanings. Vision Transformers (ViTs) do not provide the same structure, instead representing images through tokens, attention, residual streams, and multimodal interactions. This paper presents a systematic taxonomy and literature audit of how Grad-CAM and related methods are adapted, justified, and reported for ViT-based architectures. From an initial search of more than 550 papers, we identify 175 papers that apply Grad-CAM or Grad-CAM-adjacent methods to ViTs. We find that most papers do not provide a full mathematical or implementation-level account of how Grad-CAM is adapted to transformer representations. To characterize this gap, we introduce a descriptive taxonomy of ViT Grad-CAM adaptations that makes explicit the feature locations, gradient targets, spatial reconstruction steps, and aggregation choices that are often left implicit. This taxonomy is not intended to prescribe a single correct adaptation, but to clarify the range of methodological choices being made. The study shows that Grad-CAM on ViTs is often treated as a trivial extension of CNN-based Grad-CAM, despite requiring nontrivial choices that affect rigor, reproducibility, and interpretation.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-07</td>
+            <td><a href="https://arxiv.org/abs/2608.05565" target="_blank">2608.05565</a></td>
+            <td>EffectLearner: World-Aware Object-Effect Reasoning for Real-World Video Object Removal</td>
+            <td>Feier Wu, Wanke Xia, Xu He, Zilang Zhou, Si Chen, Dongxia Liu, Liyang Chen, Qimeng Wu, Zhengbo Zhang, Wenming Yang, Zhiyong Wu</td>
+            <td>7.3678925761010845</td>
+            <td><a href="https://arxiv.org/pdf/2608.05565v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Video object removal must eliminate not only the target object but also its induced effects while maintaining high-fidelity and spatiotemporally coherent restoration. Existing methods mainly learn object-effect correspondences implicitly from predefined effect categories and fixed data distributions, limiting their generalization to complex real-world scenes involving compositional effects, spatially detached or weakly correlated effects, long-tail physical phenomena, and dynamically evolving interactions. We propose EffectLearner, a semantic-reasoning-enhanced framework that combines a VLM-based Object-Effect Reasoner with a DiT-based Video Eraser. Guided by a structured effect-analysis prompt, the Reasoner performs cross-modal reasoning over a target-highlighted video and extracts compact effect-aware context, which guides the Video Eraser toward comprehensive object-effect removal. Motion-aware mask guidance and motion-consistency supervision further improve removal coverage and spatiotemporal stability under object motion and evolving scene dynamics. To fully exploit the framework in challenging real-world scenarios, we further construct EffectWorld, a paired video dataset specifically designed for complex object-induced effects, and introduce a progressive training curriculum that combines common supervision with complex-effect data. On the standard ROSE-Bench, EffectLearner outperforms existing baselines on most metrics and achieves clear advantages on both EffectWorld-Eval and the challenging EffectWorld-Wild, demonstrating its ability to deliver high-quality video object removal in complex real-world scenes.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-07</td>
+            <td><a href="https://arxiv.org/abs/2608.05976" target="_blank">2608.05976</a></td>
+            <td>Diff-VF: Training-free High-quality Long Video Generation via Diffusion Model</td>
+            <td>Haoning Yang, Xinyuan Chen, Yaohui Wang, Guo Lu</td>
+            <td>7.340440804339892</td>
+            <td><a href="https://arxiv.org/pdf/2608.05976v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Recently, diffusion models have made great progress in video generation. However, most existing video diffusion models are trained with short videos, and degrade when extrapolated to long videos, struggling to maintain long-range temporal coherence while retaining diverse motions. To generate consistent, high-quality and dynamic long videos, we propose Diff-VF, a training-free, plug-and-play and model-agnostic framework that converts existing short-video diffusion backbones into long-video generators without modifying or fine-tuning the base model. Diff-VF couples three complementary strategies: Hybrid Noise Initialization (HNI) to constrain global semantics, Weighted Window Sampling (WWS) to remove inter-window discontinuities, and Temporal Extended Sampling (TES) to establish long-range dependencies with a timestep-varying fusion. We further extend Diff-VF to long-video enhancement via Skip Residual Guidance that balances fidelity and realism through timestep-dependent guidance. VBench-Long evaluation results show that Diff-VF achieves a more favorable balance between temporal coherence and motion diversity than base models and recent training-free long video generation baselines, including FreeNoise, FreeLong, and RIFLEx, while maintaining competitive frame-wise quality. Experiments on two base models demonstrate the applicability to video diffusion models with different spatial-temporal modeling strategies. Extensive ablations validate the contribution of each component and hyperparameters.</td>
+        </tr>
+        
         <tr>
             <td>2026-08-05</td>
             <td><a href="https://arxiv.org/abs/2608.00486" target="_blank">2608.00486</a></td>
