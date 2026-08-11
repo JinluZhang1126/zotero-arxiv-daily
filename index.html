@@ -15,7 +15,7 @@
 <body>
   <h1>Daily arXiv Papers</h1>
   <p>Data source: <a href="./paper_list.json"><code>paper_list.json</code></a></p>
-  <p>Total papers: 210</p>
+  <p>Total papers: 240</p>
   <table>
     <thead>
       <tr>
@@ -31,6 +31,344 @@
     </thead>
     <tbody>
       
+        <tr>
+            <td>2026-08-10</td>
+            <td><a href="https://arxiv.org/abs/2608.06965" target="_blank">2608.06965</a></td>
+            <td>Cross-View Action Consistency for Camera-Robust Vision-Language-Action Policies</td>
+            <td>Bingqi Huang, Bingchuan Wei, Xuan Wang, Yingkai Cai, Zhaokui Wang</td>
+            <td>7.7002981499508705</td>
+            <td><a href="https://arxiv.org/pdf/2608.06965v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Vision-language-action (VLA) policies fine-tuned from a fixed scene camera can fail when the camera is moved, even when the task, objects, language, and robot state are unchanged. We study scene-camera viewpoint robustness using only a scene RGB image, language, and proprioception, without camera labels, extrinsics, depth, or point-cloud inputs. The wrist stream is masked throughout to prevent an unperturbed visual shortcut from confounding attribution to scene-camera variation. For flow-based VLAs, we propose to regularize the action-flow velocity field, the quantity directly integrated to generate continuous action chunks. We construct action-equivalent view pairs by resetting original LIBERO demonstrations to the same MuJoCo state and rendering nominal and perturbed scene-camera views. Both views are supervised by flow matching, while a cross-view loss encourages their predicted action-flow velocities to agree at the same sampled flow coordinates. On the LIBERO-Plus camera-perturbation track, our method reaches 87.2$\pm$0.4% (4,797 rollouts per seed across 3 training seeds), +7.4pp over flow-matching-only training on the same paired data (79.8$\pm$0.8%, also 3 seeds) and +12.5pp over naive mixed-camera SFT, while maintaining nominal-camera ID performance (95.0$\pm$0.8%; same-data FM-only: 95.0$\pm$4.3%). A shuffled-pair control collapses to 25.8%, showing that the gain depends on action-equivalent pairing. On a real robot, we evaluate three tabletop tasks with 10 rollouts per task and camera placement; held-out-camera success improves from 53.3% to 74.4% under the same single-scene-RGB inference interface.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-10</td>
+            <td><a href="https://arxiv.org/abs/2608.07267" target="_blank">2608.07267</a></td>
+            <td>WNM-3D: A World Navigation Model with 3D Scene Conditioning for Closed-Loop VLN</td>
+            <td>Yuehao Huang, Yunzi Wu, Xiaotao Zhang, Xinhai Li, Jiankun Dong, Jiajun Lv, Chi Zhang, Chenjia Bai, Yong Liu, Xuelong Li</td>
+            <td>7.641831080168262</td>
+            <td><a href="https://arxiv.org/pdf/2608.07267v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Recent vision-language navigation (VLN) systems increasingly adapt pretrained vision-language models (VLMs) into vision-language-action (VLA) policies that map egocentric observations and language instructions directly to navigation actions. Although semantically capable, such action-centric training does not explicitly model how the agent&#x27;s visual observations should evolve under its predicted motion. Generative world-action models (WAMs) jointly predict future observations and actions, yet existing WAMs for continuous VLN do not condition joint future-view and action generation on geometry-aware representations inferred from the observed history. We present WNM-3D, a generative World Navigation Model with 3D scene conditioning for continuous VLN. To consolidate past observations into persistent scene context, a frozen feed-forward geometry encoder extracts geometry-aware representations from the monocular egocentric RGB history, and a trainable 3D Scene-to-Token Adapter converts them into a fixed-length prefix in the token space of the world-action Diffusion Transformer. Through block-causal attention, this prefix conditions every future video-action block, providing a shared geometric context for both future-view and action generation. We train WNM-3D through supervised world-action fine-tuning on A*-generated demonstrations, DAgger-style adaptation on policy-visited states, and DanceGRPO-based closed-loop policy optimization. Experiments on GN-Bench show that WNM-3D outperforms strong VLM-based navigation policies and its 2D-conditioned counterpart in closed-loop navigation. On a fixed near-goal evaluation set, WNM-3D also achieves higher flow-action consistency and lower visual-motion error.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-10</td>
+            <td><a href="https://arxiv.org/abs/2608.07409" target="_blank">2608.07409</a></td>
+            <td>UniJEPA: A Unified Joint-Embedding Predictive Architecture for Task-Agnostic Visual World Modeling</td>
+            <td>An Lanji, Dawei Liu, Jin Li, Haoran Xu, Mei Chen, Yu Tian</td>
+            <td>7.577897282136865</td>
+            <td><a href="https://arxiv.org/pdf/2608.07409v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Joint-Embedding Predictive Architectures (JEPAs) have emerged as a principled framework for self-supervised learning of world models in compact latent spaces, yet existing methods are fragmented: some predict masked parts of a single image in latent space (I-JEPA), others learn to predict global photometric transformations (Image World Models), while video-scale JEPAs predict future temporal states and are post-trained for action-conditioned planning (V-JEPA~2, DINO-World, DINO-WM). These objectives are treated as distinct recipes with separate encoders, predictors, and anti-collapse regularizers, hindering a single model from unifying image-level and video-level world modeling. We present UniJEPA, a unified JEPA that jointly learns photometric prediction (image-level transformations) and temporal prediction (video-level next-state dynamics) in one shared latent space. A single end-to-end objective, composed of a next-embedding prediction loss and a Gaussian regularizer, yields a provably anti-collapse encoder-predictor pair trainable from raw pixels without EMA, stop-gradient, or pre-trained encoders. We show that the same latent space supports controllable abstraction: photometric prediction learns invariant structure while temporal prediction learns equivariant dynamics. After action-conditioned post-training on offline trajectories, UniJEPA enables zero-shot planning by treating goal features as prediction targets. On image, video, and control benchmarks, UniJEPA matches or surpasses task-specific JEPAs while requiring a single loss hyperparameter, and plans up to tens of times faster than generative world models at comparable accuracy.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-10</td>
+            <td><a href="https://arxiv.org/abs/2608.06434" target="_blank">2608.06434</a></td>
+            <td>Fast and Accurate: An Adaptive VLA Inference Framework through Environment-aware Model Selection</td>
+            <td>Yuewei Sun, Lang Qin, Zechuan Tian, Jingwen Li, Guiqin Wang, Shengzeng Huo, Wenxin Ren, Tao Fang, Xiaochen Zhang, Guanqing Deng, Xiang Wang, Xiaowen Dong, Qinghai Guo, Yuxin Ma</td>
+            <td>7.577864131043012</td>
+            <td><a href="https://arxiv.org/pdf/2608.06434v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Embodied intelligence demands both long-horizon reasoning and real-time closed-loop responsiveness. Recent dual-system Vision-Language-Action (VLA) architectures combine fast reactive control with slow deliberative reasoning to balance inference speed and task success rate. However, existing dual-process VLAs tightly couple the fast module to intermediate representations of the slow module, necessitating end-to-end joint training and limiting modularity, extensibility and flexible system switching. In this paper, we propose Environment-aware Model Selection (EMS), an adaptive VLA inference framework that switches between two fully decoupled systems of different scales through environment-aware model selection. The large-scale deliberative system provides globally consistent trajectory planning to ensure task success, while a lightweight reactive system enables high-frequency closed-loop control. A reinforcement-learning-based switching policy dynamically selects which system to invoke based on real-time feedback, enabling sparse use of the slow system and thereby balancing pretrained knowledge utilisation with runtime efficiency. Our design offers three key advantages over prior hierarchical VLA frameworks: (1) a fully decoupled and modular dual-system architecture that supports plug-and-play model replacement; (2) an adaptive, environment-aware switching strategy; (3) high-frequency inference for responsive closed-loop control. We extensively evaluate EMS in both simulation and real-world environments. On the LIBERO benchmark, EMS achieves success rates comparable to the large-scale baseline while increasing the effective action frequency to 93.4 Hz. The framework further demonstrates strong extensibility in real-world dual-arm manipulation tasks, where it accelerates task completion while maintaining robust performance.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-10</td>
+            <td><a href="https://arxiv.org/abs/2608.06994" target="_blank">2608.06994</a></td>
+            <td>Decoupling Intention from Trajectory: A Representational Deduction Framework for World Action Models</td>
+            <td>Xiangkai Ma, Yue Ma, Junjie Wang, Sheng Xu, Mingyang Li, Han Zhang, Yuzheng Zhuang, Wenzhong Li, Zhihao Yuan</td>
+            <td>7.574854047902246</td>
+            <td><a href="https://arxiv.org/pdf/2608.06994v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>World Action Models (WAMs) aim to construct a unified architecture capable of understanding world state evolution and guiding to generative motion planning. However, existing visual branches focus on predicting static visual observation, rather than reflecting potential transition information that captures the evolution of world states under motion interactions. This leads to representational entanglement between high-level physical condition evolution and low-level action trajectory generation within the Action Model, creating a structural bottleneck while weakening the predictive capability of world evolution modeling for action generation. We propose PILOT (Physical Inference for Latent Optimized Trajectories), whose core Representational Deduction (RD) bridges this gap by integrating motion thought-of-chain (CoT) guidance as a native model capability. Specifically, RD aims to encourage the action branch to explicitly model potential state transition tokens, which are retained as CoT in the reasoning space to guide fine-grained motion trajectory. Experiments demonstrate that RD not only significantly improves the success rate and generalization ability of WAMs in complex robotic manipulation tasks but also enhances the model&#x27;s physical interpretability by decoupling high-level motion semantics from low-level trajectory details. Furthermore, the abundant state transition supervision signals introduced by RD effectively alleviate the sparse supervision in action generation, enabling it to serve as an efficient few-shot real-robot fine-tuning strategy and demonstrating superior scalability for migration to mainstream WAM architectures.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-10</td>
+            <td><a href="https://arxiv.org/abs/2608.06729" target="_blank">2608.06729</a></td>
+            <td>AtlasVLA: Persistent World-Ego State Modeling for Vision-Language-Action Models</td>
+            <td>Guiyu Zhao, Longteng Guo, Yanghong Mei, Zilin Zhu, Yu Zhang, Bin Cao, Mingming Yu, Xingjian He, Jie Jiang, Jing Liu</td>
+            <td>7.567703351809493</td>
+            <td><a href="https://arxiv.org/pdf/2608.06729v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>While Vision-Language-Action (VLA) models have advanced embodied AI, their fundamentally reactive paradigm severely limits performance in partially observable and long-horizon tasks. When restricted to a single wrist-mounted camera, they inevitably suffer from perception forgetting as objects exit the field of view, and temporal task-progress forgetting} during multi-step execution. To overcome these bottlenecks, we propose AtlasVLA, a novel framework that transitions from direct reactive manipulation to proactive reasoning through a persistent world-ego state. AtlasVLA features a dual-memory architecture: a 4D Persistent World State Memory that lifts transient 2D observations into a globally updated, voxel-hashed spatial state to resolve visual blind spots, and an Ego-Working State Memory that tracks historical ego state and task progress. By conditioning a diffusion transformer (DiT) on this joint World-Ego state, AtlasVLA enables robust spatial reasoning. Extensive evaluations across LIBERO, RLBench, and real-world benchmarks demonstrate that AtlasVLA achieves state-of-the-art performance using solely a wrist camera. Remarkably, it decisively outperforms multi-view baselines, yielding absolute success rate improvements of 9.4% on LIBERO-Long and 17.5% in real-world long-horizon tasks.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-10</td>
+            <td><a href="https://arxiv.org/abs/2608.07314" target="_blank">2608.07314</a></td>
+            <td>TEMPO: Semantic-Action Decoupled RL Post-Training for Vision-Language-Action Models</td>
+            <td>Ziheng Liu, Quantao Yang</td>
+            <td>7.5647704106911995</td>
+            <td><a href="https://arxiv.org/pdf/2608.07314v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Vision-language-action (VLA) models are commonly adapted to downstream manipulation tasks via supervised fine-tuning (SFT) or online reinforcement learning (RL) post-training. SFT is prone to distribution mismatch, and existing RL approaches typically apply a single, uniform update strategy to all model components, ignoring their distinct functional roles. We propose TEMPO, a semantic-action decoupled, two-timescale RL post-training framework for VLA models. TEMPO freezes the pretrained vision-language backbone to preserve general semantic representations, and restricts adaptation to two components with dedicated RL optimization loops: the semantic projection layer and the low-level action expert. We update them at different rates--the semantic projection layer infrequently, to keep the latent action stable, and the action expert frequently, to rapidly incorporate control feedback from online interaction. This decoupling RL fine-tuning strategy prevents fast policy updates from destabilizing high-level semantic representations while still allowing the action expert to learn efficiently from online feedback. Experiments on the CALVIN benchmark and real-world manipulation tasks demonstrate that TEMPO consistently outperforms both pretrained state-of-the-art VLA models and the RL post-training baseline, while reaching and maintaining higher evaluation rewards on two real-world tasks.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-10</td>
+            <td><a href="https://arxiv.org/abs/2608.07045" target="_blank">2608.07045</a></td>
+            <td>C2Dex: Contact-Consistent Reconstruction and Retargeting for Dexterous Manipulation from Monocular Video</td>
+            <td>Jie Ren, Zhehao Jiang, Yinhong Yang, Haorui Jia, Han Jiang, Ben Li, Yao Yao, Cheng Lin, Qiu Shen, Zhenshan Bing, Xiao-Xiao Long, Xun Cao</td>
+            <td>7.549221543415923</td>
+            <td><a href="https://arxiv.org/pdf/2608.07045v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>High-quality demonstrations for dexterous robot manipulation are costly and difficult to collect, whereas monocular human videos provide a scalable source of diverse manipulation behaviors. However, transferring such demonstrations to dexterous robots remains challenging: monocular hand-object interaction (HOI) reconstruction often produces temporally unstable contacts and physically implausible interactions, while conventional retargeting methods struggle to preserve task-relevant contacts and local interaction geometry across different hand embodiments. We present C2Dex, a video-to-dexterous-manipulation framework built around a shared interaction representation: stable object-side contacts recovered by aggregating noisy frame-wise observations in the canonical object space. These stable contacts serve a dual role: as trajectory-level constraints that guide reconstruction toward temporally coherent and physically plausible human HOI trajectories, and as explicit transfer targets for the dexterous hand, where Laplacian interaction optimization preserves the local hand-object geometry across embodiments and residual reinforcement learning refines the trajectory in simulation. Experiments on DexYCB and TACO show that C2Dex achieves end-to-end trajectory success rates of 57.78% and 26.67%, respectively, substantially outperforming the strongest baselines (17.78% and 10.00%) under identical evaluation criteria. Real-robot replay experiments further demonstrate physical feasibility across diverse contact-rich manipulation tasks. Project page: https://k-jie.github.io/C2Dex/</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-10</td>
+            <td><a href="https://arxiv.org/abs/2608.06756" target="_blank">2608.06756</a></td>
+            <td>Capek 0.5: An Execution-Centric Vision-Language Model for Embodied Intelligence</td>
+            <td>Ying Chen, Weizhen Li, Zhe Hu, Zhenjiang Li, Rui Jiang, Zhifeng Gu, Lihuang Fang, Jiangping Liu, Lei Yi, Jie Chen</td>
+            <td>7.541257747191432</td>
+            <td><a href="https://arxiv.org/pdf/2608.06756v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Vision-language models are increasingly serving as the reasoning core of embodied agents. Robot execution is inherently iterative: each action reshapes the scene and physical state, continually renewing what must be perceived, reasoned about, and verified. Meeting these demands requires complementary capabilities that differ in supervision signals, prediction formats, and verification criteria. Existing approaches typically develop these capabilities against isolated, task-specific objectives, leaving open how they should be organized and integrated around execution as a whole. We present Capek 0.5, an embodied vision-language model built around an execution-centric capability taxonomy. Rather than organizing training by datasets or tasks, the taxonomy groups embodied capabilities according to their functional roles throughout execution and comprises four capability families: Spatial Reasoning, Temporal Understanding, Action Guidance, and State Verification. Each capability is first acquired by a dedicated specialist through reinforcement learning with verifiable rewards from a shared backbone, and the specialists are then consolidated into a single inference-time model through weight-space merging followed by routed policy-space distillation. We instantiate Capek 0.5 at the 2B and 35B-A3B scales and evaluate it from three complementary perspectives: comprehensive benchmark suites including Capek-StateBench, a new benchmark for state verification; a controlled study of capability retention from specialists to the unified model; and closed-loop evaluation in simulated embodied environments. Capek 0.5 improves the large majority of matched benchmark rows over its initialization, retains all four specialized capabilities in one checkpoint with quantified losses, and transfers to closed-loop embodied task execution.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-10</td>
+            <td><a href="https://arxiv.org/abs/2608.06688" target="_blank">2608.06688</a></td>
+            <td>CrossTracer: Cross-Embodiment Navigation via VLA Model Reasoning and Trace Residuals Adapting</td>
+            <td>Yao Wang, Siyuan Wang, Zhirui Sun, Wenzheng Chi, Liang Lin, Jiankun Wang, Wenjun Xu</td>
+            <td>7.477273670119988</td>
+            <td><a href="https://arxiv.org/pdf/2608.06688v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Vision-language-action (VLA) models provide strong semantic priors for robot navigation, but they often ignore embodiment-specific mobility constraints. A path that is semantically plausible for one robot may be physically infeasible for another. We propose CrossTracer, a hierarchical framework for cross-embodiment navigation through adaptive trace residuals. CrossTracer represents navigation plans as normalized image-plane waypoints, forming a unified pixel-space interface between semantic reasoning and physical grounding. First, Vision-Language Trace Proposer (VL-Tracer) adapts a pretrained VLA model to predict an initial navigation trace from egocentric observations and flexible goal specifications. Second, CE-Adapter refines this trace by predicting embodiment-conditioned residual corrections from visual traversability cues, robot identity, and the initial trace. To train the refinement module without costly manual annotation, Cross-Embodiment RRT* (CE-RRT*) converts panoptic segmentation into robot-conditioned traversability cost maps and generates cost-minimizing pixel-space traces. We evaluate CrossTracer on the NaviTrace benchmark, which tests whether a model can generate embodiment-consistent navigation traces from egocentric observations, language instructions, and robot embodiment types. CrossTracer achieves a total score of 45.68, outperforming the strongest evaluated general-purpose baseline, Gemini-2.5-Pro, by 10.01 points, corresponding to a 28.1% relative improvement. Real-world deployment on wheeled and legged robots further shows improved navigation success and execution efficiency.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-10</td>
+            <td><a href="https://arxiv.org/abs/2608.07012" target="_blank">2608.07012</a></td>
+            <td>Scenix: Sparse-View 3D Scene Reconstruction via Executable Scene Programs</td>
+            <td>Kai Li, Lutao Jiang, Zhenyang Li, Jiayu Dong, Jierui Zhang, Yingda Yin, Runze Zhang, Kai Yan, Xiaoyang Huang, Keyang Luo, Xin Wang, Xiangyu Zhao, Weikai Chen</td>
+            <td>7.474889329644782</td>
+            <td><a href="https://arxiv.org/pdf/2608.07012v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Synthesizing a structured and editable 3D indoor scene from a few uncalibrated RGB views requires more than generating high-quality individual assets: a system must infer the room structure, associate objects across incomplete observations, and recover a globally consistent spatial configuration. Previous methods mainly focus on 3D scene generation with text input or require continuous visual inputs with additional priors, \ e.g., human-annotated masks or accurate 3D layouts, which makes these methods labor demanding and hard to apply in general cases. We present \textsc{Scenix}, a sparse-view 3D scene reconstruction framework via executable scene programs, a structured representation that can be directly instantiated into editable 3D scenes. Given sparse views, \textsc{Scenix} predicts executable scene programs through perception-grounded asset instantiation and closed-loop spatial refinement. % We present \method, a framework that predicts an executable scene representation from sparse views and realizes it through perception-grounded asset instantiation and closed-loop spatial refinement. To support this task, we construct \dataset, a dataset of approximately 110,000 synthetic and real indoor scenes with multiview imagery, room structures, object-centric descriptions, and metric spatial annotations. We further introduce observation-consistent supervision that aligns each target scene with the visual evidence available in its input views. Experiments on held-out \textsc{XScene} scenes, real indoor images, and out-of-distribution SpatialGen cases evaluate structured scene prediction, object grounding, and spatial refinement.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-10</td>
+            <td><a href="https://arxiv.org/abs/2608.07256" target="_blank">2608.07256</a></td>
+            <td>CANIS: Generation-Assisted 3D Canonicalization via an Image-Semantic Bridge</td>
+            <td>Kendong Liu, Yuxin Yao, Junhui Hou</td>
+            <td>7.471705654296957</td>
+            <td><a href="https://arxiv.org/pdf/2608.07256v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Canonicalizing 3D object orientation is fundamental to 3D understanding and analysis. Existing approaches often rely on geometric cues, although 3D canonicalization ultimately requires a semantically meaningful orientation. To address this gap, we propose CANIS, a category-agnostic, generation-assisted framework that introduces the semantic orientation prior of a frozen image-to-3D generative model into 3D canonicalization, without canonicalization-specific training or category-specific templates. Specifically, CANIS first renders the input object from candidate viewpoints, selects an informative view, and generates a proxy in a canonical orientation. During generation, a sparse structural latent encoded from the input guides the proxy to preserve the geometry of an object. CANIS then uses the selected image as a semantic bridge between the input and the proxy. Image patches identify semantic regions on the proxy, and depth back-projection locates the corresponding regions on the input. The resulting semantic anchors constrain geometric matching, from which we estimate the rigid transformation that canonicalizes the input. Experiments on synthetic benchmarks validate CANIS and its key components, while qualitative results on partial observations and OmniObject3D suggest its applicability to incomplete and real-world scans. CANIS also improves downstream 3D classification, part segmentation, and dense correspondence under arbitrary rotations. Project page: https://kenkenzaii.github.io/Canis.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-10</td>
+            <td><a href="https://arxiv.org/abs/2608.07199" target="_blank">2608.07199</a></td>
+            <td>Flow-Corrected Shape Optimization: Taming Manifold Drift in High-Dimensional 3D Models</td>
+            <td>Emilien Seiler, Nicolas Talabot, Yingxuan You, Federico Stella, Pascal Fua</td>
+            <td>7.457065303462047</td>
+            <td><a href="https://arxiv.org/pdf/2608.07199v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Optimizing 3D shapes within the latent spaces of deep generative models is fundamental to computer assisted engineering, yet remains prone to a critical failure mode we term manifold drift: the tendency of gradient-based optimization to move latent vectors away from the manifold of valid shapes. This problem is exacerbated in state-of-the-art 3D shape generative models that operate in increasingly high-dimensional latent spaces where valid shapes occupy a vanishingly small fraction of the full space. Existing mitigation strategies, including latent regularization and flow-matching approaches, either sacrifice expressiveness, demand a difficult trade-off between objective guidance and generative fidelity that remains prone to manifold drift, or are computationally infeasible to scale to modern, large-capacity 3D shape models. We introduce a novel optimizer-corrector framework that alternates between gradient steps for objective minimization and guided flow matching to drive the latent state back to the valid shape manifold. By decoupling objective minimization from flow-based correction, optimizing freely and correcting strictly, this alternating design avoids inherent trade-offs, preserving geometric validity without sacrificing expressiveness while remaining computationally feasible on modern 3D shape models. We demonstrate its effectiveness across generative priors of varying complexity, from simple vector latent spaces to large-scale architectures across a variety of downstream optimization tasks, including aerodynamic drag reduction and object compliance optimization.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-10</td>
+            <td><a href="https://arxiv.org/abs/2608.06784" target="_blank">2608.06784</a></td>
+            <td>UniCycleFlow: Bidirectional Unpaired Image Translation with a Shared Rectified Flow</td>
+            <td>Xianhao Zhou, Jianghao Wu, Shaoting Zhang, Guotai Wang</td>
+            <td>7.451536435109184</td>
+            <td><a href="https://arxiv.org/pdf/2608.06784v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Bidirectional unpaired image translation must preserve source-specific structure while learning coherent transformations in both directions without paired supervision. Existing methods typically employ two direction-specific generators or train separate one-way models. Even when linked by cycle consistency, such models constrain only the round-trip endpoint reconstruction, without requiring the two directions to obey a common local transformation rule. We propose UniCycleFlow, a rectified-flow framework that represents bidirectional translation as forward and reverse integration of a single time-conditioned velocity field. This formulation organizes both directions within the same continuous dynamics, rather than coupling otherwise separate endpoint mappings. A key challenge is that unpaired data provide no meaningful source--target coupling from which rectified-flow trajectories can be constructed. UniCycleFlow addresses this challenge by learning deterministic source-conditioned endpoints whose marginal distributions are adversarially matched to the opposite domains. The resulting paths are regularized by stop-gradient self-flow matching for intermediate velocity supervision, discrete cycle closure for forward--reverse consistency, and representation path-velocity regularization for controlling localized feature changes along the trajectory. Across ten translation directions, UniCycleFlow achieves the lowest FID on 7 of 10 tasks using a single Euler evaluation and obtains the best average FID of 55.1.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-10</td>
+            <td><a href="https://arxiv.org/abs/2608.06827" target="_blank">2608.06827</a></td>
+            <td>R2S-EGO: Dual-Proxy Refinement for Sparse-Capture Real-to-Sim</td>
+            <td>Shuai Fang, Xin Deng, Yuchen Kang, Zhenjiang Li, Jie Chen</td>
+            <td>7.447320782378911</td>
+            <td><a href="https://arxiv.org/pdf/2608.06827v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Real-to-sim (R2S) depends on scene representations that render observations along robot ego trajectories, yet dense multi-view capture limits per-environment real-image capture-count efficiency, and sparse human capture can
+  leave behavior-scoped robot views under-supported. Camera-controlled synthesis can fill missing views, but its use in R2S requires behavior-admissible queries and capture-anchored structural conditioning. We present R2S-EGO,
+  which couples a simulator-derived robot proxy that represents the behavior-scoped executable query domain with a capture-anchored geometry proxy that supplies scene-specific structural conditions. Within this domain, fixed-
+  budget selection targets current support deficits for which geometry support is available. The generated observations are assimilated as pseudo-observations to refine the visual asset, while real captures remain anchors. The
+  fused geometry proxy also supplies the scene collision surface, which is refreshed between rounds. Together, these updates refine the existing simulation scene while its robot dynamics and control stack stay fixed. Across 48
+  frozen Unitree G1 ego views in three Replica scenes, six-view R2S-EGO reaches 19.062 dB PSNR, compared with 14.226 dB for the strongest reported R2S baseline. Across five paired policy-training seeds, R2S-EGO achieves 82.5%
+  +/- 6.8% real-G1 sitting success, compared with 10.0% +/- 10.5% for GaussGym.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-10</td>
+            <td><a href="https://arxiv.org/abs/2608.07468" target="_blank">2608.07468</a></td>
+            <td>SimWAM: A Simple World Action Model for End-to-End Autonomous Driving</td>
+            <td>Zongchuang Zhao, Xin Zhou, Tianyang Xu, Zhengyang Sun, Kaixuan Zhou, Honglin Li, Dingkang Liang, Xiang Bai</td>
+            <td>7.431994532557913</td>
+            <td><a href="https://arxiv.org/pdf/2608.07468v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>World-Action Models (WAMs) improve end-to-end autonomous driving by transferring video dynamics priors to action prediction, but existing methods require costly future generation at inference. We present SimWAM, a simple yet effective WAM that uses video generation purely as a training signal. It co-trains a pretrained video expert and a lightweight action expert with joint flow matching. An isolated attention mask keeps action prediction independent of future frames, allowing the video branch to be discarded after training and leaving a self-contained planner that directly predicts trajectories. Since the two experts share no parameters and interact only through a unified attention interface, the video backbone could be replaced and the action expert scaled independently without modifying the learning objective or inference pipeline. We further apply reinforcement learning to optimize a compositional driving reward beyond trajectory imitation. Our SimWAM achieves $91.5$ PDMS on NAVSIM, surpasses state-of-the-art WAM-based planners with substantially lower latency, and transfers zero-shot to nuScenes. These results position SimWAM as a simple yet solid baseline that could readily benefit from advances in video generation for efficient autonomous driving. The code and model weights are available at https://github.com/H-EmbodVis/SimWAM/</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-10</td>
+            <td><a href="https://arxiv.org/abs/2608.06901" target="_blank">2608.06901</a></td>
+            <td>Prune Once: Retraining-Free Task-Agnostic Pruning for Vision-Language Models</td>
+            <td>Minseok Kang, Hyunwoo Kim, Chanyoung Kim, Minwoo Kim, Jaekoo Lee, Dahuin Jung</td>
+            <td>7.418170262570667</td>
+            <td><a href="https://arxiv.org/pdf/2608.06901v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Vision-language models (VLMs) have achieved remarkable generalization across diverse multimodal tasks through large-scale pre-training, yet their rapidly increasing computational and memory requirements pose significant challenges for deployment in constrained environments. Existing pruning strategies often depend on task-specific criteria or LLM-oriented importance measures, making them unsuitable for task-agnostic pruning, where no task-specific samples are available at pruning time and the pruned model remains broadly applicable. We introduce a retraining-free VLM pruning framework called PORTA that derives a task- and modality-agnostic importance formulation based on activation variation, estimated from generic calibration data, which reliably captures feature-level representation utility across modalities. PORTA further incorporates an adaptive sparsity allocation mechanism that assigns layer-wise pruning ratios based on output feature variability, avoiding the limitations of uniform sparsity and reducing performance degradation at high compression levels. Extensive experiments across VLM architectures, such as CLIP, BLIP, and Qwen2-VL, demonstrate that PORTA achieves competitive downstream performance under high sparsity without requiring any retraining, supporting efficient VLM compression. Code is available at https://github.com/cau-hai-lab/PORTA.git.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-10</td>
+            <td><a href="https://arxiv.org/abs/2608.07144" target="_blank">2608.07144</a></td>
+            <td>InstanceSplat: Instance-Aware Feed-Forward 3D Gaussian Splatting for Scene Understanding</td>
+            <td>Minchao Jiang, Xiaoxuan Ma, Shunyu Jia, Haoru Wang, Zhang Liang, Wentao Zhu</td>
+            <td>7.414952964782493</td>
+            <td><a href="https://arxiv.org/pdf/2608.07144v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Feed-forward 3D Gaussian Splatting (3DGS) enables efficient and generalizable 3D reconstruction, but current feed-forward 3DGS methods for scene understanding remain largely category-oriented. In contrast, instance-aware 3DGS methods typically rely on per-scene optimization and often decouple reconstruction from instance and semantic learning, limiting reciprocal interactions among them. We present InstanceSplat, a unified feed-forward 3DGS framework for generalizable 3D reconstruction and instance-aware scene understanding from pose-free multi-view images. In a single forward pass, InstanceSplat constructs an instance-aware Gaussian representation that jointly encodes appearance, geometry, instance identity, and language-aligned semantics. Shared 3D Gaussians ground instance identities across views, producing renderable and cross-view-consistent instance features. To allow reconstruction and scene understanding to benefit from each other, we further design an instance-centric learning strategy that connects reconstruction, instance learning, and semantic learning through shared instance structure. Specifically, instance cues guide reconstruction, language-aligned semantics strengthen the discrimination of confusing same-category instances, and instance regions aggregate semantic evidence into coherent object-level predictions. Experiments on novel-view synthesis, instance segmentation, and open-vocabulary semantic understanding under varying input-view settings and on an unseen dataset demonstrate state-of-the-art performance, practical efficiency, and strong generalization.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-10</td>
+            <td><a href="https://arxiv.org/abs/2608.06799" target="_blank">2608.06799</a></td>
+            <td>Is Forward Prediction Enough? Physical State Grounding for JEPA World Models</td>
+            <td>Haodong Yan, Jiaguan Zhu, Mingyuan Jia, Ruiqing Yin, Junjie He, Zhide Zhong, Junfeng Li, Jinxuan Lu, Hengtao Li, Tianran Zhang, Jiayi Chen, Wenxuan Song, Wen Chen, Yuxiang Gao, Haoang Li</td>
+            <td>7.40067359034194</td>
+            <td><a href="https://arxiv.org/pdf/2608.06799v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Learning structured and control-relevant latent representations remains a key challenge for world models. Recent JEPA-based world models learn action-conditioned predictive latent dynamics from observation sequences. However, their forward-prediction objectives do not explicitly enforce reliable identifiability of robot-centric physical state from individual latents or state changes from latent pairs, which can limit downstream planning and policy performance. We propose PSG-JEPA, a physically grounded JEPA world model that shapes its latent space with two complementary grounding objectives beyond forward prediction: grounding individual latents in robot proprioceptive state, and grounding latent pairs in multi-horizon joint-angle changes. Both objectives are applied only during training, leaving the inference architecture and computational cost unchanged. To comprehensively evaluate PSG-JEPA, we conduct experiments at three levels: (1) latent identifiability via probing, (2) goal-conditioned planning on frozen latents, and (3) policy learning in simulation and on a real robot. Experiments demonstrate that our PSG-JEPA consistently outperforms state-of-the-art latent world-model baselines at all three levels.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-10</td>
+            <td><a href="https://arxiv.org/abs/2608.06770" target="_blank">2608.06770</a></td>
+            <td>Surg-UniWorld: A Unified Surgical World Model with Multimodal Control Experts</td>
+            <td>Rulin Zhou, Wanhao Liu, Guoheng Ma, Liangjin Shao, Qiujie Song, Yidu Wang, Guankun Wang, Tong Chen, Long Bai, Luping Zhou, Hongliang Ren</td>
+            <td>7.387128139377934</td>
+            <td><a href="https://arxiv.org/pdf/2608.06770v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Controllable surgical world models can provide a generative foundation for surgical artificial intelligence and simulation by synthesizing realistic instrument--tissue interactions. However, existing methods lack a unified multimodal control paradigm, while direct fusion of heterogeneous visual conditions often causes anatomical distortion, instrument appearance drift, and temporally inconsistent interactions. In this work, we propose {Surg-UniWorld}, a unified surgical world model with multimodal control experts. Surg-UniWorld first constructs a {Hierarchical Surgical Anchor} from first-frame appearance and hierarchical semantic masks to preserve persistent scene identity, anatomical organization, and interaction boundaries. {Anchor-Relative Modality Experts} then interpret edge, depth, and optical-flow evidence relative to the shared anchor, capturing complementary boundary, geometric, and motion information. A {Multimodal Control Expert} further performs contribution-preserving stage-wise composition of the activated modality increments and generates control hints for the Wan2.2 video diffusion backbone. To support multimodal surgical world modeling, we further construct Cholec80-SurgWAM, a benchmark for controllable surgical video generation. Extensive experiments demonstrate that Surg-UniWorld consistently outperforms existing controllable video generation methods and surgical world-model baselines in generation quality, temporal consistency, and multimodal controllability.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-10</td>
+            <td><a href="https://arxiv.org/abs/2608.06836" target="_blank">2608.06836</a></td>
+            <td>GOPI: Generation-Oriented 3D Pose Inference for Furniture Insertion from Single-View RGB-D Indoor Scenes</td>
+            <td>Ruifeng Zhai, Renjie Liu, Guangrun Wang, Liang Lin</td>
+            <td>7.3541102185160545</td>
+            <td><a href="https://arxiv.org/pdf/2608.06836v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>We study the problem of inserting new furniture into indoor scene images. Under masked single-view 2D image-plane conditioning, however, the physical scale of the inserted furniture relative to the scene cannot be uniquely determined, making physically grounded furniture placement underdetermined from image evidence alone. We therefore reformulate the task as a combination of 3D pose inference and geometry-guided image generation, where estimating a geometrically plausible 3D placement is essential for reliable synthesis.
+  To this end, we propose a two-stage framework. For 3D placement, we introduce GOPI, a generation-oriented 3D pose inference framework that addresses the underdetermined nature of single-view furniture insertion through data-driven iterative inference, producing geometrically plausible object placements. For image generation, we develop a geometry-guided conditioning strategy that projects the inferred 3D pose into the image plane as a pixel-aligned constraint, enforcing consistency between the synthesized image and the underlying 3D geometry.
+  Experimental results validate the proposed framework from both 3D pose estimation and image synthesis perspectives. For 3D placement, GOPI produces poses with stronger geometric feasibility and better consistency with reference layouts than direct regression and vanilla baselines. For image synthesis, our method preserves alignment with the projected 3D geometry across different furniture scales, showing stable projection-generation alignment across the tested furniture scales.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-10</td>
+            <td><a href="https://arxiv.org/abs/2608.07065" target="_blank">2608.07065</a></td>
+            <td>AutoIntervene: Calibrated Intervention for Action-Chunking Imitation Learning Policies</td>
+            <td>Jinhe Tang, Weiming Zhi</td>
+            <td>7.350749064442881</td>
+            <td><a href="https://arxiv.org/pdf/2608.07065v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Action-chunking visuomotor policies learn from demonstrations and improve temporal consistency by predicting short action sequences rather than single-step commands. Yet perception errors and execution drift can move the robot outside the demonstration distribution, while the policy continues to produce smooth action chunks that are inconsistent with the observed state. We present AutoIntervene, an online framework that selectively transfers control between an action-chunking policy and an operator during deployment. AutoIntervene evaluates proposed chunks against a visual-action support memory built from successful task executions, combining visual similarity with consistency between proposed and reference actions. Phase-local support governs policy-to-operator transfer within the current task phase, whereas global support governs the return to policy control after operator recovery. We calibrate separate switching thresholds for the two directions from empirical quantiles of evaluation-level scores on held-out expert demonstrations, avoiding direct manual tuning of score cutoffs. Intervention segments retained from successful rollouts target learner-induced states and provide corrective supervision for subsequent policy updates. Experiments on real-world bimanual manipulation tasks show higher post-adaptation task success and lower operator-control time than manual intervention. Videos and additional results are available at https://aus.bot/research/autointervene/.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-10</td>
+            <td><a href="https://arxiv.org/abs/2608.06544" target="_blank">2608.06544</a></td>
+            <td>TaskSense: Focusing on What Matters in World Models</td>
+            <td>SM Mazharul Islam, Manfred Huber</td>
+            <td>7.344063540055251</td>
+            <td><a href="https://arxiv.org/pdf/2608.06544v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>World models for visual control typically learn compact latent states by reconstructing observations, implicitly encouraging representations to preserve information across the entire visual input. However, task-relevant content often occupies only a small fraction of the observation, while background clutter and distractors consume valuable representational capacity. This mismatch between visual reconstruction and control objectives biases latent representations to model task-irrelevant visual content, diluting learning signals for control-relevant features and severely degrading downstream performance under visual distractions. We introduce TaskSense, a task-centric world modeling framework that enforces task relevance before latent encoding through a differentiable stochastic spatial attention mechanism conditioned on the previous latent state. To steer attention toward control-relevant regions, we augment training with an auxiliary inverse-dynamics objective. Rather than reconstructing the full observation, the world model reconstructs only the attended regions, encouraging latent representations to preserve task-relevant information while discarding irrelevant visual content. The decoder is further conditioned on the sampled attention map, enabling consistent reconstruction despite stochastic attention. Compared with the DreamerV3 baseline, TaskSense maintains competitive performance on the DeepMind Control Suite while consistently outperforming DreamerV3 on the Distracting Control Suite, demonstrating substantially improved robustness to visual distractions. Qualitative analysis further confirms that the learned attention, guided by inverse-dynamics supervision, consistently localizes control-relevant regions while suppressing irrelevant visual content.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-10</td>
+            <td><a href="https://arxiv.org/abs/2608.07074" target="_blank">2608.07074</a></td>
+            <td>M2-SMap: Memory-Efficient Semantic Mapping with Hierarchical Multi-Model Representation</td>
+            <td>QiYing Deng, ZhongLai Wang, Yuan Gao, Wei Dong</td>
+            <td>7.33743898054541</td>
+            <td><a href="https://arxiv.org/pdf/2608.07074v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Dense point cloud maps, as a typically used mapping representation, are difficult to deploy on resource-constrained robots because their memory consumption grows rapidly with scene scale. Although compact single-model representations reduce memory cost, their fixed geometric expressiveness is insufficient for structurally diverse environments. Existing multi-model methods improve representational flexibility, yet their feature extraction and model selection are often dominated by local geometry, which can cause overfitting and adhesion between objects. To address these issues, this paper presents M2-SMap, a memory-efficient semantic mapping framework based on hierarchical multi-model representation. First, a hierarchical geometric decomposition partitions RGB-D point clouds into compact Gaussian components. Then, a projection-guided semantic annotation mechanism assigns instance identities to each component. Subsequently, these annotations are incorporated into an object-aware Gaussian fusion strategy. Furthermore, a multi-scale feature extraction strategy separates large planar regions, semantic objects, and complex residual structures, which are respectively represented by bounded planes, object-level superquadrics, and GMM primitives. Experiments on three RGB-D sequences show that M2-SMap runs in real time at no less than 29.37 Hz while achieving the lowest primitive count, with an average reduction of 18.7% over the best baseline. It also reduces the mean per-frame number of measured inter-object adhesion cases from 2.808 to 0, demonstrating efficient and semantically consistent scene representation.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-10</td>
+            <td><a href="https://arxiv.org/abs/2608.06833" target="_blank">2608.06833</a></td>
+            <td>Unordered Landmark Visual Navigation</td>
+            <td>Hao Ren, Junzhe Zhu, Yihan Li, Zetong Bi, Le Zheng, Zhi Li, Yiqing Yuan, Zhaoliang Wan, Dizhe Zhang, Lu Qi, Hui Cheng</td>
+            <td>7.333610821090108</td>
+            <td><a href="https://arxiv.org/pdf/2608.06833v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Image-goal navigation is a fundamental capability for embodied AI, yet its practical deployment is strained by strong prior assumptions. Existing methods predominantly rely on temporally ordered video streams or auxiliary sensors (e.g., depth, LiDAR) to maintain spatial consistency. These sequential and multimodal dependencies severely restrict scalability, especially when deploying robots using crowd-sourced or pre-recorded unordered image collections. When temporal priors are removed, current methods struggle with severe perceptual aliasing, noisy associations, and catastrophic mapping failures. To address this underexplored challenge, we propose Unordered Landmark Visual Navigation (ULVN), a unified RGB-only framework free from temporal and odometric priors. ULVN systematically mitigates error accumulation by integrating mapping, localization, and planning. Specifically, it constructs a robust 2D topological map directly from unstructured images via calibrated geometric verification and maximum spanning forest refinement. For closed-loop execution, ULVN abandons sequential heuristics, utilizing a graph-based belief propagation filter with entropy-adaptive fusion for global localization and dynamic subgoal planning. Extensive experiments in simulation and real-world deployments demonstrate that ULVN significantly outperforms state-of-the-art methods.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-10</td>
+            <td><a href="https://arxiv.org/abs/2608.07463" target="_blank">2608.07463</a></td>
+            <td>MirrorWorld: Taming Video Diffusion Models for Mirror Reflection Generation</td>
+            <td>Youjun Zhao, Alex Warren, Gary K. L. Tam, Rynson W. H. Lau</td>
+            <td>7.329681475859466</td>
+            <td><a href="https://arxiv.org/pdf/2608.07463v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Recent advances in video diffusion models (VDMs) have enabled high-fidelity video synthesis. However, generating mirror reflections remains challenging because the content within a mirror must remain consistent with the surrounding scene. Existing VDMs are not specifically designed to model scene-to-mirror relationships, which can lead to reflections with incorrect content or inconsistent spatial arrangements. We observe that mirror reflection generation involves two complementary challenges: determining what scene content should be reflected and how the reflected content should be spatially arranged within the mirror region. Motivated by this observation, we propose MirrorWorld, a reflection-aware video inpainting framework that models scene-to-mirror relationships during generation. Specifically, we introduce Semantic Relation Distillation (SRD), which transfers relational information from a frozen visual foundation model to encourage semantic associations between visible scene content and mirror regions. We further propose Geometric Transformation Alignment (GTA), which learns a transformation that guides the spatial arrangement of reflected content. The two components play complementary roles, with SRD modeling what should be reflected and GTA modeling how it should be arranged. To facilitate research on this problem, we construct a benchmark for video mirror reflection generation by repurposing four existing video mirror datasets into a unified reflection reconstruction task. Experimental results show that MirrorWorld achieves improved reflection reconstruction quality over representative image-based reflection generation methods and strong video inpainting baselines.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-10</td>
+            <td><a href="https://arxiv.org/abs/2608.06490" target="_blank">2608.06490</a></td>
+            <td>InsertFuse: A Unified Framework for Multi-Category Reference-Guided Image Insertion</td>
+            <td>Guangzhao Li, Qingyan Wei, Huayu Zheng, Yige Zheng, Chaoyang Zhang, Jie Yang, Yunan Ding, Yan Tai, Siqi Luo, Xiaohong Liu</td>
+            <td>7.321479857061233</td>
+            <td><a href="https://arxiv.org/pdf/2608.06490v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>We present InsertFuse, a unified framework for multi-category reference-guided image insertion. Its key idea is to decouple category-specific expertise learning from cross-category capability consolidation. InsertFuse first trains specialized experts for different insertion categories and then introduces Insertion On-Policy Distillation (IOPD) to consolidate their capabilities into a single student. By querying the matched expert at states visited by the student, IOPD preserves category-specific insertion behavior while mitigating the cross-category interference caused by direct joint training. To improve spatial control, we propose Token-Aligned Geometry Conditioning (TAGC), which maps mask-derived geometric cues to the visual token grid, and Region-Balanced Flow Matching, which separately normalizes prediction errors inside and outside the insertion region to prevent background-dominated and scale-dependent supervision. We further introduce Reference CFG to isolate and strengthen the guidance induced by the visual reference under fixed scene and geometry conditions, with IOPD transferring this enhanced supervision into the unified student. Extensive experiments on the public AnyInsertion benchmark and our multi-category test set demonstrate state-of-the-art performance on most metrics, showing strong reference fidelity and generation quality across diverse insertion categories.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-10</td>
+            <td><a href="https://arxiv.org/abs/2608.07154" target="_blank">2608.07154</a></td>
+            <td>Representation Handoffs for OpenArm-Based Laboratory Mobile Manipulation</td>
+            <td>Yang Shen, Chonghao Cheng, Ziyi Zhao, Jialuo Zhu, Zhenyi Yi, Qi Zhao, Jian Yang, Yuhui Shi, Chin-Teng Lin</td>
+            <td>7.28900472824048</td>
+            <td><a href="https://arxiv.org/pdf/2608.07154v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Open-source robotics and foundation models have lowered the barrier to embodied AI, yet language-guided laboratory automation still requires reliable alignment from instructions and observations to safe actions. This field report presents an OpenArm-based mobile manipulation prototype for laboratory-style tasks, built by integrating dual OpenArm manipulators with a mobile base, vertical slide, RGB-D sensing, lidar-based mapping, ROS2/MoveIt execution, and profile-defined skill interfaces. The system is organized around representation handoffs: natural language requests are constrained into registered skill calls, sensor observations are grounded into maps and object poses, object priors provide role and skill constraints, and runtime bindings compile validated skills into executable motion goals. We use dry-run traces and startup checks to evaluate this integration path, showing how the prototype exposes missing calibration, incomplete object assets, and unfinished real-scene visual grounding as explicit deployment blockers. These intermediate representations serve as practical debugging interfaces for integrating language, perception, planning, and robot safety in embodied systems.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-10</td>
+            <td><a href="https://arxiv.org/abs/2608.07120" target="_blank">2608.07120</a></td>
+            <td>Multiple Hypothesis Flow Estimation for Video Frame Interpolation under Matching Ambiguity</td>
+            <td>Zibo Su, Jing Kong, Ruixing Wang, Zhanhe Zhang, Kun Wei</td>
+            <td>7.2860346946992705</td>
+            <td><a href="https://arxiv.org/pdf/2608.07120v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Many flow-based video frame interpolation (VFI) methods synthesize an intermediate frame by estimating optical flow fields, warping the two input frames, and blending the warped observations. These latent flow fields are typically learned through image-level reconstruction supervision without direct flow annotations. In ambiguous regions containing repetitive or stochastic textures, rotating symmetric structures, or fast motion with blur, the matching evidence for a single query may contain multiple comparable and spatially separated peaks. Although the ground-truth intermediate frame provides indirect supervision, it may not uniquely identify the latent correspondence in ambiguous regions.When several locations provide multiple plausible matches, a single-flow estimator can retain only one displacement and discard the remaining candidates. If the selected match is incorrect or inconsistent with those of neighboring pixels, warping samples content from mismatched locations, producing ghosting, structural distortion, or blur.To address this limitation, we propose a multiple hypothesis flow estimation framework that preserves top-K candidate correspondences and selects one per location through a reliability-guided router. Each hypothesis is initialized from a coarse matching anchor and refined separately through anchor-centered local attention. Frame synthesis is thus conditioned on one selected flow-appearance hypothesis rather than a soft combination of candidate motions.Experiments on the proposed MA-HD benchmark and public VFI benchmarks show that our method achieves the best LPIPS and DISTS among the compared methods.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-08-10</td>
+            <td><a href="https://arxiv.org/abs/2608.06773" target="_blank">2608.06773</a></td>
+            <td>AnyTrack: Unifying Visual Object Tracking with Any Modalities</td>
+            <td>Hao Li, Yunzhi Zhuge, Wenning Hao, Pingping Zhang, Xiaoxiong Zhang, Dong Wang, Huchuan Lu</td>
+            <td>7.284846542900844</td>
+            <td><a href="https://arxiv.org/pdf/2608.06773v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Visual object tracking aims to continuously locate specific targets within sequential frames, evolving from single-modal methods to multi-modal ones. However, existing multi-modal trackers are typically designed for fixed modality combinations, requiring separate models for different inputs. This leads to a poor adaptability to missing or imperfect modalities, and limited generalization. To address these issues, we propose a novel unified framework called AnyTrack for object tracking with any modalities. Specifically, we design a Modality-aware Interaction Module (MIM) to facilitate dynamic interaction across diverse modalities. This module bridges modality discrepancies and aggregates temporal cues to maintain spatio-temporal consistency during cross-modal interaction. Furthermore, we introduce a Context Understanding Module (CUM) to establish spatial correspondence between visual features and target locations via global-local prompts. This module employs target-aware context modeling to enhance foreground-background discrimination for precise localization. Finally, to support the training and evaluation under diverse modalities, we extend existing multi-modal object tracking benchmarks by incorporating grayscale images, language descriptions, and audio clips. Extensive experiments with both complete and missing modality settings demonstrate that our AnyTrack achieves state-of-the-art performance, validating its effectiveness and flexibility. The source code is available at https://github.com/IdolLab/AnyTrack.</td>
+        </tr>
+        
         <tr>
             <td>2026-08-07</td>
             <td><a href="https://arxiv.org/abs/2608.05706" target="_blank">2608.05706</a></td>
