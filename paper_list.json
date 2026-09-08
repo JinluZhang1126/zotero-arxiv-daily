@@ -1,5 +1,544 @@
 [
   {
+    "date": "2026-09-08",
+    "title": "UniMate: One Unified Model to Animate Diverse Skeletons",
+    "arxiv_id": "2609.05415",
+    "authors": [
+      "Linzhan Mou",
+      "Jiahui Lei",
+      "Zhiyang Dou",
+      "Chenyue Cai",
+      "Chaoyue Song",
+      "Adam Finkelstein",
+      "Szymon Rusinkiewicz"
+    ],
+    "summary": "Recent advances in automatic rigging now deliver animation-ready 3D assets at scale, yet generating the motion to drive them remains a bottleneck. Existing learned animators are topology-constrained: they rely on category-specific templates or require per-skeleton fine-tuning and reference motions at inference. We present UniMate, a unified foundation model that synthesizes articulated motion for arbitrary skeletons from a rigged 3D asset and a text prompt, with no test-time optimization or per-skeleton retraining. UniMate introduces a topology-aware diffusion transformer, which integrates skeletal topology into attention via three mechanisms: (1) a graph-aware attention bias from pairwise joint relations and geodesic distances; (2) a spectral rotary position embedding generalizing RoPE to arbitrary kinematic trees via the graph Laplacian; and (3) a global topological conditioner attention-pooled from the rest-pose skeleton. We also curate UniML3D, 13,006 motion sequences spanning bipedal, quadrupedal, avian, marine, insectoid, serpentine, and articulated rigid objects with unified canonicalization and text pairing. Trained on this dataset, UniMate outperforms state-of-the-art baselines in quality, generalization, and efficiency, and supports zero-shot cross-topology transfer, in-betweening, expansion, and text-guided editing. Our project page is available at https://linzhanmou.com/unimate/.",
+    "pdf_url": "https://arxiv.org/pdf/2609.05415v1",
+    "code_url": null,
+    "score": 7.7177023955044906
+  },
+  {
+    "date": "2026-09-08",
+    "title": "An Evaluation Framework for Generating Multi-View Images of a Person in a Scene",
+    "arxiv_id": "2609.04603",
+    "authors": [
+      "Mahir Majid",
+      "Young Kyung Kim",
+      "Guillermo Sapiro"
+    ],
+    "summary": "Recent generative image-editing Diffusion Transformers (DiTs) demonstrate impressive semantic editing capabilities but still struggle with spatially consistent camera angle changes. A primary bottleneck in training foundation models to execute free-form, promptable camera angle changes is the lack of specialized training data. While multi-view datasets exist for generic 3D environments and objects, there remains an absence of paired, multi-view datasets featuring human subjects at fixed locations in natural scenes, including frontal and side-profile views. Capturing such multi-camera data in unconstrained environments is logistically challenging and unscalable. In this paper, we first experiment with multiple state-of-the-art image editing models to create this data synthetically, but find that the outputs are frequently prone to hallucinations involving how much the subject's head turns relative to the background, often producing inconsistent environments. To address this issue, we propose the Head Scene Rotation Difference (HSRD) metric to quantitatively evaluate camera movements around a person. The proposed metric operates by decoupling camera movement from localized head pose manipulation. As demonstrated by the extensive experimentation, HSRD provides the pipeline necessary to evaluate 3D spatial parallax for a person in a scene, paving the way to reliably construct high-quality multi-view synthetic datasets.",
+    "pdf_url": "https://arxiv.org/pdf/2609.04603v1",
+    "code_url": null,
+    "score": 7.687316086354546
+  },
+  {
+    "date": "2026-09-08",
+    "title": "Object Concepts Emerge from Motion",
+    "arxiv_id": "2609.04348",
+    "authors": [
+      "Boshi Li",
+      "Xiaohui Wang",
+      "Xiaoyang Wu",
+      "Zhichao Li",
+      "Ya Yang",
+      "Naiyan Wang"
+    ],
+    "summary": "Object-centric visual representations are important for physical-world perception, but existing visual pretraining methods often capture semantic categories without preserving the identity and coherence of individual instances. We present a biologically inspired framework that learns object-centric representations for single images from raw videos. Our approach uses motion boundaries as a source of object-level grouping: off-the-shelf optical flow and clustering produce pseudo-instance masks, which supervise a single-image encoder with pixel-level pairwise metric learning. The framework requires neither human annotations nor camera calibration. We first obtain 195 million pseudo-labeled frames from 7,163 hours of driving and web videos, then expand the supervision to 421 million frames with Motion-Verified Self-Training, which combines model proposals with motion evidence. We train encoders up to Swin-H and distill the learned representations into a family of Swin backbones. Across monocular depth estimation, 3D object detection, 3D occupancy prediction, and end-to-end planning, the resulting models achieve competitive or superior performance relative to supervised and self-supervised pretraining baselines, with particularly strong transfer on geometry- and instance-sensitive tasks. These results show that motion-derived supervision can teach static image encoders to represent visual instances, providing a complementary direction for scalable visual pretraining.",
+    "pdf_url": "https://arxiv.org/pdf/2609.04348v1",
+    "code_url": null,
+    "score": 7.639339296986083
+  },
+  {
+    "date": "2026-09-08",
+    "title": "MINT: A Unified Model for World-Space Camera and Hand Motion Estimation from Scalable Egocentric Pipeline Supervision",
+    "arxiv_id": "2609.04958",
+    "authors": [
+      "Zijie Zhu",
+      "Weiren Cai",
+      "Yizhou Wang",
+      "Zhenjie Yang",
+      "Yide Liu",
+      "Jiahao Chen",
+      "Guanqi He"
+    ],
+    "summary": "Recovering camera and hand motion in world coordinates from egocentric video is a key capability for activity understanding, robot learning, and augmented reality. Existing systems typically decompose this problem into separate stages for camera motion, depth, hand reconstruction, and trajectory refinement, resulting in substantial computational overhead and preventing the joint modeling of camera and hand motion. We introduce MINT (Minting IN-the-Wild Trajectories), the first foundation model that directly produces complete world-space two-hand trajectories from ego-centric RGB video. From a single shared spatiotemporal video representation, MINT jointly predicts the camera trajectory, camera-frame hand states, and per-frame hand presence, and then produces world-space hand motion via explicit coordinate transformations. Training such a model at scale is challenging, since paired world-space camera and hand annotations are scarce. We therefore develop an open-source labeling EGOPIPELINE that converts large collections of public egocentric videos into structured camera-and-hand trajectory supervision. MINT is first pretrained on these large-scale pseudo-labels and then fine-tuned on a small set of high-quality joint annotations. Across public benchmarks, MINT achieves [xxx] improvement in world-space hand trajectory accuracy, [xxx] improvement in camera trajectory estimation, and [xxx] faster end-to-end trajectory generation than the labeling pipeline, while generalizing zero-shot to unseen egocentric datasets. We release the model, training and inference code, labeling pipeline, and a curated 1,021-hour egocentric trajectory dataset.",
+    "pdf_url": "https://arxiv.org/pdf/2609.04958v1",
+    "code_url": null,
+    "score": 7.631042192983125
+  },
+  {
+    "date": "2026-09-08",
+    "title": "RoboSPA: Can VLA Models Go Beyond Simple Scenes and Short-Horizon Tasks?",
+    "arxiv_id": "2609.05324",
+    "authors": [
+      "Zhenxuan Fan",
+      "Bo Zhang",
+      "Yutong Lin",
+      "Yuqian Yuan",
+      "Juekai Lin",
+      "Liang Liang",
+      "Zhuoyi Huang",
+      "Wenqiao Zhang",
+      "Juncheng Li",
+      "Siliang Tang",
+      "Jun Xiao",
+      "Yueting Zhuang"
+    ],
+    "summary": "Vision-Language-Action (VLA) models have shown promising progress in language-conditioned robotic manipulation. However, existing datasets and benchmarks mainly evaluate task completion under predefined settings, offering limited insight into model reasoning under increasing spatial and procedural complexity. We introduce \\textbf{RoboSPA} (\\textbf{Robo}t \\textbf{S}patial-\\textbf{P}rocedural \\textbf{A}ssessment), a large-scale robotic manipulation dataset and benchmark for diagnosing embodied reasoning in VLA models. \\texttt{RoboSPA} focuses on two core dimensions, Fine-Grained Spatial Reasoning and Long-Horizon Procedural Planning, covering 10 task categories and 56 base tasks. Each task is instantiated across five difficulty levels, yielding 280 variants with increasing spatial ambiguity and procedural complexity. We collect 527K trajectories across multiple embodiments and diverse scenes. Beyond binary success rate, \\texttt{RoboSPA} introduces diagnostic metrics for more detailed evaluation. Experiments on representative VLA models show that current systems still struggle with complex spatial relations, precise low-level execution, and memory-intensive planning. These results establish \\texttt{RoboSPA} as a challenging diagnostic benchmark for developing more capable, reliable, and generalizable embodied agents. Our data and code are available at https://github.com/fanzhenxuan/RoboSPA.",
+    "pdf_url": "https://arxiv.org/pdf/2609.05324v1",
+    "code_url": null,
+    "score": 7.562135062572317
+  },
+  {
+    "date": "2026-09-08",
+    "title": "Temporal Residual Neural Radiance Fields for Monocular Video Dynamic Human Body Reconstruction",
+    "arxiv_id": "2609.04984",
+    "authors": [
+      "Tianle Du",
+      "Jie Wang",
+      "Xiaolong Xie",
+      "Wei Li",
+      "Pengxiang Su",
+      "Jie Liu"
+    ],
+    "summary": "In the field of computer vision and graphics, high-quality reconstruction of the human body in static scenes has been achieved in recent years by a single multilayer perceptron (MLP) in a number of approaches. However, MLPs have capacity limitations, requiring substantial training time and computational resources for dynamic scene reconstruction. And the quality of reconstruction is significantly constrained. This paper proposes a method for effectively processing complex spatiotemporal signals in dynamic scene human 3D modeling. The proposed method uses Temporal Residual Neural Radiance Fields to achieve novel view rendering and new pose synthesis of human bodies.To address the problem of representing temporal signals in video sequences, we construct a temporal residual field which is not related to the MLP architecture. Secondly, to improve reconstruction efficiency, we propose an integrated approach that reduces trainable parameters and accelerates rendering, thereby enhancing the network's feature representation capability. Finally, we design a multi-dimensional loss function to accurately measure the loss between predicted and actual spatial pixel values. The experimental results show that our proposed approach improves the peak signal-to-noise ratio (PSNR) and structural similarity index (SSIM) accuracy metrics compared to the latest representative methods. It maintains similar accuracy to Anim-NeRF and Neural Body while achieving a nearly 780-fold increase in time efficiency.",
+    "pdf_url": "https://arxiv.org/pdf/2609.04984v1",
+    "code_url": null,
+    "score": 7.534771835492401
+  },
+  {
+    "date": "2026-09-08",
+    "title": "What Moves? Localized Motion Representations for Compositional Scene Control",
+    "arxiv_id": "2609.04383",
+    "authors": [
+      "Frank Fundel",
+      "Malek Ben Alaya",
+      "Thomas Ressler-Antal",
+      "Stefan Andreas Baumann",
+      "Björn Ommer"
+    ],
+    "summary": "Real-world dynamics are inherently compositional: multiple entities move simultaneously within a shared scene, each exhibiting distinct motion patterns. Yet most existing video representations encode motion globally, without explicitly capturing localized motion for individual entities. Crucially, motion is defined relative to a global reference frame, including camera motion and scene layout. However, localized embeddings are often computed from cropped images or obtained by masking features after encoding, discarding the context needed to interpret motion. To address this, we introduce a promptable localized motion representation that produces persistent embeddings for user-specified regions defined by spatial masks. Rather than cropping the input or masking features, our model processes the full video and conditions motion encoding directly on the queried region. This yields temporally consistent, region-addressable embeddings that isolate local dynamics while retaining the global context required for disambiguation. We demonstrate object-level motion transfer, enabling controlled composition of dynamic scenes. Beyond generative control, our embeddings support localized action classification in multi-actor videos. Across both tasks, our approach improves controllability and outperforms global representations localized through cropping or post-hoc masking. Project Page: https://compvis.github.io/WhatMoves",
+    "pdf_url": "https://arxiv.org/pdf/2609.04383v1",
+    "code_url": null,
+    "score": 7.534366128986884
+  },
+  {
+    "date": "2026-09-08",
+    "title": "CLON: Cue-Calibrated Linguistic Object Onboarding for Zero-Shot 6D Pose Front-Ends",
+    "arxiv_id": "2609.04784",
+    "authors": [
+      "Seojin Ji",
+      "Yoojin Kwon",
+      "Hyung-Sin Kim"
+    ],
+    "summary": "Zero-shot 6D pose estimation pipelines increasingly rely on strong downstream pose solvers, but their performance is often limited by the front-end: object proposals must preserve partially visible true positives while rejecting semantically plausible distractors. We introduce Cue-Calibrated Linguistic Object Onboarding (CLON), a front-end requiring no task-specific training for new objects. Given rendered templates of the onboarded object set, CLON constructs a linguistic semantic memory for top-down proposal generation and object-set cue weights for calibrated proposal scoring. The linguistic memory guides SAM 3 toward high-recall proposals for onboarded objects, while cue weights are computed once from the onboarded object set before scene inference and kept fixed during online scoring. On seven BOP-Classic-Core datasets, CLON improves detection AP by 8.1 percentage points (pp), segmentation AP by 6.2 pp, and downstream 6D pose AR by up to 4.1 pp over CNOS and SAM-6D front-ends.",
+    "pdf_url": "https://arxiv.org/pdf/2609.04784v1",
+    "code_url": null,
+    "score": 7.524209861676356
+  },
+  {
+    "date": "2026-09-08",
+    "title": "Mitigating Performance Discrepancy in Cross-Domain 3D Class-Incremental Learning",
+    "arxiv_id": "2609.04860",
+    "authors": [
+      "Jinge Ma",
+      "Gautham Vinod",
+      "Bruce Coburn",
+      "Jui-Feng Chi",
+      "Siddeshwar Raghavan",
+      "Fengqing Zhu"
+    ],
+    "summary": "3D perception plays a crucial role in real-world applications such as autonomous driving, robotics, and AR/VR. In practical scenarios, 3D perception models need to continually adapt to newly emerging 3D object categories, making class-incremental learning (CIL) particularly important. However, unlike 2D images, 3D point clouds are inherently heterogeneous: objects from the same class may not only come from the clean CAD domain, but also from RGB-D camera scans of varying quality, video reconstructions, or even corrupted observations. We discover that such heterogeneity introduces a new challenge beyond catastrophic forgetting: the degree of performance degradation can vary substantially across domains, a phenomenon we term performance discrepancy. To investigate this problem, we establish the Domain3D-CIL training and evaluation protocol, which contains point cloud categories from heterogeneous domains. We further adapt a wide range of mainstream CIL methods to the 3D modality. The results demonstrate that this performance discrepancy consistently appears across these baselines. To mitigate this issue, we introduce PolyMem, an exemplar-free approach that implicitly models rich high-order statistics of the feature distribution to enhance cross-domain robustness. Experiments demonstrate that our method effectively alleviates the performance discrepancy while improving the model's performance across domains. Code will be made publicly available upon acceptance.",
+    "pdf_url": "https://arxiv.org/pdf/2609.04860v1",
+    "code_url": null,
+    "score": 7.516602617505754
+  },
+  {
+    "date": "2026-09-08",
+    "title": "Dressing in Motion: A Human Motion-Aware Diffusion Policy for Robot-Assisted Dressing",
+    "arxiv_id": "2609.04759",
+    "authors": [
+      "Haoxiang Sun",
+      "Fangyuan Wang",
+      "Songhao Huang",
+      "Justina Y. W. Liu",
+      "Jihong Zhu",
+      "Peng Zhou",
+      "David Navarro-Alarcon"
+    ],
+    "summary": "Robotic dressing assistance is a promising solution for supporting older adults with physical impairments in daily living. However, dressing under human motion remains challenging, as complex garment--human contact and occlusions make it difficult to generate actions aligned with arm movements. In this letter, we propose a visuomotor policy that learns dressing skills from static expert demonstrations and generalizes to dynamic user-motion scenarios. A diffusion policy tailored to garment--human interaction geometry learns from partially observed point clouds with varied arm postures. We then introduce an object-centric representation based on PDE diffusion to capture the axial distribution of the arm. By sampling motion-relevant regions and registering them across consecutive observations, the proposed method approximates arm motion and reactively adapts the executed trajectory. We evaluate our method in simulation and a real-world human study involving nine participants, three garment types, and six arm-motion patterns. Results show that our method outperforms baselines in dressing progress, freedom of movement, and user comfort. The project website is https://anonymous.4open.science/w/dressing-in-motion.",
+    "pdf_url": "https://arxiv.org/pdf/2609.04759v1",
+    "code_url": null,
+    "score": 7.507760774984123
+  },
+  {
+    "date": "2026-09-08",
+    "title": "Towards Neuro-Symbolic Procedural Reasoning for Long-Horizon Vision-Language-Action Manipulation",
+    "arxiv_id": "2609.05369",
+    "authors": [
+      "Vivek Chavan",
+      "Yahuan Shi",
+      "Oliver Heimann",
+      "Kevin Haninger",
+      "Jörg Krüger"
+    ],
+    "summary": "Vision-language-action (VLA) models can execute short manipulation skills, but remain brittle in long-horizon procedures requiring persistent task state, dependency-aware reasoning, conditional decisions, and reliable grounding. We investigate a neuro-symbolic framework that combines learned VLA control with explicit task graphs and multimodal procedural memory. Task graphs encode action dependencies, valid transitions, and branch conditions, while memory maintains the active step, completed actions, textual context, and task-relevant visual evidence. Together, these structures guide object selection, destination grounding, subgoal dispatch, and verification of expected state transitions. Human demonstrations provide additional spatial and temporal guidance through gaze or saliency cues. To isolate their effect on policy learning, our initial study bypasses cross-view gaze transfer and directly annotates pseudo-gaze in robot-view teleoperation videos. The resulting guidance is used during VLA fine-tuning and inference. We study two long-horizon manipulation domains, workspace clearing and surgical-instrument handling, which require ordered execution, visually grounded decisions, and conditional branching. We evaluate correct-object and destination selection, subtask completion, task progress, step-order consistency, complete-task success, and procedural or execution mistakes. This work positions structured symbolic reasoning and demonstration-derived visual guidance as complementary mechanisms for reliable long-horizon VLA manipulation.",
+    "pdf_url": "https://arxiv.org/pdf/2609.05369v1",
+    "code_url": null,
+    "score": 7.477874134235629
+  },
+  {
+    "date": "2026-09-08",
+    "title": "ReaDiT Guidance: Control for Image and Video Generation using Diffusion Transformer Features",
+    "arxiv_id": "2609.04649",
+    "authors": [
+      "Jay Mahajan",
+      "Chang Liu",
+      "Rauf Makharov",
+      "Viraj Shah",
+      "Alexander Schwing",
+      "Svetlana Lazebnik"
+    ],
+    "summary": "We present DiT Readout (ReaDiT) Guidance, a lightweight framework for controlling generation with Diffusion Transformer (DiT) models via their internal feature representations. ReaDiT Guidance uses features from a single DiT block to steer the generative process according to spatial targets - like depth, pose, or edge maps - provided at test time. Furthermore, since modern text-to-video models are largely built on DiT backbones, ReaDiT Guidance naturally extends to video generation, enabling camera and motion control. Experimental results demonstrate that our approach achieves competitive or improved results compared to existing feature-based and off-the-shelf adapter-based approaches while requiring fewer parameters.",
+    "pdf_url": "https://arxiv.org/pdf/2609.04649v1",
+    "code_url": null,
+    "score": 7.461890272072384
+  },
+  {
+    "date": "2026-09-08",
+    "title": "Learning 3D Editing without Paired Supervision via Generative Prior Distillation",
+    "arxiv_id": "2609.04942",
+    "authors": [
+      "Hao Wen",
+      "Weibin Yun",
+      "Hongxing Fan",
+      "Haotian Lu",
+      "Rui Chen",
+      "Zehuan Huang",
+      "Lu Sheng"
+    ],
+    "summary": "Instruction-guided 3D editing is essential for interactive content creation, yet it faces a significant bottleneck: the severe scarcity of high-quality paired training data. Existing approaches attempt to bypass this by either relying on slow test-time optimization or training on pseudo-pairs constructed via complex pipelines, which often introduce structural drift and geometric artifacts. In this paper, we propose a novel framework that learns feed-forward 3D editing without paired 3D supervision via Generative Prior Distillation. Instead of relying on ground-truth 3D pairs, our core idea is to distill visual, semantic, and geometric knowledge from powerful foundation models directly into a 3D editing model. Specifically, through a differentiable rendering pipeline, we supervise the 3D representation using two complementary signals: a 2D visual prior from an image editing model at the main editing view, and a semantic prior from a Vision-Language Model at novel views to ensure strict instruction following and source identity preservation. Crucially, to address the geometric collapse and multi-view inconsistencies inherent in 2D projection supervision, we introduce a 3D-aware Distribution Matching regularization. Acting as a geometric prior, this term operates in the 3D latent space, constraining the edited output to remain within the manifold of realistic 3D assets defined by a pretrained image to 3D teacher model. Extensive experiments demonstrate that our method achieves superior instruction fidelity and cross-view consistency, significantly outperforming state-of-the-art baselines. Our project is available at: https://github.com/thiamine128/PriorEdit3D.",
+    "pdf_url": "https://arxiv.org/pdf/2609.04942v1",
+    "code_url": null,
+    "score": 7.458313422955358
+  },
+  {
+    "date": "2026-09-08",
+    "title": "WorldSculpt: Generating Compositional Worlds from Grounded Videos",
+    "arxiv_id": "2609.05416",
+    "authors": [
+      "Muyao Niu",
+      "Jixuan He",
+      "Ruihan Yu",
+      "Lian Fu",
+      "Yonghao Yu",
+      "Zheng-Hui Huang",
+      "Yifan Zhan",
+      "Fengbo Lan",
+      "Yongtao Ge",
+      "Yinqiang Zheng",
+      "Kaipeng Zhang",
+      "Zhixiang Wang"
+    ],
+    "summary": "We study the problem of generating a compositional 3D representation of a cluttered scene containing hundreds of objects. The goal is to represent the scene as a collection of individual object meshes placed in a shared world frame, as required by downstream applications such as gaming, AR/VR, simulation, and robotics. This task is challenging in densely cluttered scenes, where objects heavily occlude one another and each view reveals only a fraction of their geometry. Geometry-based approaches typically reconstruct the scene as a single representation and leave incomplete geometry in occluded regions, while existing compositional methods with generative priors are largely limited to relatively simple scenes. We show that complex scenes with hundreds of objects can instead be generated compositionally by adapting a strong single-object 3D generative prior to multi-view observations. We instantiate this paradigm with Pixal3D, extending it with a multi-view conditioning pathway that grounds object generation in multiple posed observations. Although the model is finetuned entirely on single objects in canonical space, it generalizes to large scenes with severe occlusion without any scene-level training, demonstrating the feasibility and scalability of this paradigm. We further introduce UE-MeshyScene, a photorealistic benchmark of densely cluttered scenes with hundreds of objects, per-object annotations, and ground-truth meshes. Across single-object, controlled multi-object, and UE-MeshyScene evaluations, our method consistently outperforms prior approaches, with larger gains as scene complexity and occlusion increase. Finally, we demonstrate broader applicability by converting generated 3DGS worlds, such as Marble and HY-World 2.0, into compositional mesh scenes.",
+    "pdf_url": "https://arxiv.org/pdf/2609.05416v1",
+    "code_url": null,
+    "score": 7.457642239355908
+  },
+  {
+    "date": "2026-09-08",
+    "title": "Joint Alignment and Distillation for Video Generation via Sample-Guided Distribution Matching",
+    "arxiv_id": "2609.04283",
+    "authors": [
+      "Jiuzhou Lin",
+      "Junlong Wu",
+      "Fei Zuo",
+      "Huan Ouyang",
+      "Dewen Fan",
+      "Boheng Zhang",
+      "Huaiqing Wang",
+      "Jia Sun",
+      "Fan Yang",
+      "Houde Liu",
+      "Kehai Chen",
+      "Min Zhang",
+      "Tingting Gao",
+      "Han Li"
+    ],
+    "summary": "Aligning video generative models to human preferences heavily relies on Reinforcement Learning (RL), which suffers from extensive computational overhead. Existing workflows typically treat RL and distillation as disconnected stages: applying RL before distillation incurs prohibitive computational costs, whereas applying RL after distillation frequently leads to model collapse. To overcome these limitations, we propose a unified, single-stage optimization framework grounded in Distribution Matching (DM). In the standard DM framework, distillation updates the model via a gradient direction that minimizes the gap between the real and fake models, guiding generations toward clarity and high fidelity. Building upon this, we introduce DM-Align, which derives a complementary gradient direction to guide the model toward human-preferred samples. Inspired by DPO and GRPO, our method leverages the distributional gap -- formulated from either preference pairs or intra-group exploration -- to directly construct this preference-guided gradient. By synergizing these two gradient directions, our approach eliminates the need for multi-step reward evaluation and complex ODE-SDE conversions inherent in traditional RL. Comprehensive experiments across multiple foundational video models demonstrate that this sample-guided framework robustly enhances both distillation quality and preference alignment, consistently outperforming both standalone variants and sequential two-stage pipelines.",
+    "pdf_url": "https://arxiv.org/pdf/2609.04283v1",
+    "code_url": null,
+    "score": 7.4508462967576445
+  },
+  {
+    "date": "2026-09-08",
+    "title": "Sound-based Multi-Person 3D Pose Estimation",
+    "arxiv_id": "2609.04902",
+    "authors": [
+      "Yusuke Oumi",
+      "Yuto Shibata",
+      "Go Irie",
+      "Akisato Kimura",
+      "Yoshimitsu Aoki",
+      "Mariko Isogawa"
+    ],
+    "summary": "Can we recover the 3D poses of multiple people using only sound? This paper presents the first attempt to estimate multi-person 3D poses solely from acoustic signals. Estimating the poses of multiple individuals using acoustic signals is inherently challenging due to the superposition of motion-dependent signal variations. Unlike single-person scenarios, the presence of multiple subjects leads to overlapping acoustic signatures, making it difficult to attribute specific signal changes to an individual's pose. Furthermore, the complexity is compounded by inter-person reflections, which introduce intricate propagation delays that obscure the temporal motion-acoustic relationship. To address these issues, we propose SoundMHPE (Sound-based Multi-person Human Pose Estimator), a novel encoder-decoder framework consisting of two key components. First, the Acoustic Multi-scale Encoder captures diverse temporal and fine-grained frequency features to isolate subtle acoustic signatures from complex, overlapping signals. Second, the Temporal Pose Decoder employs an attention mechanism to disentangle multi-person information across successive frames. By jointly accounting for temporal dynamics and inter-person dependencies, this component precisely reconstructs frame-wise individual poses. To validate our approach, we constructed the 6-hour Acoustic Multi-person Pose (AMP) dataset consisting of 432K synchronized frames of multi-person pose and acoustic data, and demonstrated that our SoundMHPE outperforms baseline models. Project page: https://oumi03.github.io/sound-mhpe/",
+    "pdf_url": "https://arxiv.org/pdf/2609.04902v1",
+    "code_url": null,
+    "score": 7.426175836208781
+  },
+  {
+    "date": "2026-09-08",
+    "title": "Linguistic Trajectory Encoding for Efficient Long-Horizon Spatial Memory in Embodied Agents",
+    "arxiv_id": "2609.04802",
+    "authors": [
+      "Tianyidan Xie",
+      "Shenyi Wang",
+      "Qiang Tang",
+      "Mingjie Wang",
+      "Zhicheng Qiu",
+      "Xuanfu Li",
+      "Zhan Xu",
+      "Jian Yang",
+      "Lanjun Wang",
+      "Zili Yi"
+    ],
+    "summary": "Embodied agents performing long-horizon tasks require a memory representation in which the state transitions of dynamic objects remain queryable in natural language across hours-to-days observation horizons. Existing systems either drop fine-grained motion (clip-level video-language embeddings), keep it only as raw coordinates (geometric SLAM), or organise it around immediate task context (agent working memories). None of them gives the agent a per-object timeline whose state transitions are themselves queryable in language. Our key contribution is \\textbf{Linguistic Trajectory Encoding} (LTE), which compresses dynamic object motion histories via a hybrid representation combining natural language descriptions, sparse spatial anchors, and visual anchors. LTE adapts compression to motion complexity by anchoring periods without reliable observations to the last seen location, while representing motion with geometric waypoints and linguistic descriptions to preserve accuracy. To evaluate these capabilities across extended time horizons, we construct the \\textbf{Spatial Memory Benchmark} (SMB) from EgoLife multi-day recordings, targeting capabilities absent in existing benchmarks: semantic trajectory retrieval and long-horizon object retrieval. On SMB, the LTE-based system achieves $45.3\\%$ success in semantic trajectory retrieval and $48.7\\%$ in long-horizon object retrieval, outperforming structured-memory and VLM baselines (best prior: $31.9\\%$ and $34.4\\%$). LTE achieves trajectory compression by factors of $8.7\\times$ to $26.1\\times$ with sub-second query latency on $24$\\,h video. On Ego4D natural-language queries, the system reaches $28.75\\%$ / $55.10\\%$ R@1/R@5, $+15.80$ / $+31.30$ pts over EgoVLPv2.",
+    "pdf_url": "https://arxiv.org/pdf/2609.04802v1",
+    "code_url": null,
+    "score": 7.422850153775846
+  },
+  {
+    "date": "2026-09-08",
+    "title": "HiSfM: Disambiguating Structure-from-Motion via Scaffold-Anchored Hierarchical Reconstruction",
+    "arxiv_id": "2609.04718",
+    "authors": [
+      "Ziding Zhao",
+      "Hainan Cui",
+      "Peilin Tao",
+      "Shuhan Shen"
+    ],
+    "summary": "Structure-from-Motion (SfM) is a fundamental tool for sparse 3D reconstruction with broad impact in robotics and vision, supporting mapping, localization, and large-scale scene modeling. However, conventional pipelines often fail under hard visual ambiguity caused by repeated or symmetric structures, and incur heavy computational cost due to redundant cameras and constraints. We present HiSfM, a hierarchical coarse-to-fine SfM framework that improves robustness and efficiency through scaffold construction. HiSfM first forms strong local communities using geometrical induced heuristics, then connects communities with a compact yet strong skeleton by packing edge-disjoint spanning trees (EDST) while verifying skeletal edges with a two-view disambiguator. We reconstruct a stable scaffold on this verified skeleton, serving as an anchor to capture the essence of the scene, and subsequently absorb remaining images via efficient registration and triangulation for further refinements. Experiments on ambiguity-focused benchmarks and general datasets show that HiSfM prevents ambiguity-induced failures while substantially reducing runtime compared to previous methods, and improves completeness over aggressive sparsification methods. Code is available at https://github.com/3dv-casia/HiSfM.",
+    "pdf_url": "https://arxiv.org/pdf/2609.04718v1",
+    "code_url": null,
+    "score": 7.42073112542562
+  },
+  {
+    "date": "2026-09-08",
+    "title": "Where to Look Matters: Learning Influential Views for VLM-based 3D Visual Grounding",
+    "arxiv_id": "2609.04741",
+    "authors": [
+      "Tsung-Chih Chiang",
+      "Hsuan-Kung Yang",
+      "Jou-Min Liu",
+      "Ting-Ru Liu",
+      "Chun-Wei Huang",
+      "Quan Kong",
+      "Chun-Yi Lee"
+    ],
+    "summary": "Recent zero-shot 3D visual grounding methods leverage vision-language models (VLMs) to localize objects in 3D scenes from natural language queries. However, these methods typically rely on heuristic rules to select which camera views are provided to the VLM, often prioritizing object visibility rather than grounding relevance. We present IVSGround, a framework that learns Influential View Selection for VLM-based 3D visual grounding. Instead of using fixed heuristics, a lightweight view selector is trained to identify views that provide discriminative evidence for grounding. To obtain supervision signals, we generate training signals using feedback from a reasoning VLM through a two-stage rejection sampling process. During inference, the learned selector predicts query-conditioned influential views for each candidate object, which are then evaluated by a frozen reasoning VLM through comparative grounding. Experiments on ScanRefer and NR3D show that IVSGround consistently improves grounding accuracy over existing zero-shot pipelines, demonstrating that selecting where to look is crucial for effective 3D visual grounding. Project page: https://ivsground.github.io/",
+    "pdf_url": "https://arxiv.org/pdf/2609.04741v1",
+    "code_url": null,
+    "score": 7.416660119677192
+  },
+  {
+    "date": "2026-09-08",
+    "title": "Reasoning Without Inference Cost: Latent Semantic Scaffolding for Robot VLA Policies",
+    "arxiv_id": "2609.04893",
+    "authors": [
+      "Andrew Ting Yan Li",
+      "Zhuo Li",
+      "Zhelin Yang",
+      "Zhipeng Dong",
+      "Quentin Rouxel",
+      "Fei Chen"
+    ],
+    "summary": "Vision-language-action (VLA) models are trained by imitation and capture what action to take but not why; adding causal reasoning improves manipulation, but current methods pay for it at inference time - generating reasoning tokens or rolling out predicted future states at every step, a cost that compounds over long horizons. We ask whether this benefit can instead be captured during training and discarded before deployment. We introduce Latent Semantic Scaffolding (LSS), an auxiliary loss applied during human-demonstration pretraining that aligns a VLA's action-token representations to text embeddings of physical-reasoning rationales through a small projection head. The head is dropped at inference, leaving the unmodified base policy with zero added cost. Our central finding concerns alignment granularity: aligning each action token to the rationale of its own manipulation phase (Dense LSS) rather than to a single pooled episode-level embedding (Pooled LSS) yields representations that transfer markedly better to held-out tasks. Dense LSS attains both the best in-distribution success and the best transfer to tasks unseen during alignment, whereas pooled alignment over-specializes to the training task. A representational probe shows Dense LSS induces roughly twice the per-phase separability in the backbone, supporting that phase-local alignment is the operative mechanism.",
+    "pdf_url": "https://arxiv.org/pdf/2609.04893v1",
+    "code_url": null,
+    "score": 7.4133971794758855
+  },
+  {
+    "date": "2026-09-08",
+    "title": "SocioGesture: Real-Time and Adaptive Social Gesture Perception for Human-Robot Interaction",
+    "arxiv_id": "2609.04545",
+    "authors": [
+      "Wenjin Fu",
+      "Li-Fan Wu",
+      "Jerin Peter",
+      "Chip Huyen",
+      "Boyuan Chen",
+      "Jan Liphardt"
+    ],
+    "summary": "Robots interacting with people must recognize not only explicit commands, but also social cues such as invitations, refusals, and unavailability. In real deployments, these cues must be inferred from noisy onboard perception under partial occlusion, changing viewpoints, and strict latency constraints. We present SocioGesture, a real-time adaptive social gesture perception system for human-robot interaction (HRI). SocioGesture uses a compact confidence-aware body-hand skeleton representation and a lightweight dual-stream model that fuses body motion with hand articulation for low-latency onboard recognition. To improve deployment robustness, we train the model with occlusion-aware skeleton corruption, exposing it to missing hands, occluded arms, and temporally unstable keypoints without increasing the inference cost. On a social gesture dataset collected in mixed indoor-outdoor HRI scenarios, SocioGesture achieves strong held-out-subject recognition, substantially improves robustness under structured joint occlusion, and runs in real time on a robot-mounted edge device. During deployment, uncertain interaction segments are saved for offline labeling and adaptation, enabling SocioGesture to expand its gesture vocabulary while preserving performance in the original classes. These results demonstrate a practical path toward robust, efficient, and adaptive social perception for interactive robots.",
+    "pdf_url": "https://arxiv.org/pdf/2609.04545v1",
+    "code_url": null,
+    "score": 7.401752781599141
+  },
+  {
+    "date": "2026-09-08",
+    "title": "VLA-Precision: Asymmetric Co-Bootstrapping for Efficient Real-World Online RL of Vision-Language-Action Models",
+    "arxiv_id": "2609.04355",
+    "authors": [
+      "Chenyu Su",
+      "Zhaolong Shen",
+      "Yuan Qian",
+      "Chen Qian",
+      "Rui Zhang",
+      "Feng Yan",
+      "Weixing Chen",
+      "Fei Zhang",
+      "Jiamin Wang",
+      "Shuang Cong",
+      "Weiwei Shang"
+    ],
+    "summary": "Pretrained vision-language-action (VLA) models enable broad manipulation but remain unreliable in tasks demanding precision and repeatability. Applying real-world online reinforcement learning (RL) to VLA post-training enables autonomous trial-and-error improvement beyond demonstrations alone, but exposes two bottlenecks: 1) unreliable value signals can induce policy drift; 2) large-VLA overhead constrains throughput and sample efficiency. To address these challenges, we present VLA-Precision, an efficient real-world online RL framework featuring the Asymmetric Co-Bootstrapping (ACoB) algorithm and the ACoB-Stream architecture. Specifically, ACoB establishes asymmetric co-bootstrapping across timescales: early intervention-guided behavioral learning rapidly improves policy performance while enhancing online experience quality. As autonomous experience accumulates, global return propagation and local preference ranking progressively calibrate value estimates, yielding relative action advantages for reference-regularized policy improvement while suppressing drift. To enable ACoB on large VLAs, we develop ACoB-Stream, a closed-loop experience--policy architecture that establishes invariant-state decoupling and on-demand streaming as design principles, delivering up to 10.9$\\times$ improvements in throughput and computational efficiency. Extensive evaluations on nine high-precision chemistry tasks across four categories and four robot embodiments show that VLA-Precision achieves 98.3\\% mean success rate in 45.8 min/task, with 27.6 s episodes running at 1.2$\\times$ and 1.8$\\times$ the speeds of VLA and RL baselines. Resources are available at https://vla-precision.github.io.",
+    "pdf_url": "https://arxiv.org/pdf/2609.04355v1",
+    "code_url": null,
+    "score": 7.398184924870988
+  },
+  {
+    "date": "2026-09-08",
+    "title": "Human-Human & Human-Robot Interaction Transformer (H2INT) for Robot Navigation in Dense and Uncertain Crowds",
+    "arxiv_id": "2609.05300",
+    "authors": [
+      "Ao Shen",
+      "Kaixi Chen",
+      "Shiwei Liu",
+      "Fang Deng",
+      "Chen Chen"
+    ],
+    "summary": "Safe robot navigation in dense crowds requires reasoning about pedestrian motion and how it may change in response to a robot. However, many learning-based approaches generate pedestrian motion independently of the robot or assume uniform reciprocity, omitting an important source of interaction uncertainty. This paper presents a Human-Human & Human-Robot Interaction Transformer (H2INT), a reinforcement learning framework that retains robot-conditioned changes in pedestrian motion during policy learning while allowing responsiveness to vary across pedestrians. Responsiveness affects the crowd dynamics when the robot is visible but is not supplied as a policy input; the policy must instead infer its consequences from robot-centered relative positions. A two-stage gated Transformer progressively encodes human-human and human-robot relations, while a recurrent policy captures their temporal evolution. A curriculum gradually reduces pedestrian responsiveness to increase interaction difficulty. Simulation experiments demonstrate improved navigation safety and robustness over representative baselines across response conditions and crowd densities, and show transfer without retraining to structurally distinct crowd-flow layouts. Ablations support the hierarchical relational encoding and gated updates. Real-robot deployment further verifies that the learned policy can operate with sparse observations in a physical environment.",
+    "pdf_url": "https://arxiv.org/pdf/2609.05300v1",
+    "code_url": null,
+    "score": 7.391927973479204
+  },
+  {
+    "date": "2026-09-08",
+    "title": "WeAgent-MMGenEdit: A Full-Stack Recipe for Multimodal Agentic Image Generation and Editing",
+    "arxiv_id": "2609.05171",
+    "authors": [
+      "Hui Zhang",
+      "Zongkai Liu",
+      "Liqiang Niu",
+      "Juntao Liu",
+      "Han Li",
+      "Zhen Cao",
+      "Wenchao Chen",
+      "Chengduo Zhao",
+      "Fandong Meng"
+    ],
+    "summary": "Image generation and editing models have advanced rapidly, yet remain unreliable when prompts require external world knowledge. Bounded and long-tail parametric knowledge prevents direct or reason-then-generate approaches from recovering the required facts and visual appearances. Existing agentic generation and editing methods mitigate this limitation with retrieval tools, yet remain constrained by insufficient visual verification, overloaded policy models, and weak integration of retrieved textual and visual evidence. To address these limitations, we present WeAgent-MMGenEdit, a full-stack recipe including a multimodal harness, a scalable data construction pipeline, a comprehensive benchmark, and post-training methods for the agent policy and image backend. We first introduce WeAgent-Harness, a multimodal runtime with persistent evidence management and dedicated verification and integration tools that organize retrieved multimodal evidence into a dense carrier. Upon this, we develop a scalable pipeline for prompt synthesis and agentic trajectory collection, yielding 23K supervised trajectories and 14.7K RL tasks with three-layer verifiable checklists. We further introduce WeBench-MMGenEdit, a bilingual benchmark covering both knowledge-intensive image generation and multi-image editing. Finally, a two-sided post-training recipe based on SFT and RL improves the agent policy and image backend. Together, WeAgent-MMGenEdit enables a 30B-total/3B-active policy to outperform similarly sized policy models and approach the performance of a 1T-parameter agent.",
+    "pdf_url": "https://arxiv.org/pdf/2609.05171v1",
+    "code_url": null,
+    "score": 7.388310212616023
+  },
+  {
+    "date": "2026-09-08",
+    "title": "LookThere! Sparse Vision by Reinforced Selection",
+    "arxiv_id": "2609.04698",
+    "authors": [
+      "Sreehari Rammohan",
+      "Yousef Yassin",
+      "Anthony Fuller",
+      "Junfeng Wen",
+      "Carl Vondrick",
+      "Evan Shelhamer"
+    ],
+    "summary": "Vision transformers typically treat every image token as equally important, yet for most tasks in computer vision only a fraction are needed. Adaptive computation methods accelerate inference by choosing which tokens to process, but existing methods struggle at extreme sparsity and require heuristics that may not generalize like token diversity and attention scores. We address these limitations with LookThere, achieving a new pareto frontier in performance-compute trade-offs through an end-to-end reinforcement learning framework that jointly trains a shallow input selector and a deep representation extractor. The selector learns where to look and the extractor learns what to see, together saving computation by selecting only what is worth processing for a given task without relying on auxiliary signals. We show that LookThere only selects the task-specific input, excelling at sparse recognition in high-resolution settings (traffic signs, billiards), and maintaining accuracy with as little as 0.2% of the input. It generalizes across tasks and models, including global recognition (ImageNet classification), local recognition (ADE20K segmentation), zero-shot classification (by distillation), and regression (counting). Across all settings, LookThere surpasses state-of-the-art selection to provide a general and scalable framework for specialized and efficient adaptive computation.",
+    "pdf_url": "https://arxiv.org/pdf/2609.04698v1",
+    "code_url": null,
+    "score": 7.3858068034428905
+  },
+  {
+    "date": "2026-09-08",
+    "title": "LIBERO-RECOVER: Beyond Task Success Towards Failure Recovery in Robotic Manipulation Models",
+    "arxiv_id": "2609.05178",
+    "authors": [
+      "Lin Liu",
+      "Zhicheng Bao",
+      "Lu Zhang",
+      "Ziying Song",
+      "Wu Yang",
+      "Shuai Tao",
+      "Wulong Liu",
+      "Huchuan Lu"
+    ],
+    "summary": "Vision-Language-Action (VLA) or World Action (WAM) models have recently demonstrated remarkable performance in robotic manipulation. On LIBERO, SOTA method have achieved nearly 100\\% success rates, seemingly suggesting that the models are ready for deployment in real world. However, near perfect performance on existing benchmarks can be misleading: success under ideal conditions does not imply real world robustness. Existing benchmarks primarily evaluate task completion from predefined initial states, while real world interactions inevitably involve failures such as failed grasps, collisions, and unintended object movements. A robot must therefore not only execute tasks successfully, but also recognize and recover from failures to continue the task. Yet this capability remains largely unmeasured, revealing a critical gap between benchmark performance and real world reliability. To address this gap, we introduce LIBERO-Recover Benchmark, a large scale benchmark for failure recovery in robotic manipulation. Built upon LIBERO, we collect real execution failures from SOTA embodied models and construct 1,000+ scenarios across four recovery levels: (1) Action Retry, (2) Action Adaptation, (3) Object State Recovery, and (4) Environmental Recovery. We evaluate four core capabilities: spatial understanding, object structure reasoning, interaction understanding, and topological reasoning. As the first large-scale benchmark for embodied failure recovery, LIBERO-Recover shifts evaluation from \\emph{Can the robot succeed?''} to \\emph{Can the robot recover after failure?''}, promoting robust and generalizable embodied agents. The project will be avaible in \\textcolor{blue}{https://liulin815.github.io/LIBERO-Recovery/}.",
+    "pdf_url": "https://arxiv.org/pdf/2609.05178v1",
+    "code_url": null,
+    "score": 7.38345554935319
+  },
+  {
+    "date": "2026-09-08",
+    "title": "Measured Sliders: Learning Continuous Controls from Differentiable Image Measurements",
+    "arxiv_id": "2609.05234",
+    "authors": [
+      "Yijia Chen",
+      "Boyu Wei",
+      "Xuanhua Yin"
+    ],
+    "summary": "Continuous sliders are useful only when coefficient changes produce predictable image changes. Yet most diffusion sliders derive their axes from text or learned representations, leaving their scales disconnected from observable image properties. Consequently, we cannot tell in advance which attributes are learnable, compare control strengths directly, or anticipate interference when multiple controls are combined. We propose Measured Sliders, a framework that defines continuous controls through closed-form differentiable image measurements. A common measurement space unifies the pipeline. Before training, an observability test identifies usable supervision. During training, a measurement-guided objective learns target movement while suppressing non-target changes. After training, decoded calibration expresses controls in comparable units of realized image change. Multiple LoRA branches are stored in one checkpoint and composed without training on joint activations. Across SDXL and FLUX.1-dev, the resulting controls are ordered, selective, and composable. On 553 prompts, lighting direction reaches rho = 0.995 and 98.9% monotone sweeps. A five-attribute checkpoint achieves average selectivity 2.59, compared with 1.50 for the strongest baseline, and preserves every requested direction in 96.7% of pair and 86.1% of triple compositions. The observability test also separates every subsequently successful measurement from the failed candidate. Overall, image-space measurement provides a common basis for learning, diagnosing, calibrating, and composing continuous generative controls.",
+    "pdf_url": "https://arxiv.org/pdf/2609.05234v1",
+    "code_url": null,
+    "score": 7.382733876249881
+  },
+  {
+    "date": "2026-09-08",
+    "title": "Step Back to Move Forward: Reflection-Aware Preference Optimization for Visual Generation",
+    "arxiv_id": "2609.04282",
+    "authors": [
+      "Junlong Wu",
+      "Jiuzhou Lin",
+      "Jia Sun",
+      "Boheng Zhang",
+      "Huaiqing Wang",
+      "Dewen Fan",
+      "Houde Liu",
+      "Qianqian Gan",
+      "Fan Yang",
+      "Tingting Gao"
+    ],
+    "summary": "Diffusion models have become the mainstream paradigm for modern visual generation and have substantially advanced multimedia content synthesis, especially in text-to-image and text-to-video tasks. To further align such generative models with human preferences, reinforcement learning (RL) has recently shown strong potential as a post-training strategy. Nevertheless, existing policy gradient-based methods often explore inefficiently, making them vulnerable to local optima that may degrade semantic faithfulness and visual realism. To address these challenges, we present Reflection-Aware GRPO (RA-GRPO), a new RL-based preference alignment framework for diffusion generative models. The core idea is to improve \"forward\" generation by incorporating \"backward\" reflection during optimization. We first introduce Diffusion Reflection, which rectifies intermediate sampling trajectories by inverting the diffusion process with a weak estimator, guiding latent states toward higher-probability regions of the true data manifold. Furthermore, we introduce Counterfactual Path Synthesis to implicitly distill these rectified trajectories into the policy, enabling the model to internalize the benefits of search-based exploration without incurring inference-time overhead. Extensive experiments on T2I and T2V models demonstrate that RA-GRPO significantly outperforms existing methods, particularly in mitigating reward hacking and improving generalization. The method remains architecture-agnostic and integrates seamlessly with standard pipelines, suggesting a promising direction for stable preference alignment.",
+    "pdf_url": "https://arxiv.org/pdf/2609.04282v1",
+    "code_url": null,
+    "score": 7.381982097372095
+  },
+  {
+    "date": "2026-09-08",
+    "title": "TourPhysics: Bringing Physics to World Models for Exploration and Manipulation from a Single Image",
+    "arxiv_id": "2609.04911",
+    "authors": [
+      "Xin Zhang",
+      "Yabo Chen",
+      "Zixuan Duan",
+      "Haibin Huang",
+      "Chi Zhang",
+      "Feng Xu",
+      "Xuelong Li"
+    ],
+    "summary": "Interactive visual world models must distinguish observation from physical intervention. Camera motion reveals new surfaces, whereas intervention changes object motion, contact, and deformation. Current video world models are largely driven by appearance priors and often lose physical or spatial consistency over long horizons. We present TourPhysics, an online framework initialized from a single image and a declarative physical configuration. TourPhysics extends PhysOmni, our ACM Multimedia 2026 work, from finite physics-grounded video synthesis to persistent exploration and manipulation. TourPhysics combines deterministic simulation with video generation while assigning separate roles to simulator state, geometric evidence, generator controls, and appearance memory. For each action, the simulator computes a finite physical and camera trajectory before the corresponding observation is generated. Accepted observations publish the terminal state and update the appearance memory and subsequent generator controls, while the committed state and simulator geometry remain fixed throughout synthesis and retry. We further separate the simulator geometry used for projection and visibility from the relative depth used to condition the generator. A reference-anchored memory retrieves accepted static appearance through geometric cross-view correspondence and incorporates it through a bounded residual that reverts to the native path when no valid correspondence exists. On simulator-defined camera tours and object manipulations, TourPhysics follows prescribed camera and object trajectories more closely than the evaluated baselines, preserves the input scene, and reduces appearance drift during long-horizon revisits.",
+    "pdf_url": "https://arxiv.org/pdf/2609.04911v1",
+    "code_url": null,
+    "score": 7.372227408429019
+  },
+  {
+    "date": "2026-09-08",
+    "title": "MM-IFEval-Pro: A Multilingual and Attack-Resistant Benchmark for Instruction-Following in Vision-Language Models",
+    "arxiv_id": "2609.04859",
+    "authors": [
+      "Changming Xiao",
+      "Zhenliang Ni",
+      "Jinhui He",
+      "Han Shu",
+      "Jie Hu"
+    ],
+    "summary": "As vision-language models (VLMs) rapidly advance in image understanding, cross-modal reasoning, and complex instruction execution, instruction-following capability has become a key indicator of their reliability and practicality. However, existing multimodal instruction-following benchmarks still suffer from limited language coverage and insufficient adversarial safety scenarios, making them inadequate for evaluating real-world multilingual and safety-sensitive settings. To address these gaps, we present MM-IFEval-Pro, a multimodal instruction-following benchmark covering Chinese and English tasks as well as diverse instruction hijacking cases. MM-IFEval-Pro includes 4 major task categories and 24 subcategories and 8 instruction categories with 52 subcategories, with each sample containing an average of 3.0 constraints to realistically simulate complex instruction scenarios. We further construct a reinforcement-learning training set enriched with Chinese and adversarial instructions, which significantly improves model performance on MM-IFEval-Pro and transfers effectively to other mainstream multimodal benchmarks, demonstrating strong cross-task and cross-language generalization.",
+    "pdf_url": "https://arxiv.org/pdf/2609.04859v1",
+    "code_url": null,
+    "score": 7.367240594120838
+  },
+  {
     "date": "2026-09-05",
     "title": "GIFT: Guided Intermediate Feature Training via Action-Oriented Structural Supervision for Robotic Manipulation",
     "arxiv_id": "2609.04193",
