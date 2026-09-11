@@ -15,7 +15,7 @@
 <body>
   <h1>Daily arXiv Papers</h1>
   <p>Data source: <a href="./paper_list.json"><code>paper_list.json</code></a></p>
-  <p>Total papers: 480</p>
+  <p>Total papers: 510</p>
   <table>
     <thead>
       <tr>
@@ -31,6 +31,339 @@
     </thead>
     <tbody>
       
+        <tr>
+            <td>2026-09-11</td>
+            <td><a href="https://arxiv.org/abs/2609.10506" target="_blank">2609.10506</a></td>
+            <td>DUET-DINO: Simultaneous Cross-View World Modeling for Latent Planning in Robot Manipulation</td>
+            <td>Nisarga Nilavadi, Ralf Römer, Moritz Reuss, Michael Krawez, Tobias Jülg, Angela P. Schoellig, Rudolf Lioutikov, Wolfram Burgard</td>
+            <td>7.646259921791588</td>
+            <td><a href="https://arxiv.org/pdf/2609.10506v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Action-conditioned latent world models predict future visual representations, enabling zero-shot goal-conditioned robot planning and control. However, their predictions for fine-grained spatial and rotational actions are unreliable for full 7-DoF end-effector control. To address this gap, we introduce DUET-DINO, a simultaneous cross-view latent world model that jointly learns action-conditioned predictions from static side- and wrist-camera observations through cross-view conditioning. By exploiting complementary global scene and gripper-centric information, DUET-DINO enables latent planning over the full 7-DoF action space. Across spatially diverse reach, orientation-intensive angled-reach, and multi-goal grasp-and-lift tasks, DUET-DINO consistently outperforms single-view and independent dual-view baselines, achieving 92% success on reach, 72.5% on angled-reach, and 60.0% on lift tasks. DUET-DINO is trained from scratch on DROID and RoboArena datasets and generalizes robustly under visual distribution shifts. We further show that while V-JEPA 2 wrist-view predictions underestimate visual dynamics induced by fine-grained actions, DINOv3 predictions better capture action-conditioned scene changes, leading to stronger downstream planning. The code and model checkpoints will be open-sourced. Project page: https://utn-air.github.io/DUET-DINO</td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-11</td>
+            <td><a href="https://arxiv.org/abs/2609.09491" target="_blank">2609.09491</a></td>
+            <td>Learning Global Camera Poses from Noisy View-Graphs for Structure from Motion</td>
+            <td>Fadi Khatib, Meirav Galun, Ronen Basri</td>
+            <td>7.581315649501962</td>
+            <td><a href="https://arxiv.org/pdf/2609.09491v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Camera pose estimation is a key step in 3D reconstruction and view-synthesis pipelines. We present a deep, global Structure-from-Motion framework based on learned view-graph aggregation. Our method employs a permutation-equivariant, edge-conditioned graph neural network that takes noisy pairwise relative poses as input and outputs globally consistent camera extrinsics. The network is trained without ground-truth supervision, relying solely on a relative-pose consistency objective. This is followed by 3D point triangulation and robust bundle adjustment. Our approach is efficient, scalable to more than a thousand images, and robust to graph density. We evaluate our method on MegaDepth, 1DSfM, Strecha, and BlendedMVS. These experiments demonstrate that our method achieves superior rotation and translation accuracy compared to deep track-centric methods while registering more images across many scenes, and competitive results compared to state-of-the-art classical pipelines, while being much faster.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-11</td>
+            <td><a href="https://arxiv.org/abs/2609.09925" target="_blank">2609.09925</a></td>
+            <td>Time-Frequency Geometric Cross-Attention for Chunked Vision-Language-Action Models</td>
+            <td>Shengye Dong, Haochen Niu, Hao Liu, Peiwen Lin, Chuang Wang, Shanmin Pang</td>
+            <td>7.570720786387104</td>
+            <td><a href="https://arxiv.org/pdf/2609.09925v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Modern vision-language-action (VLA) policies predict a whole chunk of actions: one to two seconds of coordinated motion emitted in a single forward pass. Yet an action chunk is essentially a short multivariate trajectory, but inside these models it is a sequence of generic per-timestep hidden tokens decoded by a linear head. This under-serves two motion structures. First, frequency: a chunk superimposes a smooth global trend and fine corrective motion across time scales, and a single token entangles them. Second, cross-phase geometry: motions of different phases (reach, contact, grasp adjustment, settling) unfold along very different, near-orthogonal directions in representation space, yet are tightly related for the task and arise across the time axis. Dot-product attention scores alignment by an inner product, so it favors aligned tokens and is least sensitive near orthogonality, leaving such relationships for the network to recover through a detour.
+  We introduce Time-Frequency Geometric Cross-Attention (TFGCA), a drop-in module repairing both blind spots. TFGCA uses a per-dimension learnable stationary wavelet transform to decompose the action chunk into time-frequency tokens, and each time token retrieves information from them via a cross-attention that fuses the dot product (similarity) with the wedge-product magnitude (sensitive to near-orthogonality) through a learnable weight. A zero-initialized residual reproduces the base behavior at initialization, so it can be dropped onto a pretrained VLA and fine-tuned jointly. Relative to the same-source base, TFGCA improves in-distribution LIBERO by +1.5 on average, the OOD LIBERO-Plus by +6.3, the randomized average under RoboTwin domain randomization by +28.5, and the overall success rate on three real-robot AgiBot A2 tasks by +11.67 points, with larger gains out of distribution.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-11</td>
+            <td><a href="https://arxiv.org/abs/2609.10243" target="_blank">2609.10243</a></td>
+            <td>FolDeX: A Physical-World Benchmark for Long-Horizon Robotic Manipulation of Deformable Objects</td>
+            <td>Chenhuan Liu, Yi Xu, Feng Wu, Hanyang Wang, Wenxiao Kuai, Weihao Ding, Shan Wang, Yang Liu, Shuyong Gao, Wenqiang Zhang</td>
+            <td>7.570416655523538</td>
+            <td><a href="https://arxiv.org/pdf/2609.10243v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Embodied AI, including vision-language-action and world-action models, must operate reliably in the physical world. Yet methods that perform well in simulation can degrade substantially on real robots, especially in long-horizon deformable-object manipulation, where policies must track changing states and execute reliable multi-stage bimanual interactions. Existing real-robot benchmarks mainly focus on short-horizon rigid-object tasks and offer limited coverage of long-horizon deformable manipulation. We introduce FolDeX, a physical-world benchmark built entirely from real-robot data, with garment folding as its primary task. Since real-robot data collection is costly, FolDeX studies how heterogeneous physical experience can be reused efficiently. The benchmark is organized around four research axes: leveraging human intervention and recovery data collected during deployment; transferring data across tasks, including across garment categories and from rigid to deformable-object manipulation; reusing data across scenes with changes in lighting, background, and layout; and transferring data across robotic embodiments. FolDeX provides 2,000+ hours of real-robot data spanning 20+ tasks and 10+ embodiments. We also establish a fair real-robot evaluation platform for externally submitted policies, with standardized tasks, held-out physical objects, controlled initializations, and a unified execution protocol. The platform is publicly accessible at https://ai.midea.com/#/fold-challenge. We hope FolDeX will serve as a unified testbed for heterogeneous real-robot data reuse and reliable long-horizon deformable manipulation.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-11</td>
+            <td><a href="https://arxiv.org/abs/2609.10405" target="_blank">2609.10405</a></td>
+            <td>Frequency-Conditioned Flow Matching for Vision-Language-Action Models</td>
+            <td>Haochen Niu, Shengye Dong, Hao Liu, Peiwen Lin, Wang Chuang</td>
+            <td>7.561214336027655</td>
+            <td><a href="https://arxiv.org/pdf/2609.10405v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Robot actions are temporally correlated trajectories whose frequency components encode motion at different scales with highly non-uniform energy distributions. Yet Flow Matching--based vision-language-action (VLA) models typically generate actions in temporal coordinates, without explicitly modeling or systematically leveraging this frequency heterogeneity. We introduce \emph{FreqFM}, a frequency-conditioned Flow Matching framework for VLA models. It raises action frequency from an implicit trajectory property to an explicit conditioning dimension that spans the entire generation pipeline. Concretely, in DCT frequency coordinates, FreqFM constructs a spectrum-matched source distribution, adaptively balances the objective across frequencies, and constrains per-frequency guidance residuals using the corresponding reference transport scales. FreqFM integrates into existing Flow Matching action experts without changing the VLA backbone. Across LIBERO, LIBERO-Plus, and VLA-Arena, FreqFM consistently improves performance, including a 9.3-point gain on LIBERO-Plus, and further demonstrates its effectiveness on six real-robot tasks.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-11</td>
+            <td><a href="https://arxiv.org/abs/2609.09918" target="_blank">2609.09918</a></td>
+            <td>ViBe: Visual Behavior Adaptation for Perceptive Humanoid Whole-Body Control</td>
+            <td>Lokesh Krishna, Sarvesh Venkatesan, An Zhang, Quan Nguyen</td>
+            <td>7.55638064676165</td>
+            <td><a href="https://arxiv.org/pdf/2609.09918v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Motion tracking provides a scalable recipe for humanoid whole-body control. By design, the resulting trackers lack exteroceptive feedback hence reacting to the environment remains the responsibility of a higher-level planner. Existing perceptive controllers train geometry-only encoders from scratch, trading semantics for sim-to-real ease, and typically rely on teacher-student distillation for a task of interest. We present ViBe, a post-training framework for adapting motion trackers to perceptive control tasks. We leverage pre-trained visual encoders with a multi-query extractor module to learn task-relevant perceptive feedback. This feedback is grafted onto the tracker&#x27;s input via low-rank adapters, enabling parameter-efficient fine-tuning. Given a task reward and a reference dataset, this modular controller can be adapted directly via policy optimization. Across four tasks, ViBe shows zero-shot sim-to-real transfer spanning perceptive walking on curbs and parkour, Repose Cube, omni-object loco-manipulation, and dodgeball, with visually robust performance across outdoor, low-light, and RGB distractor conditions. Finally, we solve a goal-oriented Repose Cube task with a deliberately simple planner, demonstrating the efficacy of perceptive controllers, adapted by our approach.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-11</td>
+            <td><a href="https://arxiv.org/abs/2609.10021" target="_blank">2609.10021</a></td>
+            <td>RoboDrop: Curating VLA Post-Training Data via Local Gradient Compatibility</td>
+            <td>Runze Xu, Yuanfan Xu, Cuijie Xu, Shuang Dai, Yining Li, Yu Wang, Jincheng Yu</td>
+            <td>7.536239103785789</td>
+            <td><a href="https://arxiv.org/pdf/2609.10021v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Vision--language--action (VLA) models acquire broad generalization through large-scale pretraining, yet adapting them to a new task and robot embodiment still requires post-training on newly collected data. Unlike pretraining, post-training targets task- and embodiment-specific adaptation, making it particularly sensitive to data quality. In practice, collected robot datasets often contain heterogeneous errors, including execution mistakes, sensor drift, and timestamp misalignment, which can impair post-training and policy performance. Manual inspection is costly, while existing data-cleaning methods are typically tailored to particular corruption types. To address these challenges, we introduce \textsc{RoboDrop}, a data-curation framework that audits supervision using local gradient compatibility measured along the training trajectory as a proxy for its effect on post-training performance. During a one-epoch warm-up run, RoboDrop scores each candidate sample online by comparing its gradient with those of task-semantic and visually matched validation samples. The resulting sample scores are aggregated at the episode level, and a simple automatic post-processing rule converts them into filtering decisions. We evaluate RoboDrop on controlled observation--action corruptions, naturally suboptimal demonstrations in simulation, and real-robot datasets containing non-expert collection errors. Across these settings, RoboDrop more accurately distinguishes unreliable demonstrations than prior methods, while post-training on the curated data consistently yields stronger downstream policies, with average real-robot rollout success rising from $35.0\%$ to $67.5\%$. These results establish training-trajectory-aware, context-conditioned supervision auditing as an effective approach to robust VLA post-training.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-11</td>
+            <td><a href="https://arxiv.org/abs/2609.09528" target="_blank">2609.09528</a></td>
+            <td>MotionBlind: Probing the Illusion of Motion Understanding in Video-LLMs</td>
+            <td>Dhairya Bhatia, Bishoy Galoaa, Oliver Fritsche, Shahid Kamal, Muhammad Obaidullah Abdul Salam, Umer Saleem, Om Rastogi, Frania Felix Chettiar, Nesli Erdogmus, Sarah Ostadabbas</td>
+            <td>7.527258430581908</td>
+            <td><a href="https://arxiv.org/pdf/2609.09528v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Video large language models (Video-LLMs) are increasingly used as the perceptual front end of world models, a role that assumes they can read motion: how fast something moves, which way it travels, how hard it is pushed. We show they cannot. A Video-LLM can watch two clips of the same person in the same room, name every object in both, and still fail to say which clip moves faster. We introduce MotionBlind, a contrastive benchmark of self-recorded video for physically grounded motion(speed, magnitude, and direction), the variables a world model must predict. Each instance is a pair of near-identical clips that differ only in motion. Each clip carries two complementary yes/no questions, giving four items per instance, and a model earns credit only if all four are correct. We report Instance Accuracy(IAcc), which has a 6.25% chance floor. Single-frame, appearance, and language-only shortcuts all collapse to it. MotionBlind complements the recent TimeBlind benchmark. We run a controlled study of six open and two frontier Video-LLMs, varying whether the video is present, whether frames are shown in the correct temporal order, and how frames are sampled (1 to 24 frames, four selection strategies). Open models sit near the 6.25% floor, and scale does not help. Removing the video drops every model to zero IAcc, and shuffling frames collapses IAcc to chance, so the task genuinely needs video in order. Neither more frames nor smarter frame selection closes the gap, because these change which frames are seen, not whether motion is read. Only Gemini3.1 Pro clears the benchmark overall, and even it fails on speed. A frontend that cannot tell two speeds of the same action apart is not yet a trustworthy source of supervision, reward, or evaluation for a world model.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-11</td>
+            <td><a href="https://arxiv.org/abs/2609.09808" target="_blank">2609.09808</a></td>
+            <td>GTA-2: A Multi-VLM Framework for Synthesizing Robot Manipulation Skills via Grounded Task Axes</td>
+            <td>M. Yunus Seker, Shobhit Aggarwal, Ruwan Wickramarachchi, Jonathan Francis, Oliver Kroemer</td>
+            <td>7.524110145537599</td>
+            <td><a href="https://arxiv.org/pdf/2609.09808v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Robotic manipulation tasks are often decomposed into behaviors or skills. However, one often needs to predefine these behaviors for specific tasks or try to cover a wide range of tasks using generic skills. As a result, these behaviors can remain too coarse to expose the geometric, control, and scene-dependent decisions required for execution. We introduce Grounded Task Axes v2 (GTA-2), a modular multi-VLM framework that constructs executable, task-bespoke manipulation skills from reusable object-centric task-axis components. Rather than predicting actions end-to-end or composing fixed task-level primitives, GTA-2 represents each skill as semantic subtasks comprising task-relevant keypoints and axes, controller compositions, and scene-dependent parameters. Four specialized VLM agents separately decompose the task, construct an abstract task-axis skill, assign controller parameters, and ground the required visual features from RGB-D observations. This abstraction-to-grounding factorization enables zero-shot skill generation without task-specific robot demonstrations, policy training, or fine-tuning. It also keeps intermediate decisions explicit, allowing targeted human feedback to refine an incorrect stage while preserving correct components. We evaluate GTA-2 on 14 real-robot manipulation tasks against a VLA policy pi_{0.5} and two Code-as-Policies baselines using task-axis controllers or conventional robot primitives. GTA-2 achieves an average zero-shot success rate of 73.9%, exceeding the strongest baseline by 31.4 percentage points, while targeted refinement raises GTA-2&#x27;s average success rate to 90.7%. Project page: https://gta2-project.github.io/</td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-11</td>
+            <td><a href="https://arxiv.org/abs/2609.10308" target="_blank">2609.10308</a></td>
+            <td>Deformable Object Manipulation under Partial Observability via Real-Time Full-Shape Estimation</td>
+            <td>Kosar Behnia, Ville Kyrki, Gokhan Alcan</td>
+            <td>7.507524391299136</td>
+            <td><a href="https://arxiv.org/pdf/2609.10308v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Manipulating deformable objects (DOs) is challenging due to their high-dimensional state space, underactuated dynamics, and partial observability. In this paper, we propose cRVAE, a lightweight conditional recurrent variational autoencoder that estimates the full DO state from only partial corner-node observations during inference. The resulting model is used as the forward model in a receding-horizon optimal control framework for obstacle-aware collaborative DO manipulation. In simulation on rope and fabric, cRVAE estimates the full DO state from the available corner-node measurements alone, matching the accuracy of a parameter-identified XPBD model. At inference it uses no physical parameters as model inputs and performs no online parameter identification. It also runs approximately 350 times faster on the rope and over 1500 times faster on the fabric per forward pass, keeping horizon-based planning within the 100 ms control budget where XPBD exceeds it already at short horizons. Full-shape estimation from corner sensing at in-loop speed is what makes the model deployable on hardware, which we demonstrate on a Unitree Go2 robot.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-11</td>
+            <td><a href="https://arxiv.org/abs/2609.09396" target="_blank">2609.09396</a></td>
+            <td>VANTAGE-Bench: Evaluating the Infrastructure AI Gap in Vision-Language Models</td>
+            <td>Zaid Pervaiz Bhat, Nimra Nayyar, Arihant Jain, Lap Fung Chan, John Suchanek, Yu Wang, Varun Praveen, Tomasz Kornuta, Vidya Nariyambut Murali</td>
+            <td>7.500547589052724</td>
+            <td><a href="https://arxiv.org/pdf/2609.09396v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>As Vision-Language Models (VLMs) advance toward physical deployment, the focus has remained on action-oriented Embodied AI evaluated on subject-centric consumer video. This overlooks a pervasive class of Physical AI: Infrastructure AI, which relies on fixed cameras for open-loop insights like safety monitoring and operational logging. We introduce VANTAGE-Bench, a benchmark measuring this &quot;Infrastructure AI Gap.&quot; It spans three operational domains (Logistics, Transportation, and Smart Spaces), unifies image and video evaluation across semantic, spatial, temporal, and spatio-temporal capabilities, and moves beyond multiple-choice to eight task formulations including dense captioning and spatio-temporal grounding. It adds a single-pass trajectory protocol for Single Object Tracking and, to our knowledge, the first such evaluation on fixed-camera infrastructure video, scored against specialist trackers. Annotation spans three regimes over 3,346 media assets: 3,342 video-task annotations, 4,281 image-grounding annotations, and 27,404 detection boxes.
+  Evaluating 17 models zero-shot, we find the shortfall relative to consumer-centric benchmarks is concentrated, not general. Event verification, referring expressions, and temporal localization fall roughly 9 to 24 points at every model scale, while video question answering stays within 5.3 points of VideoMME and 2D spatial pointing shows no shortfall against BLINK. The temporal pillar is weakest in absolute terms: no system exceeds 55.7 mIoU on temporal localization or 37.3 SODA_c on dense video captioning. On tracking, frontier models come within roughly 5 points of specialist trackers over short horizons but separate as the horizon extends. Open-weight models lead 2D object localization outright, so neither scale nor proprietary access explains the pattern. Data, evaluation harness, and leaderboard: https://vantage-bench.org/</td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-11</td>
+            <td><a href="https://arxiv.org/abs/2609.10531" target="_blank">2609.10531</a></td>
+            <td>Guiding Image-to-3D Generation with Test-Time Partial Observations</td>
+            <td>Jerred Chen, Simon Weber, Ronald Clark</td>
+            <td>7.4778411466918415</td>
+            <td><a href="https://arxiv.org/pdf/2609.10531v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Image-to-3D models can generate visually compelling 3D assets from a single RGB image, but their geometry is often only loosely constrained by the available observations, limiting their use in applications that require geometric fidelity. In many real-world settings, however, partial geometric observations of the object may be available at test time. We introduce a training-free framework for incorporating such evidence into pretrained image-to-3D generative models without retraining or finetuning. To do this, we guide generation using a ray-consistent observation likelihood defined over the model&#x27;s occupancy representation, combining surface occupancy and free-space evidence. Applied to SAM 3D and its multi-view extension, our approach substantially improves geometric fidelity across different levels of observability, as well as visual quality. Our results demonstrate that pretrained image-to-3D models can effectively integrate partial geometric observations through explicit test-time guidance, complementing their learned generative priors without modifying the underlying model.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-11</td>
+            <td><a href="https://arxiv.org/abs/2609.09213" target="_blank">2609.09213</a></td>
+            <td>Geometry Conditioning in an Embodied SLM: Training Controls and Robustness Diagnostics in a 0.8B Hybrid Model</td>
+            <td>Hao Li, Haofei Sun, Lin He</td>
+            <td>7.4710887413861045</td>
+            <td><a href="https://arxiv.org/pdf/2609.09213v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>We study how physical-state inputs affect a 0.8B hybrid language model adapted for manipulation with 6.2M trainable parameters. Six conditions are trained on three LIBERO-Spatial tasks and evaluated over three seeds and 540 held-out rollouts. Conditioning recurrent decay gates on geometric increments yields 28.9% success, compared with 36.7% when those increments are shuffled during training and 24.4% without explicit object/goal geometry. Both geometry policies receive correct inputs at evaluation. A token adapter using the same increments scores 27.8%; differences vary across seeds and remain inconclusive. Token-clock conditioning scores 11.1%, including one seed that fails to converge. In separate robustness tests, a state-only relative-coordinate policy retains 7/10 success under frame relabeling, whereas all four tested visual policies fall to at most 3/20 after a 5 cm object displacement. These results show no reliable advantage from training-time geometric alignment under this recipe and illustrate the gap between coordinate invariance and physical-layout generalization. Episode records, seed-level analyses, and figure-generation code accompany the paper.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-11</td>
+            <td><a href="https://arxiv.org/abs/2609.10498" target="_blank">2609.10498</a></td>
+            <td>Field Converter: Geometry-Initialized Temporal Residual Refinement for World-Grounded Player Pose Estimation from Soccer Broadcasts</td>
+            <td>Simon Khan, Laurent Gajny, Jennyfer Lecompte, Sébastien Laporte</td>
+            <td>7.465902530569552</td>
+            <td><a href="https://arxiv.org/pdf/2609.10498v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Recovering 3D human pose from monocular sports broadcasts remains challenging when players must be localized in a shared metric world coordinate system rather than only reconstructed relative to their own body. We introduce Field Converter, a geometry-initialized temporal residual framework for world-grounded 3D player pose estimation from calibrated soccer broadcasts. Our method first uses camera and pitch geometry to initialize the player root through ray-ground intersection, then predicts a temporal residual correction from pose, image, camera, and geometric cues. On match-disjoint evaluation sequences, residual refinement reduces root error from 49cm with geometry alone to 14cm with a frame-wise MLP and 10cm with a TCN, while a Transformer achieves a comparable 11cm. The resulting world-space MPJPE reaches 13.2cm, and ablations show that residual prediction clearly outperforms direct global-root regression while temporal context matters more than the specific temporal backbone. Failure analysis further identifies airborne motion as the main limitation of the ground-based geometric initialization.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-11</td>
+            <td><a href="https://arxiv.org/abs/2609.10522" target="_blank">2609.10522</a></td>
+            <td>Show-Harness: Just a VLM Agent Can Play Robots</td>
+            <td>Yanzhe Chen, Zechen Bai, Zhijun Cao, Wenzheng Zeng, Kevin Qinghong Lin, Yiqi Lin, Guoqiang Liang, Kevin Yuchen Ma, Qiming Huang, Mike Zheng Shou</td>
+            <td>7.455548651962159</td>
+            <td><a href="https://arxiv.org/pdf/2609.10522v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Foundation vision-language models (VLMs) exhibit broad intelligence about the world, yet translating this intelligence into robot control remains challenging. We present Show-Harness, an Embodied Harness that enables VLMs to &quot;play&quot; robots through a compact semantic interface linking intent to action. Show-Harness exposes discrete semantic action units that VLMs can naturally reason over, while embodiment-specific interpreters deterministically ground them into local robot actions, keeping the VLM directly responsible for fine-grained physical decisions. Through the same interface, Show-Harness demonstrates the feasibility of (1) directly unlocking closed-source frontier VLMs for zero-shot robot control, and (2) adapting small-scale open-source VLMs for low-cost deployment with just a few GPU-hours of fine-tuning. We further develop GUMI (GUI Manipulation Interface), which extends the same semantic action space to GUI-based demonstration collection, allowing humans and agents to &quot;play&quot; robots across embodiments without specialized teleoperation hardware. Extensive experiments show that Show-Harness-equipped VLM agents generalize robustly across tasks, embodiments, and environments, outperforming representative agentic and VLA paradigms. These results suggest that the right interface can unlock substantial embodied capability from foundation VLMs, without requiring additional model capacity or costly embodiment-specific pretraining.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-11</td>
+            <td><a href="https://arxiv.org/abs/2609.09210" target="_blank">2609.09210</a></td>
+            <td>Identifying Habit, Physics, and Nuisance in Robot World Models</td>
+            <td>Jinting Hang, Zhenhui Cai</td>
+            <td>7.449292822132591</td>
+            <td><a href="https://arxiv.org/pdf/2609.09210v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Teleoperated demonstrations are often multimodal even when the underlying dynamics are nearly deterministic given the executed action. We argue that this multimodality typically mixes three factors--operator habit in action selection, shared physics, and observation nuisance--and that entangled next-observation predictors absorb all three. We formalize the split with a structural causal model a=g(h,z,u), z&#x27;=f(z,a), o=r(z,c), and test it with complementary interventions: replacing or shuffling actions at fixed state sharply increases next-state error, whereas appearance and camera changes should not; habit-aware reverse scoring improves ranking of feasible pasts without rewriting the dynamics. The associated adaptation rule is to freeze a shared physics readout and update only a thin interface. On StackCube, DROID, and RH20T this rule improves low-shot transfer relative to training from scratch, retains cleaner dynamics under corrupted adaptation data, and extends from proprioception to pixel observations with multi-view and multi-step checks. We do not equate latent actions with operator habit, and we do not target large-scale video generation benchmarks.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-11</td>
+            <td><a href="https://arxiv.org/abs/2609.09941" target="_blank">2609.09941</a></td>
+            <td>HaWMPO: Hallucination-Aware World Model-based Policy Optimization for Generalist Robot Policy</td>
+            <td>Zengjue Chen, Peidong Liu, Jiawei Li, Qi Wang</td>
+            <td>7.436130486832393</td>
+            <td><a href="https://arxiv.org/pdf/2609.09941v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Generalist robot policies have demonstrated strong generalization across robotic manipulation tasks, yet their success rates remain limited in com- plex long-horizon scenarios. Recent methods improve Visual-Language-Action (VLA) policies through online reinforcement learning on real robots, but such training relies on costly physical interactions, suffers from low sample efficiency, and may introduce hardware and safety risks. World models offer a promising alternative by enabling policy optimization with imagined rollouts. However, long-horizon rollouts generated by world models often suffer from prediction hal- lucinations, producing biased state transitions that can mislead policy learning. To address this issue, we propose Hallucination-aware World Model-based Pol- icy Optimization (HaWMPO), a closed-loop reinforcement learning pipeline for VLA policy post-training with world models. Specifically, HaWMPO introduces an action-conditioned hallucination-aware model to estimate the reliability of gen- erated image sequences, and incorporates hallucination scores into group relative policy optimization through a Reward-Soft mechanism, suppressing unreliable ac- tion chunks during training. On the LIBERO benchmark, HaWMPO achieves the best average success rate, with gains of 15.0% over the base model and 2.8% over the strongest baseline; real-world experiments on a G1 robot further validate its effectiveness, raising the average success rate on two manipulation tasks from 67.5% to 80.0%.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-11</td>
+            <td><a href="https://arxiv.org/abs/2609.10033" target="_blank">2609.10033</a></td>
+            <td>What Symmetry Buys a Learned Motion Planner</td>
+            <td>Andrea Emir Sevincel</td>
+            <td>7.387394918963156</td>
+            <td><a href="https://arxiv.org/pdf/2609.10033v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Learning-based motion planners pay at training what classical planners pay per query. Trained in world coordinates, they relearn the same motion at every position and orientation. Existing work restores the missing rigid-body equivariance in the training data, in the inference operator, or in the weights, and each carries a cost. We ask how much of that equivariance the planning query supplies for free.
+  A start s and a goal g determine a frame in closed form, with origin at their midpoint and first axis along g-s. Expressing trajectory and obstacles in that frame removes three translations and two rotations of SE(3), at initialisation, for one cross product per query and with no constraint on the architecture. A single rotation about the start-goal axis remains, and no continuous rule removes it. On a cluttered 3D benchmark, holding architecture, data and budget fixed, the frame raises the held-out collision-free rate from 14.60% to 51.10%, where a straight segment from start to goal scores 15.6% and the world-frame model does not beat it. We build all three mechanisms for the residual rotation and each is worth under a point, though the equivariant backbone reaches any given level two to three times sooner. What the representation supplies therefore dominates what any mechanism enforces, and the standard diagnostic does not see the difference: two models with indistinguishable non-equivariance residuals differ by 28 points. Calibrated against a non-symmetry intervention, the frame is not even the largest effect available, since local geometry is worth +40.0 where the frame is worth +36.5.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-11</td>
+            <td><a href="https://arxiv.org/abs/2609.09630" target="_blank">2609.09630</a></td>
+            <td>JEPA Policy: Diffusion-Free Imitation Learning via Paired Action and Future Representation Prediction</td>
+            <td>Jie Xu, Kangjin Yu, Ziyi Jin, Junjie Gao, Liqing Chen, Yixian Li, Shuai Tian, Zhongpu Xia</td>
+            <td>7.3671671915476145</td>
+            <td><a href="https://arxiv.org/pdf/2609.09630v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Standard behavior cloning supervises actions without explicitly constraining the future representation paired with each demonstrated action chunk. We introduce JEPA Policy, a diffusion-free framework that uses the action chunk and its observed future representation as paired training targets. Action and future-representation tokens interact in a shared Transformer and are refined through two forward passes. Future prediction can therefore shape the representation used to generate actions. Dual-branch and gradient-routing controls attribute the gain to this shared topology rather than to an auxiliary prediction head alone. Across nine simulated tasks, JEPA Policy improves mean success over the action-only MIP baseline and outperforms Diffusion Policy under the evaluated configurations, while adding 0.29 ms to MIP&#x27;s model latency. A five-task, 630-episode physical-robot study produces the same pooled ranking. Further audits find no complete representation collapse under action supervision and identify a task-conditioned failure-ranking signal in future-prediction error. These results support paired future-representation supervision as a practical approach to low-latency visuomotor imitation without iterative generative sampling.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-11</td>
+            <td><a href="https://arxiv.org/abs/2609.10050" target="_blank">2609.10050</a></td>
+            <td>Grounding Generated Video Plans in Simulation Towards Versatile Dexterous Controllers</td>
+            <td>Tianyue Wu, Boyuan An, Shuqi Zhao, Heyu Guo, Wanli Xing, Yi Ma, Kaifeng Zhang, Ruihai Wu, Masayoshi Tomizuka</td>
+            <td>7.362621938018242</td>
+            <td><a href="https://arxiv.org/pdf/2609.10050v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Generated hand-object interaction (HOI) videos provide a controllable way to propose manipulation motions. Simulation-based HOI tracking can translate such kinematic references into feasible low-level control, but its scalability is limited by the lack of reliable reference motions. We therefore combine generated videos with simulation-based HOI grounding: during training, generated videos provide diverse motion references for learning a multi-object, multi-trajectory HOI tracker, and at deployment, the video model produces motion plans that are executed by the learned tracker. In particular, we propose a method that enables scalable reference generation by HOI reconstruction with minimal manual intervention and successfully grounds more than 1,500 generated videos in simulation, achieving success rates over 25 percentage points higher than those of baselines during simulation-based training. In real-world closed-loop experiments, it achieves diverse grasps, including functional grasps, non-prehensile manipulation, and post-grasp object-pose tracking. Videos and code are available at https://boyuan-an.github.io/GALATEA/.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-11</td>
+            <td><a href="https://arxiv.org/abs/2609.10540" target="_blank">2609.10540</a></td>
+            <td>Programmable World Model</td>
+            <td>Zheng-Hui Huang, Guixu Lin, Jiacheng Lin, Yi-Chuan Huang, Ruihan Yu, Muyao Niu, Siqi Yang, Yu-Lun Liu, Yung-Yu Chuang, Kaipeng Zhang, Zhixiang Wang</td>
+            <td>7.34037822393284</td>
+            <td><a href="https://arxiv.org/pdf/2609.10540v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Recent video world models generate increasingly realistic and interactive visual experiences, yet lack reliable mechanisms for maintaining persistent world state and enforcing programmable rules over extended interactions. We introduce Programmable World Model, a framework that decouples world-state evolution from visual observation generation. An agent translates natural-language instructions into executable programs that specify entity states and state-transition rules, enabling direct control over individual entities and their interactions. A lightweight engine executes these programs to update and maintain an explicit, persistent global world state, including off-screen entities and non-visual attributes. To connect world state with visual generation, we introduce state-augmented 3D oriented bounding boxes (OBBs) as an intermediate representation. This representation, together with the target camera trajectory, is deterministically compiled into pixel-aligned spatiotemporal conditioning signals for a pretrained video model serving as the generative renderer. This design allows users to create playable games with predefined mechanics, direct control over individual entities, and persistent world state throughout gameplay. We further introduce CombatStateBench, a benchmark for evaluating programmable world models. On CombatStateBench, our method achieves 94% Count Accuracy and 98% State Accuracy, substantially outperforming existing interactive video world models while supporting coherent long-horizon generation. These results demonstrate the effectiveness of separating explicit state evolution from generative rendering for building persistent, programmable worlds.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-11</td>
+            <td><a href="https://arxiv.org/abs/2609.09507" target="_blank">2609.09507</a></td>
+            <td>RoMa-$Ω$: What Feed-Forward 3D Models Know About Image Matching</td>
+            <td>David Nordström, Xinyue Zhang, Thibaut Loiseau, Vincent Lepetit, Fredrik Kahl</td>
+            <td>7.333672421091871</td>
+            <td><a href="https://arxiv.org/pdf/2609.09507v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Learned image matching has experienced significant progress in recent years, culminating in robust and accurate matchers such as RoMa, whose robustness is often attributed to its use of frozen DINO features. In a parallel development, feed-forward reconstruction models, such as VGGT, have been trained on ever-growing datasets to accurately regress dense 3D point maps and camera poses. The distinction between matchers and feed-forward reconstruction models has become increasingly blurred with the introduction of matching losses in models such as MASt3R and VGGT-$Ω$. This raises a natural question: what do feed-forward 3D models know about image matching? In this work, we answer this question by analyzing three scenarios: (i) zero-shot matching of patch features, (ii) direct matching of 3D point predictions, and (iii) training a full matcher on top of the learned representations. We find that, despite performing poorly in zero-shot matching, especially in later layers, feed-forward reconstruction models provide strong representations for linear probing and full matching pipelines. We further show that, even without any training, their raw predictions alone enable competitive matching, albeit only under moderate viewpoint changes and modality gaps. Based on these insights, we retrain RoMa v2 by replacing its DINO backbone with VGGT-$Ω$. Our resulting model, \ours, outperforms state-of-the-art matchers on a wide range of benchmarks, e.g. +8.1 mAA compared to RoMa v2 on WxBS.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-11</td>
+            <td><a href="https://arxiv.org/abs/2609.09418" target="_blank">2609.09418</a></td>
+            <td>Valerant: An Automatic Navigable Game Map Generator via Action-Conditioned World Model Exploration</td>
+            <td>Yiran Qiao, Feng Wang, Jing Ma</td>
+            <td>7.327307965038729</td>
+            <td><a href="https://arxiv.org/pdf/2609.09418v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>World Action Models (WAMs) couple predictive world modeling with action generation, allowing anticipated future states to guide agent behavior. Although WAMs are rapidly advancing embodied AI, general-purpose counterparts remain largely unexplored in games. Existing game-oriented approaches often combine action-conditioned world models with external policies and reward functions to realize WAM-like decision-making, yet they operate mainly in 2D visual observation space and do not instantiate persistent 3D geometry. Extending this paradigm to 3D games introduces a distinct challenge. In autonomous driving and robotics, the physical environment exists independently of the model, providing a persistent 3D world in which selected actions can be executed. Games have no such external substrate; the virtual world itself must be instantiated. Most playable games require a persistent and navigable space, while 3D games additionally require explicit geometry that supports movement and interaction. Action-conditioned video rollouts provide visual observations but not this spatial representation. We present \textsc{Valerant}, a training-free framework that transforms a pretrained action-conditioned world model into a WAM for exploring and constructing 3D game maps. By coupling predictive visual rollouts with SLAM-based spatial reconstruction and exploration-driven action selection, \textsc{Valerant} progressively transforms a single image into a persistent 3D game map. This framework extends WAM-based interaction beyond 2D visual simulation and offers a new approach to reducing manual effort in 3D game-map creation.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-11</td>
+            <td><a href="https://arxiv.org/abs/2609.10339" target="_blank">2609.10339</a></td>
+            <td>A Confidence-Aware Multimodal Fusion Framework for Industrial Human-Robot Collaboration</td>
+            <td>Xinyu Liu, Qiqi Dong, Boya Jia, Yi Zhang, Binbin Lian</td>
+            <td>7.318877590392427</td>
+            <td><a href="https://arxiv.org/pdf/2609.10339v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>A confidence-aware multimodal fusion framework (CAMF) is proposed to realize reliable human intention prediction for industrial human-robot collaboration. This framework fuses four heterogeneous modalities including object 6D pose, gaze, skeletal motion and IMU-based hand motion. It embeds a confidence-trend-driven dynamic fusion mechanism into BiLSTM to adaptively balance bidirectional temporal features according to real-time modality reliability. A confidence-guided balanced learning strategy combined with a confidence freezing mechanism is further adopted to adjust network gradients dynamically, suppress noise from low-quality modalities and mitigate cross-modal learning bias. A physical platform based on the UR3 collaborative robot is built for experimental validation. Comparative results show that the proposed method reaches an intention recognition accuracy of 91.86% and outperforms existing multimodal fusion approaches in overall performance and stability. It also maintains satisfactory accuracy under low light and partial occlusion interference. In practical assembly tasks, the framework enables proactive and stable human-robot cooperation with strong environmental adaptability.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-11</td>
+            <td><a href="https://arxiv.org/abs/2609.10292" target="_blank">2609.10292</a></td>
+            <td>Isotropic Embedding Perturbations for Robust Vision Language Encoders</td>
+            <td>Hyesong Choi, Daeun Kim, Song Park, Taekyung Kim, Byeongho Heo, Sangdoo Yun, Dongbo Min, Dongyoon Han</td>
+            <td>7.297537057244914</td>
+            <td><a href="https://arxiv.org/pdf/2609.10292v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Data augmentation is fundamental to training modern deep vision and multimodal models. While individual methods, such as RandAug, CutMix, Mixup, RandErase, and DropPath, offer strong regularization effects, their combined use has saturated in performance due to overlapping functionalities, and aggressive pixel-level manipulations may disrupt delicate cross-modal alignment. This saturation motivates the search for a new augmentation axis within the embedding space rather than the input space. We introduce Aether, a simple plug-in method that applies diffusion-style random perturbations in the embedding space via controlled alpha-mixing, specifically designed to provide isotropic regularization that remains semantically consistent. Inspired by feature-space perturbations in language models and image degradation in generative pretraining, Aether induces mild yet effective perturbations that smooth the representations without compromising the fine-grained structural information required for strong vision-language encoders. Across diverse architectures and across multiple recognition tasks, Aether delivers consistent gains over the advanced recipe combining CutMix, Mixup, DropPath, and RandAug---a level of improvement rarely observed with modern augmentation alternatives. Notably, Aether demonstrates superior effectiveness in multi-modal alignment, succeeding where traditional pixel-space augmentations fail by providing a stable, isotropic regularization signal that respects the integrity of the high-dimensional feature space.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-11</td>
+            <td><a href="https://arxiv.org/abs/2609.10335" target="_blank">2609.10335</a></td>
+            <td>From Symbolic Perception to Logical Deduction: A Framework for Guiding Language Models in Geometric Reasoning</td>
+            <td>Weichen Dai, Rafael Medeiros Cabral, Ziyi Shou, Yan Cao, Xin Shen, Dongcai Lu, Yi Zhou</td>
+            <td>7.296743563419348</td>
+            <td><a href="https://arxiv.org/pdf/2609.10335v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Plane geometry remains a significant challenge in AI, requiring the integration of visual perception and mathematical reasoning. While Large Multimodal Models (LMMs) naturally handle visuo-linguistic inputs, they are often computationally intensive and opaque. We demonstrate that a pure Large Language Model (LLM), when equipped with specialized modules, can rival state-of-the-art LMMs on complex geometry problems. Our framework integrates a Geometric Vision Parser, which translates diagrams into symbolic form, with a Symbolic Solver that performs formal deductions, thereby mitigating hallucinations and promoting interpretable reasoning. To enable rigorous evaluation, we curate a benchmark of challenging problems from the 2025 Chinese Zhongkao examinations, ensuring data novelty and testing deeper deductive skills. Experiments demonstrate that our approach achieves performance comparable to Gemini 2.5 Pro while delivering clearer, human-like solutions.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-11</td>
+            <td><a href="https://arxiv.org/abs/2609.09606" target="_blank">2609.09606</a></td>
+            <td>RouteBridge: Reliability-Routed Bidirectional Distillation Between Neural Radiance Fields and 3D Gaussian Splatting</td>
+            <td>YuanHang Wang, Xin Cao</td>
+            <td>7.284200678359087</td>
+            <td><a href="https://arxiv.org/pdf/2609.09606v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Neural radiance fields (NeRFs) and 3D Gaussian Splatting (3DGS) encode a scene with complementary inductive biases, but existing cross-representation distillation typically fixes one representation as teacher for the entire scene. A globally fixed teacher can propagate local reconstruction errors. We present RouteBridge, a bidirectional framework that selects the teaching direction for each ray. Its reliability estimator combines photometric residuals with representation-specific geometric evidence and routes supervision from NeRF to 3DGS, from 3DGS to NeRF, or abstains. A renderer-independent interface transfers color, opacity, and normalized depth without shared features or point correspondence. On mip-NeRF 360, the NeRF and 3DGS exports reach 28.56 and 28.77 dB, respectively. The 3DGS export improves over 3DGS by 1.56 dB and over NeRF-GS by 0.45 dB while reducing LPIPS to 0.207. On static three-view DTU, RouteBridge obtains 21.12 dB. Ablations show that both adaptive routing and geometric ray targets contribute to the improvement.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-11</td>
+            <td><a href="https://arxiv.org/abs/2609.10137" target="_blank">2609.10137</a></td>
+            <td>Assembling Two Parts in One Hand</td>
+            <td>Liuao Pei, Tianyue Wu, Hui Zhang, Ping Luo, Jie Song</td>
+            <td>7.27962016242297</td>
+            <td><a href="https://arxiv.org/pdf/2609.10137v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>A hallmark of human dexterity is the cooperative use of fingers, where different fingers take on distinct yet coordinated roles to accomplish fine manipu- lation, such as capping a pen with the hand that holds it. We study this finger-level coordination through in-hand assembly: mating two rigid objects within a single dexterous hand, with no second arm and no fixture. We present a reinforcement learning formulation to solve this problem in a unified framework, which is driven by a goal relative pose between the two parts. Finger coordination is shaped by a function-based auxiliary reward and regularized toward a single human reference pose, while domain randomization and a fusion of historical proprioception and object observation confer robustness to occlusion-induced estimation noise. The same recipe solves three different assembly tasks (Bottle, Syringe, and Marker). Trained purely in simulation, the policies transfer zero-shot to hardware with a single camera, demonstrating robustness to state-estimation errors caused by oc- clusion. Our experiments also reveal that in-hand assembly places demands on hand morphology and can serve as a benchmark for modern robotic hand systems. Videos and code are available at https://ltbgbird.github.io/in-hand-assembly-page/.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-11</td>
+            <td><a href="https://arxiv.org/abs/2609.09745" target="_blank">2609.09745</a></td>
+            <td>PccDiffuser: Multi-solution Motion Planning for Continuum Robots</td>
+            <td>Ke Qiu, Sifan Chen, Si Wang, Rong Xiong, Yue Wang, Haojian Lu</td>
+            <td>7.275136140224401</td>
+            <td><a href="https://arxiv.org/pdf/2609.09745v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>We present the PccDiffuser, a conditional diffusion framework for continuum robots that learns a multimodal distribution over complete configuration-space paths and samples multiple candidate solutions in parallel, which are subsequently converted into an executable trajectory by time allocation considering actuator constraints. Under the piecewise constant-curvature model, we use exponential co-ordinates to describe the robot kinematics, and use graph neural network to encode a variable number of environment obstacles. Analytical differential kinematics is incorporated in the denoising process to improve terminal accuracy and whole-body clearance. On a mixed test set comprising workspace with zero to four obstacles, PccDiffuser achieved a success rate of 91\%. Compared with existing sampling- and optimisation-based benchmarks, it delivered both a higher success rate and greater computational efficiency, with the latter advantage becoming more substantial when sampling more candidate solutions. Experiments on a three-section tendon-driven continuum robot further demonstrate consecutive planning, multi-solution planning, and whole-body obstacle avoidance.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-09-11</td>
+            <td><a href="https://arxiv.org/abs/2609.10355" target="_blank">2609.10355</a></td>
+            <td>Why Is Video Still So Expensive? A Survey of Inference-Efficiency Mechanisms in Video and Audiovisual LLMs</td>
+            <td>Killian Steunou, Yannis Tevissen, Mounîm A. El Yacoubi</td>
+            <td>7.273799483750772</td>
+            <td><a href="https://arxiv.org/pdf/2609.10355v1" target="_blank">PDF</a></td>
+            <td>-</td>
+            <td>Video understanding has rapidly evolved toward video large language models (VideoLLMs): systems that couple video representations with pretrained large language models and condition generation on a textual prompt. Their strong performance on captioning, question answering, retrieval and temporal grounding comes at a computation and memory cost that grows with frame count and context length, limiting deployment in real-time, mobile and resource-constrained settings. This survey covers inference-efficiency mechanisms for visual and audiovisual VideoLLMs that report concrete reductions in parameter count, FLOPs per input, latency, memory, or visual and audio token count. We analyze bottlenecks across frame sampling, modality encoding, connector-level token reduction, and LLM prefilling and decoding. We organize methods by the pipeline stage at which they act, covering VideoLLMs developed since late 2022 together with earlier frame-sampling and vision-encoder mechanisms that remain components of current pipelines. We assemble literature-reported accuracy--cost comparisons under shared host models and input protocols wherever available, distinguish them from heterogeneous cross-paper evidence, and identify gaps in audiovisual efficiency and standardized evaluation. We maintain a repository at https://github.com/momentslab/awesome-efficient-videollm.</td>
+        </tr>
+        
         <tr>
             <td>2026-09-08</td>
             <td><a href="https://arxiv.org/abs/2609.05415" target="_blank">2609.05415</a></td>
