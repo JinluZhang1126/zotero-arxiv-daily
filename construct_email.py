@@ -7,6 +7,7 @@ from email.utils import parseaddr, formataddr
 import smtplib
 import datetime
 import time
+import os
 from loguru import logger
 
 framework = """
@@ -123,24 +124,48 @@ def render_email(papers:list[ArxivPaper]):
     if len(papers) == 0 :
         return framework.replace('__CONTENT__', get_empty_html())
     
+    render_delay = float(os.getenv("EMAIL_RENDER_DELAY", "1"))
     for p in tqdm(papers,desc='Rendering Email'):
-        rate = get_stars(p.score)
-        author_list = [a.name for a in p.authors]
-        num_authors = len(author_list)
-        
-        if num_authors <= 5:
-            authors = ', '.join(author_list)
-        else:
-            authors = ', '.join(author_list[:3] + ['...'] + author_list[-2:])
-        if p.affiliations is not None:
-            affiliations = p.affiliations[:5]
-            affiliations = ', '.join(affiliations)
-            if len(p.affiliations) > 5:
-                affiliations += ', ...'
-        else:
+        try:
+            rate = get_stars(p.score)
+            author_list = [a.name for a in p.authors]
+            num_authors = len(author_list)
+            
+            if num_authors <= 5:
+                authors = ', '.join(author_list)
+            else:
+                authors = ', '.join(author_list[:3] + ['...'] + author_list[-2:])
+
+            paper_affiliations = p.affiliations
+            if paper_affiliations is not None:
+                affiliations = ', '.join(paper_affiliations[:5])
+                if len(paper_affiliations) > 5:
+                    affiliations += ', ...'
+            else:
+                affiliations = 'Unknown Affiliation'
+
+            tldr = p.tldr
+            code_url = p.code_url
+        except Exception as e:
+            # One problematic paper should not abort the whole digest.
+            logger.exception(f"Failed to enrich {p.arxiv_id}; using fallback metadata: {e}")
+            rate = get_stars(p.score)
+            author_list = [a.name for a in p.authors]
+            authors = ', '.join(author_list[:5])
+            if len(author_list) > 5:
+                authors += ', ...'
             affiliations = 'Unknown Affiliation'
-        parts.append(get_block_html(p.title, authors,rate,p.arxiv_id ,p.tldr, p.pdf_url, p.code_url, affiliations))
-        time.sleep(10)
+            tldr = p.summary
+            code_url = None
+
+        parts.append(
+            get_block_html(
+                p.title, authors, rate, p.arxiv_id, tldr,
+                p.pdf_url, code_url, affiliations
+            )
+        )
+        if render_delay > 0:
+            time.sleep(render_delay)
 
     content = '<br>' + '</br><br>'.join(parts) + '</br>'
     return framework.replace('__CONTENT__', content)
