@@ -54,10 +54,20 @@ class ArxivPaper:
     @cached_property
     def code_url(self) -> Optional[str]:
         s = requests.Session()
-        retries = Retry(total=5, backoff_factor=0.1)
+        retries = Retry(
+            total=3,
+            connect=3,
+            read=3,
+            backoff_factor=0.5,
+            status_forcelist=[429, 500, 502, 503, 504],
+            allowed_methods=["GET"],
+        )
         s.mount('https://', HTTPAdapter(max_retries=retries))
         try:
-            paper_list = s.get(f'https://paperswithcode.com/api/v1/papers/?arxiv_id={self.arxiv_id}').json()
+            paper_list = s.get(
+                f'https://paperswithcode.com/api/v1/papers/?arxiv_id={self.arxiv_id}',
+                timeout=10,
+            ).json()
         except Exception as e:
             logger.debug(f'Error when searching {self.arxiv_id}: {e}')
             return None
@@ -67,7 +77,10 @@ class ArxivPaper:
         paper_id = paper_list['results'][0]['id']
 
         try:
-            repo_list = s.get(f'https://paperswithcode.com/api/v1/papers/{paper_id}/repositories/').json()
+            repo_list = s.get(
+                f'https://paperswithcode.com/api/v1/papers/{paper_id}/repositories/',
+                timeout=10,
+            ).json()
         except Exception as e:
             logger.debug(f'Error when searching {self.arxiv_id}: {e}')
             return None
