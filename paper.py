@@ -5,6 +5,7 @@ import arxiv
 import tarfile
 import re
 import time
+import socket
 from llm import get_llm
 import requests
 from requests.adapters import HTTPAdapter, Retry
@@ -79,21 +80,51 @@ class ArxivPaper:
         with ExitStack() as stack:
             tmpdirname = stack.enter_context(TemporaryDirectory())
             # file = self._paper.download_source(dirpath=tmpdirname)
+            file = None
+            retryable_http_codes = {429, 500, 502, 503, 504}
+            original_timeout = socket.getdefaulttimeout()
+            socket.setdefaulttimeout(30)
             try:
-                # 尝试下载源文件
-                file = self._paper.download_source(dirpath=tmpdirname)
-            except HTTPError as e:
-                # Source analysis is optional. arXiv can transiently return 4xx/5xx
-                # (for example 406/429), so a single paper must not abort the
-                # entire daily email workflow.
-                logger.warning(
-                    f"HTTP Error {e.code} when downloading source for "
-                    f"{self.arxiv_id}: {e.reason}. Skipping source analysis."
-                )
-                return None
-            except Exception as e:
-                logger.error(f"Error when downloading source for {self.arxiv_id}: {e}")
-                return None
+                for attempt in range(1, 4):
+                    try:
+                        file = self._paper.download_source(dirpath=tmpdirname)
+                        break
+                    except HTTPError as e:
+                        if e.code in retryable_http_codes and attempt < 3:
+                            delay = 2 ** (attempt - 1)
+                            logger.warning(
+                                f"HTTP {e.code} downloading source for {self.arxiv_id}; "
+                                f"retrying in {delay}s ({attempt}/3)."
+                            )
+                            time.sleep(delay)
+                            continue
+                        logger.warning(
+                            f"HTTP Error {e.code} when downloading source for "
+                            f"{self.arxiv_id}: {e.reason}. Skipping source analysis."
+                        )
+                        return None
+                    except (TimeoutError, socket.timeout) as e:
+                        if attempt < 3:
+                            delay = 2 ** (attempt - 1)
+                            logger.warning(
+                                f"Timeout downloading source for {self.arxiv_id}; "
+                                f"retrying in {delay}s ({attempt}/3)."
+                            )
+                            time.sleep(delay)
+                            continue
+                        logger.warning(
+                            f"Source download timed out for {self.arxiv_id}. "
+                            "Skipping source analysis."
+                        )
+                        return None
+                    except Exception as e:
+                        logger.warning(
+                            f"Error when downloading source for {self.arxiv_id}: {e}. "
+                            "Skipping source analysis."
+                        )
+                        return None
+            finally:
+                socket.setdefaulttimeout(original_timeout)
             try:
                 tar = stack.enter_context(tarfile.open(file))
             except tarfile.ReadError:
