@@ -4,6 +4,10 @@ on:
   schedule:
     - cron: '0 23 */3 * *'
 
+concurrency:
+  group: zotero-index-main
+  cancel-in-progress: false
+
 jobs:
   calculate-and-send:
     runs-on: ubuntu-latest
@@ -11,8 +15,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          repository: ${{ vars.REPOSITORY }}
-          ref: ${{ vars.REF }}
+          repository: ${{ vars.REPOSITORY || github.repository }}
+          ref: ${{ vars.REF || github.event.repository.default_branch }}
           fetch-depth: 0
 
       - name: Setup uv
@@ -44,12 +48,19 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Preserve generated files while syncing code changes that may have
-          # landed on main during this long-running workflow.
+          set -euo pipefail
+          # Refuse to overwrite files generated against a different code revision.
+          branch="${{ vars.REF || github.event.repository.default_branch }}"
+          git fetch origin "$branch"
+          if [ "$(git rev-parse HEAD)" != "$(git rev-parse FETCH_HEAD)" ]; then
+            echo "::error::Branch changed while collecting; rerun against latest source."
+            exit 1
+          fi
+          # Preserve generated files while checking the branch.
           cp paper_list.json /tmp/paper_list.json
           cp index.html /tmp/index.html
           git restore paper_list.json index.html || true
-          git pull --rebase origin "${{ vars.REF }}"
+          git pull --rebase origin "${{ vars.REF || github.event.repository.default_branch }}"
 
           cp /tmp/paper_list.json paper_list.json
           cp /tmp/index.html index.html
@@ -61,4 +72,4 @@ jobs:
           fi
 
           git commit -m "chore: refresh daily paper list and index"
-          git push origin "HEAD:${{ vars.REF }}"
+          git push origin "HEAD:${{ vars.REF || github.event.repository.default_branch }}"

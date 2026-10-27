@@ -103,6 +103,8 @@ def render_paper_list_html_from_json(json_file: str = "paper_list.json") -> str:
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Daily arXiv Papers</title>
+  <link rel="stylesheet" href="./assets/date-index.css">
+  <script defer src="./assets/date-index.js"></script>
   <style>
     body {{ font-family: Arial, sans-serif; margin: 24px; }}
     table {{ border-collapse: collapse; width: 100%; }}
