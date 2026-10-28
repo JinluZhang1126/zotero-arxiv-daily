@@ -53,46 +53,43 @@ class ArxivPaper:
     
     @cached_property
     def code_url(self) -> Optional[str]:
+        for text in (getattr(self._paper, "comment", None), self.summary):
+            if not text:
+                continue
+            for url in re.findall(r'https?://[^\s<>()",;\]]+', text):
+                cleaned = url.rstrip(".,;:)")
+                if not any(ignore in cleaned for ignore in ("arxiv.org", "creativecommons.org", "doi.org")):
+                    return cleaned
+
         s = requests.Session()
         retries = Retry(
-            total=3,
-            connect=3,
-            read=3,
+            total=2,
+            connect=2,
+            read=2,
             backoff_factor=0.5,
             status_forcelist=[429, 500, 502, 503, 504],
             allowed_methods=["GET"],
         )
         s.mount('https://', HTTPAdapter(max_retries=retries))
         try:
-            paper_list = s.get(
-                f'https://paperswithcode.com/api/v1/papers/?arxiv_id={self.arxiv_id}',
+            resp = s.get(
+                f'https://huggingface.co/api/papers/{self.arxiv_id}',
                 timeout=10,
-            ).json()
+            )
+            if resp.status_code == 200:
+                paper_info = resp.json()
+                repo = paper_info.get('githubRepo') or paper_info.get('projectPage')
+                if repo:
+                    return repo
         except Exception as e:
             logger.debug(f'Error when searching {self.arxiv_id}: {e}')
-            return None
-
-        if paper_list.get('count',0) == 0:
-            return None
-        paper_id = paper_list['results'][0]['id']
-
-        try:
-            repo_list = s.get(
-                f'https://paperswithcode.com/api/v1/papers/{paper_id}/repositories/',
-                timeout=10,
-            ).json()
-        except Exception as e:
-            logger.debug(f'Error when searching {self.arxiv_id}: {e}')
-            return None
-        if repo_list.get('count',0) == 0:
-            return None
-        return repo_list['results'][0]['url']
+        return None
     
     @cached_property
     def tex(self) -> dict[str,str]:
         with ExitStack() as stack:
             tmpdirname = stack.enter_context(TemporaryDirectory())
-            # file = self._paper.download_source(dirpath=tmpdirname)
+            _ = self.pdf_url
             file = None
             retryable_http_codes = {429, 500, 502, 503, 504}
             original_timeout = socket.getdefaulttimeout()
@@ -242,7 +239,7 @@ class ArxivPaper:
         # use gpt-4o tokenizer for estimation
         enc = tiktoken.encoding_for_model("gpt-4o")
         prompt_tokens = enc.encode(prompt)
-        prompt_tokens = prompt_tokens[:4000]  # truncate to 4000 tokens
+        prompt_tokens = prompt_tokens[:2500]  # truncate to 2500 tokens
         prompt = enc.decode(prompt_tokens)
         
         tldr = llm.generate(
@@ -275,7 +272,7 @@ class ArxivPaper:
             # use gpt-4o tokenizer for estimation
             enc = tiktoken.encoding_for_model("gpt-4o")
             prompt_tokens = enc.encode(prompt)
-            prompt_tokens = prompt_tokens[:4000]  # truncate to 4000 tokens
+            prompt_tokens = prompt_tokens[:1500]  # truncate to 1500 tokens
             prompt = enc.decode(prompt_tokens)
             llm = get_llm()
             affiliations = llm.generate(

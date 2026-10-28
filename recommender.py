@@ -4,6 +4,8 @@ from paper import ArxivPaper
 from datetime import datetime
 
 def rerank_paper(candidate:list[ArxivPaper],corpus:list[dict],model:str='avsolatorio/GIST-small-Embedding-v0') -> list[ArxivPaper]:
+    if not candidate or not corpus:
+        return candidate
     encoder = SentenceTransformer(model)
     #sort corpus by date, from newest to oldest
     corpus = sorted(corpus,key=lambda x: datetime.strptime(x['data']['dateAdded'], '%Y-%m-%dT%H:%M:%SZ'),reverse=True)

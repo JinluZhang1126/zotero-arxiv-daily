@@ -16,10 +16,13 @@ arxiv.Result._get_pdf_url = _get_pdf_url_patch
 import argparse
 from datetime import date
 import os
+import re
 import sys
 import json
 import html as html_lib
 from typing import Optional
+import requests
+from requests.adapters import HTTPAdapter, Retry
 from dotenv import load_dotenv
 load_dotenv(override=True)
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
@@ -172,30 +175,102 @@ def filter_corpus(corpus:list[dict], pattern:str) -> list[dict]:
     return new_corpus
 
 
+def _result_from_atom_entry(entry) -> arxiv.Result:
+    raw_id = getattr(entry, "id", "") or entry.get("id", "")
+    short_id = raw_id.removeprefix("oai:arXiv.org:").strip()
+    if "arxiv.org/abs/" in short_id:
+        short_id = short_id.split("arxiv.org/abs/")[-1].strip()
+    arxiv_id = re.sub(r"v\d+$", "", short_id)
+    title = re.sub(r"\s+", " ", getattr(entry, "title", "") or entry.get("title", "")).strip()
+    raw_summary = getattr(entry, "summary", "") or entry.get("summary", "")
+    summary = re.sub(
+        r"^arXiv:\S+\s+Announce Type:\s+\S+\s*\nAbstract:\s*",
+        "",
+        raw_summary,
+        flags=re.DOTALL,
+    ).strip()
+    raw_authors = entry.get("authors", [])
+    if not raw_authors and entry.get("author"):
+        raw_authors = [{"name": entry.get("author")}]
+    authors = [
+        arxiv.Result.Author(name.strip())
+        for a in raw_authors
+        for name in (a.get("name", "") if isinstance(a, dict) else getattr(a, "name", "")).split(",")
+        if name.strip()
+    ]
+    abs_url = f"https://arxiv.org/abs/{short_id}"
+    pdf_url = f"https://arxiv.org/pdf/{arxiv_id}.pdf"
+    links = [
+        arxiv.Result.Link(abs_url, rel="alternate", content_type="text/html"),
+        arxiv.Result.Link(pdf_url, title="pdf", rel="related", content_type="application/pdf"),
+    ]
+    return arxiv.Result(
+        entry_id=abs_url,
+        title=title,
+        authors=authors,
+        summary=summary,
+        links=links,
+        _raw=entry,
+    )
+
+
+def _fetch_atom_feed(query: str):
+    url = f"https://rss.arxiv.org/atom/{query}"
+    session = requests.Session()
+    retries = Retry(
+        total=3,
+        connect=3,
+        read=3,
+        backoff_factor=1.0,
+        status_forcelist=[429, 500, 502, 503, 504],
+        allowed_methods=["GET"],
+    )
+    session.mount("https://", HTTPAdapter(max_retries=retries))
+    resp = session.get(url, headers={"User-Agent": "zotero-arxiv-daily/1.0"}, timeout=30)
+    resp.raise_for_status()
+    return feedparser.parse(resp.content)
+
+
 def get_arxiv_paper(query:str, debug:bool=False) -> list[ArxivPaper]:
-    client = arxiv.Client(num_retries=10,delay_seconds=10)
-    feed = feedparser.parse(f"https://rss.arxiv.org/atom/{query}")
-    if 'Feed error for query' in feed.feed.title:
+    effective_query = query or "cs.AI"
+    feed = _fetch_atom_feed(effective_query)
+    if "Feed error for query" in feed.feed.get("title", ""):
         raise Exception(f"Invalid ARXIV_QUERY: {query}.")
     if not debug:
         papers = []
-        all_paper_ids = [i.id.removeprefix("oai:arXiv.org:") for i in feed.entries if i.arxiv_announce_type == 'new']
-        bar = tqdm(total=len(all_paper_ids),desc="Retrieving Arxiv papers")
-        for i in range(0,len(all_paper_ids),20):
-            search = arxiv.Search(id_list=all_paper_ids[i:i+20])
-            batch = [ArxivPaper(p) for p in client.results(search)]
-            bar.update(len(batch))
-            papers.extend(batch)
+        seen_ids = set()
+        new_entries = [
+            i for i in feed.entries
+            if getattr(i, "arxiv_announce_type", None) == "new"
+        ]
+        bar = tqdm(total=len(new_entries), desc="Retrieving Arxiv papers")
+        for entry in new_entries:
+            paper = ArxivPaper(_result_from_atom_entry(entry))
+            bar.update(1)
+            if paper.arxiv_id in seen_ids:
+                continue
+            seen_ids.add(paper.arxiv_id)
+            papers.append(paper)
         bar.close()
-
     else:
         logger.debug("Retrieve 5 arxiv papers regardless of the date.")
-        search = arxiv.Search(query='cat:cs.AI', sort_by=arxiv.SortCriterion.SubmittedDate)
         papers = []
-        for i in client.results(search):
-            papers.append(ArxivPaper(i))
+        seen_ids = set()
+        for entry in feed.entries:
+            paper = ArxivPaper(_result_from_atom_entry(entry))
+            if paper.arxiv_id in seen_ids:
+                continue
+            seen_ids.add(paper.arxiv_id)
+            papers.append(paper)
             if len(papers) == 5:
                 break
+        if not papers:
+            client = arxiv.Client(page_size=5, num_retries=2, delay_seconds=3)
+            search = arxiv.Search(query="cat:cs.AI", max_results=5, sort_by=arxiv.SortCriterion.SubmittedDate)
+            for i in client.results(search):
+                papers.append(ArxivPaper(i))
+                if len(papers) == 5:
+                    break
 
     return papers
 

@@ -181,14 +181,22 @@ def send_email(sender:str, receiver:str, password:str,smtp_server:str,smtp_port:
     today = datetime.datetime.now().strftime('%Y/%m/%d')
     msg['Subject'] = Header(f'Daily arXiv {today}', 'utf-8').encode()
 
-    try:
-        server = smtplib.SMTP(smtp_server, smtp_port, timeout=30)
-        server.starttls()
-    except Exception as e:
-        logger.warning(f"Failed to use TLS. {e}")
-        logger.warning(f"Try to use SSL.")
-        server = smtplib.SMTP_SSL(smtp_server, smtp_port, timeout=30)
+    for attempt in range(1, 4):
+        try:
+            try:
+                server = smtplib.SMTP(smtp_server, smtp_port, timeout=30)
+                server.starttls()
+            except Exception as e:
+                logger.warning(f"Failed to use TLS. {e}")
+                logger.warning(f"Try to use SSL.")
+                server = smtplib.SMTP_SSL(smtp_server, smtp_port, timeout=30)
 
-    server.login(sender, password)
-    server.sendmail(sender, [receiver], msg.as_string())
-    server.quit()
+            server.login(sender, password)
+            server.sendmail(sender, [receiver], msg.as_string())
+            server.quit()
+            return
+        except Exception as e:
+            if attempt == 3:
+                raise
+            logger.warning(f"SMTP send attempt {attempt}/3 failed: {e}; retrying in 3s...")
+            time.sleep(3)
